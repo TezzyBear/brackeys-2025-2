@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://1s8icgqleh81"]
+
+[ext_resource type="PackedScene" uid="uid://umwejshud0lh" path="res://scenes/ui/panel_sound.tscn" id="1_y2vrh"]
+[ext_resource type="PackedScene" uid="uid://ces3wna4uuv0e" path="res://scenes/ui/panel_stamina.tscn" id="2_h1r6l"]
+
+[node name="CanvasUI" type="CanvasLayer"]
+
+[node name="PanelSound" parent="." instance=ExtResource("1_y2vrh")]
+
+[node name="PanelStamina" parent="." instance=ExtResource("2_h1r6l")]

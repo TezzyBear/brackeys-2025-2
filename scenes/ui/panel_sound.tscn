@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://umwejshud0lh"]
+
+[ext_resource type="Script" uid="uid://cnwycm5hvc31v" path="res://scenes/ui/panel_sound.gd" id="1_hgx5c"]
+
+[node name="PanelSound" type="Panel" node_paths=PackedStringArray("progress_bar")]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -100.0
+offset_right = 50.0
+offset_bottom = 100.0
+grow_vertical = 2
+script = ExtResource("1_hgx5c")
+progress_bar = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -95.0
+offset_right = 12.5
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 40.0
+fill_mode = 3
+show_percentage = false

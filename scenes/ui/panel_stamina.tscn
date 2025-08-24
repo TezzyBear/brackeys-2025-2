@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ces3wna4uuv0e"]
+
+[node name="PanelStamina" type="Panel"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -65.0
+offset_right = 350.0
+offset_bottom = -40.0
+grow_vertical = 0
