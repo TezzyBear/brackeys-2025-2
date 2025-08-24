@@ -11,8 +11,20 @@ config_version=5
 [application]
 
 config/name="Brackeys20252"
+run/main_scene="res://scenes/dig.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/game_manager.gd"
+Enums="*res://scripts/enums.gd"
+Chunks="*res://scripts/chunks.gd"
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
 
 [rendering]
 
