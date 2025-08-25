@@ -22,3 +22,9 @@ enum CARD {
 	GOLD_PATH,
 	DIRT_PATH,
 }
+
+enum DIG_INTENSITY {
+	LOW,
+	MID,
+	HIGH
+}
