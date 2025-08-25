@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cun7vhbhw8oyh"]
+[gd_scene load_steps=3 format=3 uid="uid://cun7vhbhw8oyh"]
 
 [ext_resource type="Script" uid="uid://degi8mgv1o5lo" path="res://scripts/dig_scene_manager.gd" id="1_cd2qk"]
+[ext_resource type="PackedScene" uid="uid://b3uocdmladqm4" path="res://pick.tscn" id="2_cd2qk"]
 
 [node name="Dig" type="Node2D"]
 script = ExtResource("1_cd2qk")
@@ -14,3 +15,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Pick" parent="CanvasGame" instance=ExtResource("2_cd2qk")]

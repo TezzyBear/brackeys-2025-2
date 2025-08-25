@@ -3,6 +3,7 @@ extends Node2D
 class_name DigSceneManager
 
 @onready var texture_rect: TextureRect = $CanvasGame/TextureRect
+@onready var pick: Pick = $CanvasGame/Pick
 
 const DIRT_TEXTURE = preload("res://assets/images/bgs/bg_dirt.jpg")
 const STONE_TEXTURE = preload("res://assets/images/bgs/bg_stone.jpg")
@@ -14,10 +15,8 @@ func _ready() -> void:
 	texture_rect.texture = _get_diggable_texture(step_value)
 
 func _process(delta: float) -> void:
-	var in_transition = GameManager.instance.transition_manager.in_transition
-	if not in_transition and Input.is_action_just_pressed("click"):
-		GameManager.instance.run_step()
-		
+	pass
+
 func _get_diggable_texture(bg: Enums.STEP):
 	match bg:
 		Enums.STEP.DIRT:

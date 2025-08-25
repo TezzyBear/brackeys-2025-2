@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Pick
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var digging := false

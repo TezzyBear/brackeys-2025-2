@@ -17,8 +17,16 @@ func restart(level: int = 0) -> void:
 	tresholdValue = newTreshold
 	tresholdRect.position.y = tresholdValue * 2
 
-func sound_increase(noise: int) -> void:
-	progress_bar.value += noise
+func sound_increase(intensity: Enums.DIG_INTENSITY) -> void:
+	var noise_increment: int = 0
+	match intensity:
+		Enums.DIG_INTENSITY.HIGH:
+			noise_increment = 12
+		Enums.DIG_INTENSITY.MID:
+			noise_increment = 8
+		Enums.DIG_INTENSITY.LOW:
+			noise_increment = 4
+	progress_bar.value += noise_increment
 	progress_bar_warning_update()
 
 func progress_bar_warning_update() -> void:
@@ -27,11 +35,6 @@ func progress_bar_warning_update() -> void:
 
 func _process(delta: float) -> void:
 	decrease_progress(delta)
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_RIGHT:
-			sound_increase(5)
 
 func decrease_progress(delta: float) -> void:
 	progress_bar.value -= 3 * delta

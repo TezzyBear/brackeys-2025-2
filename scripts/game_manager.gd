@@ -26,11 +26,10 @@ func _ready() -> void:
 	if not instance:
 		GameManager.instance = self
 	
-	
-	
 	var random_chunk = Chunks.get_random_chunk(Enums.CHUNK_TYPES.DIRT)
 	add_chunk(random_chunk)
 	transition_to_scene(load("res://scenes/dig.tscn"))
+	dig_scene.pick.on_dig.connect(handle_pick_hit)
 
 func _process(delta: float) -> void:
 	pass
@@ -57,5 +56,5 @@ func add_chunk(chunk: Array):
 	level_layout += chunk + [Enums.STEP.SELECTION]
 	print(level_layout)
 
-func digging_update(noise: int = 5) -> void:
-	(canvas_ui.get_node("PanelSound") as UISound).sound_increase(noise)
+func handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
+	(canvas_ui.get_node("PanelSound") as UISound).sound_increase(intensity)
