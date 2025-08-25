@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxxcvro4vwo2"]
+[gd_scene load_steps=9 format=3 uid="uid://dxxcvro4vwo2"]
 
 [ext_resource type="Script" uid="uid://cem63el5ke0x3" path="res://scripts/canvas_overlay.gd" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cijyoj7k13whn" path="res://scripts/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://ntmuc3fp4f5s" path="res://scenes/transition_manager.gd" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://1s8icgqleh81" path="res://scenes/ui/canvas_ui.tscn" id="4_lbhrr"]
 
 [sub_resource type="Animation" id="Animation_7p6dd"]
 length = 0.001
@@ -79,3 +80,5 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 &"": SubResource("AnimationLibrary_e2t8h")
 }
+
+[node name="CanvasUI" parent="." instance=ExtResource("4_lbhrr")]

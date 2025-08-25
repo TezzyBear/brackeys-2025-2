@@ -7,6 +7,7 @@ static var instance: GameManager
 const MAX_TIME_STEPS = 30
 
 @onready var transition_manager: TransitionManager = $TransitionManager
+@onready var canvas_ui: CanvasLayer = $CanvasUI
 
 var rendered_scene: Node = null
 var dig_scene: DigSceneManager = null
@@ -25,15 +26,18 @@ func _ready() -> void:
 	if not instance:
 		GameManager.instance = self
 	
+	
+	
 	var random_chunk = Chunks.get_random_chunk(Enums.CHUNK_TYPES.DIRT)
 	add_chunk(random_chunk)
-	transition_to_scene(load("res://scenes/dig.tscn"))	
+	transition_to_scene(load("res://scenes/dig.tscn"))
 
 func _process(delta: float) -> void:
 	pass
 	
 func run_step():
 	level_index += 1
+	(canvas_ui.get_node("PanelSound") as UISound).restart(level_index)
 	if not dig_scene: return
 	
 	var step_result: Enums.STEP = level_layout[level_index]
@@ -52,3 +56,6 @@ func transition_to_scene(scene: PackedScene):
 func add_chunk(chunk: Array):
 	level_layout += chunk + [Enums.STEP.SELECTION]
 	print(level_layout)
+
+func digging_update(noise: int = 5) -> void:
+	(canvas_ui.get_node("PanelSound") as UISound).sound_increase(noise)

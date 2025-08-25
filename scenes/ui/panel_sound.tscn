@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://umwejshud0lh"]
+[gd_scene load_steps=3 format=3 uid="uid://umwejshud0lh"]
 
 [ext_resource type="Script" uid="uid://cnwycm5hvc31v" path="res://scenes/ui/panel_sound.gd" id="1_hgx5c"]
+[ext_resource type="Texture2D" uid="uid://xihcqwlccco0" path="res://scenes/ui/warning-caution-sign-on-transparent-background-free-png.png" id="2_vcbjg"]
 
-[node name="PanelSound" type="Panel" node_paths=PackedStringArray("progress_bar")]
+[node name="PanelSound" type="Panel" node_paths=PackedStringArray("progress_bar", "warning", "tresholdRect")]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 4
 anchor_top = 0.5
@@ -14,6 +15,26 @@ offset_bottom = 100.0
 grow_vertical = 2
 script = ExtResource("1_hgx5c")
 progress_bar = NodePath("ProgressBar")
+warning = NodePath("TextureRect")
+tresholdRect = NodePath("ProgressBar/ColorRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -157.0
+offset_right = 318.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+tooltip_text = "Loud Digging!
+The Dragon could be nearby!"
+texture = ExtResource("2_vcbjg")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
@@ -23,11 +44,22 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -12.5
-offset_top = -95.0
+offset_top = -100.0
 offset_right = 12.5
-offset_bottom = 105.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 value = 40.0
 fill_mode = 3
 show_percentage = false
+
+[node name="ColorRect" type="ColorRect" parent="ProgressBar"]
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -25.0
+offset_right = 8.0
+offset_bottom = 2.5
+grow_horizontal = 0
