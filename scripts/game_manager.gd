@@ -1,24 +1,51 @@
 extends Node
 
-var dig_scene: DigSceneManager = null
+class_name GameManager
 
+static var instance: GameManager
+
+@onready var transition_manager: TransitionManager = $TransitionManager
+
+var rendered_scene: Node = null
+var dig_scene: DigSceneManager = null
+var interaction_scene: InteractionSceneManager = null
 # Progress Variables
-var level_index := -1
+var level_index := 0
 var level_layout := [] # Add predefined "routes" that end on an interaction
 
-# Character Stats
+# Player Stats
 var fatigue := 0 #cap 100
 var weight := 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("GameManager initialized...")
+	if not instance:
+		GameManager.instance = self
+		print("Initialized Game Manager")
 	
-	var random_chunk = Chunks.return_chunk(Enums.CHUNK_TYPES.DIRT)
-	level_layout.append(random_chunk)
-	
-	print(level_layout)
+	var random_chunk = Chunks.get_random_chunk(Enums.CHUNK_TYPES.DIRT)
+	add_chunk(random_chunk)
+	transition_to_scene(load("res://scenes/dig.tscn"))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func run_step():
+	level_index += 1
+	if not dig_scene: return
+	
+	var step_result: Enums.STEP = level_layout[level_index]
+	if step_result < 3:
+		dig_scene.transition_to_bg(step_result)
+	else:
+		dig_scene.transition_to_interaction(step_result)
+
+func transition_to_scene(scene: PackedScene):
+	if rendered_scene:
+		rendered_scene.queue_free()
+	rendered_scene = scene.instantiate()
+	get_tree().current_scene.add_child(rendered_scene)
+	await transition_manager.fade_in()
+	
+func add_chunk(chunk: Array):
+	level_layout += chunk + [Enums.STEP.SELECTION]
+	print(level_layout)

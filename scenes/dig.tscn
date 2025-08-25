@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cun7vhbhw8oyh"]
+[gd_scene load_steps=3 format=3 uid="uid://cun7vhbhw8oyh"]
 
-[ext_resource type="Script" uid="uid://degi8mgv1o5lo" path="res://scenes/dig_scene_manager.gd" id="1_cd2qk"]
-[ext_resource type="Texture2D" uid="uid://crbfhexg4kcb8" path="res://assets/images/bgs/bg_dirt.jpg" id="1_v8b4l"]
+[ext_resource type="Script" uid="uid://degi8mgv1o5lo" path="res://scripts/dig_scene_manager.gd" id="1_cd2qk"]
 [ext_resource type="PackedScene" uid="uid://1s8icgqleh81" path="res://scenes/ui/canvas_ui.tscn" id="3_mhjl4"]
 
-[node name="Main" type="Node2D"]
+[node name="Dig" type="Node2D"]
 script = ExtResource("1_cd2qk")
 
 [node name="CanvasGame" type="CanvasLayer" parent="."]
@@ -15,7 +14,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_v8b4l")
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasUI" parent="." instance=ExtResource("3_mhjl4")]

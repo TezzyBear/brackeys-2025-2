@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://drm43ldv2plwx"]
+
+[ext_resource type="Script" uid="uid://da2hxyqxn47kb" path="res://scenes/selection_card.gd" id="1_4it2i"]
+
+[node name="SelectionCard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(100, 200)
+script = ExtResource("1_4it2i")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 400.0
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.0
+offset_top = 10.0
+offset_right = 39.0
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "More gold"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -73.5
+offset_top = -100.0
+offset_right = 73.5
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Go!"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

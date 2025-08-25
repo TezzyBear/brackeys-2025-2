@@ -1,3 +1,32 @@
-[gd_scene format=3 uid="uid://bwybf42x85ren"]
+[gd_scene load_steps=3 format=3 uid="uid://bwybf42x85ren"]
+
+[ext_resource type="Script" uid="uid://dx4x0askgka2b" path="res://scripts/interaction_scene_manager.gd" id="1_krms6"]
+[ext_resource type="PackedScene" uid="uid://drm43ldv2plwx" path="res://scenes/selection_card.tscn" id="2_pcrba"]
 
 [node name="Interaction" type="Node2D"]
+script = ExtResource("1_krms6")
+
+[node name="CanvasGame" type="CanvasLayer" parent="."]
+
+[node name="CanvasInteractionDisplay" type="CanvasLayer" parent="."]
+
+[node name="Cards" type="Control" parent="CanvasInteractionDisplay"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GoldCard" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("2_pcrba")]
+offset_left = 180.0
+offset_top = 63.0
+offset_right = 180.0
+offset_bottom = 63.0
+title_text = "More gold"
+
+[node name="DirtCard" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("2_pcrba")]
+offset_left = 572.0
+offset_top = 57.0
+offset_right = 572.0
+offset_bottom = 57.0
+type = 1
+title_text = "More dirt"
