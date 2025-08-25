@@ -9,7 +9,7 @@ const MAX_TIME_STEPS = 30
 @onready var transition_manager: TransitionManager = $TransitionManager
 @onready var canvas_ui: CanvasLayer = $CanvasUI
 
-var rendered_scene: Node = null
+var rendered_scene: SceneManager = null
 var dig_scene: DigSceneManager = null
 var interaction_scene: InteractionSceneManager = null
 
@@ -26,10 +26,12 @@ func _ready() -> void:
 	if not instance:
 		GameManager.instance = self
 	
-	var random_chunk = Chunks.get_random_chunk(Enums.CHUNK_TYPES.DIRT)
+	var random_chunk = Chunks.get_random_chunk(Enums.CHUNK_TYPE.DIRT)
 	add_chunk(random_chunk)
+	
+	# Initialize Dig Scene parameters
 	transition_to_scene(load("res://scenes/dig.tscn"))
-	dig_scene.pick.on_dig.connect(handle_pick_hit)
+	dig_scene.pick.on_dig.connect(_handle_pick_hit)
 
 func _process(delta: float) -> void:
 	pass
@@ -37,24 +39,27 @@ func _process(delta: float) -> void:
 func run_step():
 	level_index += 1
 	(canvas_ui.get_node("PanelSound") as UISound).restart(level_index)
-	if not dig_scene: return
-	
-	var step_result: Enums.STEP = level_layout[level_index]
-	if step_result < 3:
-		dig_scene.transition_to_bg(step_result)
-	else:
-		dig_scene.transition_to_interaction(step_result)
 
 func transition_to_scene(scene: PackedScene):
 	if rendered_scene:
 		rendered_scene.queue_free()
+		
 	rendered_scene = scene.instantiate()
-	get_tree().current_scene.add_child(rendered_scene)
-	await transition_manager.fade_in()
 	
+	get_tree().current_scene.add_child(rendered_scene)
+	rendered_scene.travel_to_step(level_index)
+	
+	await transition_manager.fade_in()
+
 func add_chunk(chunk: Array):
-	level_layout += chunk + [Enums.STEP.SELECTION]
+	level_layout += chunk + [Step.create(Enums.STEP_TYPE.PATH_SELECTION, false)]
 	print(level_layout)
 
-func handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
+func get_current_step() -> Step:
+	return level_layout[level_index]
+
+func get_step_at(step_index) -> Step:
+	return level_layout[step_index]
+
+func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	(canvas_ui.get_node("PanelSound") as UISound).sound_increase(intensity)

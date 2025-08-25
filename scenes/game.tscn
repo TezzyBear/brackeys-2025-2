@@ -64,6 +64,7 @@ script = ExtResource("1_yqjtg")
 script = ExtResource("2_lnu2h")
 
 [node name="CanvasOverlay" type="CanvasLayer" parent="."]
+layer = 10
 script = ExtResource("1_uwrxv")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasOverlay"]
@@ -73,6 +74,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 

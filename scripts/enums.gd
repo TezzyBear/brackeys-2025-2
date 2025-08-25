@@ -1,18 +1,18 @@
 extends Node
 
-enum CHUNK_TYPES {
+enum CHUNK_TYPE {
 	DIRT,
 	GOLD
 }
 
-enum STEP {
+enum STEP_TYPE {
 	# diggables
 	DIRT,
 	GOLD,
 	STONE,
 	# 3+ means interaction (non-diggables)
-	STORE,
-	SELECTION,
+	SHOP,
+	PATH_SELECTION,
 	TREASURE,
 }
 

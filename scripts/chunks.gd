@@ -1,23 +1,29 @@
 extends Node
 
+var dirt_step: Step = Step.create(Enums.STEP_TYPE.DIRT, true)
+var stone_step: Step = Step.create(Enums.STEP_TYPE.STONE, true)
+var gold_step: Step = Step.create(Enums.STEP_TYPE.GOLD, true)
+var shop_step: Step = Step.create(Enums.STEP_TYPE.SHOP, false)
+var path_selection_step: Step = Step.create(Enums.STEP_TYPE.PATH_SELECTION, false)
+
 var base: Array[Array] = [
-		[Enums.STEP.DIRT, Enums.STEP.DIRT, Enums.STEP.DIRT],
-		[Enums.STEP.DIRT, Enums.STEP.STONE, Enums.STEP.DIRT],
-		[Enums.STEP.STONE, Enums.STEP.STONE, Enums.STEP.DIRT],
-		[Enums.STEP.STONE, Enums.STEP.STONE, Enums.STEP.STONE],
+		[dirt_step, dirt_step, dirt_step],
+		[dirt_step, stone_step, dirt_step],
+		[stone_step, stone_step, dirt_step],
+		[stone_step, stone_step, stone_step],
 	]
 	
 var gold: Array[Array] = [
-		[Enums.STEP.GOLD, Enums.STEP.DIRT, Enums.STEP.GOLD],
-		[Enums.STEP.GOLD, Enums.STEP.GOLD, Enums.STEP.DIRT],
-		[Enums.STEP.GOLD, Enums.STEP.STONE, Enums.STEP.GOLD],
-		[Enums.STEP.GOLD, Enums.STEP.GOLD, Enums.STEP.GOLD],
+		[gold_step, dirt_step, gold_step],
+		[gold_step, gold_step, dirt_step],
+		[gold_step, stone_step, gold_step],
+		[gold_step, gold_step, gold_step],
 	]
 
-func get_random_chunk(chunk_type: Enums.CHUNK_TYPES) -> Array:
+func get_random_chunk(chunk_type: Enums.CHUNK_TYPE) -> Array:
 	match chunk_type:
-		Enums.CHUNK_TYPES.DIRT:
-			return base[randi_range(0, base.size() - 1)] as Array[Enums.STEP]
-		Enums.CHUNK_TYPES.GOLD:
-			return gold[randi_range(0, gold.size() - 1)] as Array[Enums.STEP]
+		Enums.CHUNK_TYPE.DIRT:
+			return base[randi_range(0, base.size() - 1)]
+		Enums.CHUNK_TYPE.GOLD:
+			return gold[randi_range(0, gold.size() - 1)]
 	return []

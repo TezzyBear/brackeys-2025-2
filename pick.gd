@@ -4,6 +4,7 @@ class_name Pick
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var block := false
 var digging := false
 var digging_intensity := Enums.DIG_INTENSITY.LOW
 var hits_since_dig_start := 0
@@ -15,6 +16,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
+	if block: return
+	
 	if Input.is_action_just_pressed("click"):
 		_start_digging()
 	if Input.is_action_just_released('click'):
@@ -28,7 +31,6 @@ func _start_digging() -> void:
 
 func _stop_digging() -> void:
 	digging = false
-	
 	animation_player.stop()
 
 func _animation_player_dig_hit() -> void:
@@ -38,3 +40,10 @@ func _animation_player_dig_hit() -> void:
 	var intensity = min((hits_since_dig_start - 1) / HITS_PER_INTENSITY, Enums.DIG_INTENSITY.HIGH)
 	on_dig.emit(intensity)
 	pass
+
+func set_block(value: bool):
+	if block != value:
+		block = value
+		if block:
+			_stop_digging()
+		

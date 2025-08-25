@@ -1,4 +1,4 @@
-extends Node2D
+extends SceneManager
 
 class_name InteractionSceneManager
 
@@ -14,7 +14,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+
+func travel_to_step(current_step: Enums.STEP_TYPE) -> void:
+	super(current_step)
+
 func get_chunk_type_from_card_type(selected_card_type: Enums.CARD):
 	match selected_card_type:
 		Enums.CARD.DIRT_PATH:
@@ -30,3 +33,4 @@ func transition_to_dig(selected_card_type: Enums.CARD) -> void:
 	await GameManager.instance.transition_manager.fade_out()
 	GameManager.instance.interaction_scene = null
 	GameManager.instance.transition_to_scene(load("res://scenes/dig.tscn"))
+	

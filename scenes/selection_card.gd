@@ -12,11 +12,9 @@ signal on_selected(type: Enums.CARD)
 func _ready() -> void:
 	title.text = title_text
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
 
 func _on_button_pressed() -> void:
 	on_selected.emit(type)
