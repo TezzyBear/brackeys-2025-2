@@ -4,27 +4,30 @@ class_name GameManager
 
 static var instance: GameManager
 
+const MAX_TIME_STEPS = 30
+
 @onready var transition_manager: TransitionManager = $TransitionManager
 
 var rendered_scene: Node = null
 var dig_scene: DigSceneManager = null
 var interaction_scene: InteractionSceneManager = null
+
 # Progress Variables
-var level_index := 0
-var level_layout := [] # Add predefined "routes" that end on an interaction
+var level_index := 0 # Position in level
+var level_layout := [] 
 
 # Player Stats
+var time_steps_passed := 0
 var fatigue := 0 #cap 100
 var weight := 0
 
 func _ready() -> void:
 	if not instance:
 		GameManager.instance = self
-		print("Initialized Game Manager")
 	
 	var random_chunk = Chunks.get_random_chunk(Enums.CHUNK_TYPES.DIRT)
 	add_chunk(random_chunk)
-	transition_to_scene(load("res://scenes/dig.tscn"))
+	transition_to_scene(load("res://scenes/dig.tscn"))	
 
 func _process(delta: float) -> void:
 	pass

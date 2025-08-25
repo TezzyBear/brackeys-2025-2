@@ -13,7 +13,6 @@ enum STEP {
 	# 3+ means interaction (non-diggables)
 	STORE,
 	SELECTION,
-	ENCOUNTER,
 	TREASURE,
 }
 
