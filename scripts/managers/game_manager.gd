@@ -9,6 +9,7 @@ const TIME_TO_LOSE: float = 480
 
 @onready var camera_2d: ShakeCamera = $Camera2D
 @onready var transition_manager: TransitionManager = $TransitionManager
+@onready var fatigue_manager: FatigueManager = $FatigueManager
 
 @onready var canvas_ui: CanvasLayer = $CanvasUI
 @onready var sound_ui: UISound = $CanvasUI/PanelSound
@@ -41,17 +42,35 @@ func _ready() -> void:
 	transition_to_scene(load("res://scenes/dig.tscn"))
 	_initialize_time_wheel()
 	_initialize_sound_bar()
+	fatigue_ui.on_fatigue_treshold_reached.connect(_handle_fatigue_treshold_reached)
 	
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("hack_1"):
+		run_step()
+	if Input.is_action_just_pressed("hack_2"):
+		_add_gold(100)
+	if Input.is_action_just_pressed("hack_3"):
+		_add_fatigue(33)
 
 func _add_gold(value) -> void:
-	gold += value
+	var uncapped_gold = gold + value
+	gold = min(999, max(0, uncapped_gold))
 	gold_ui.update(gold)
 
 func _add_fatigue(value) -> void:
-	fatigue += value
+	var uncapped_fatigue = fatigue + value
+	fatigue = min(100, max(0, uncapped_fatigue))
 	fatigue_ui.update(fatigue)
+
+func _handle_fatigue_treshold_reached():
+	
+	fatigue_manager.animate_fatigue_with_callback(func():
+		print("AAA")
+		_add_gold(-100)
+		_add_fatigue(-100)
+		time_ui.shift_time(180)
+	)
+	
 
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	_add_gold(_get_gold_in_step_by_pick_hit_intensity(intensity))
@@ -71,16 +90,17 @@ func _setup_lose():
 
 func run_step():
 	if dig_scene and loss_pending:
+		canvas_ui.visible = false
 		dig_scene.handle_loss()
 		return
 		
 	level_index += 1
 	print("Position: ", level_index)
-	sound_ui.update_bar_treshold(float(level_index) / STEPS_TO_WIN)
 	
 	var current_step: Step = get_current_step()
 	
 	await transition_manager.fade_out()
+	sound_ui.update_bar_treshold(float(level_index) / STEPS_TO_WIN)
 	
 	if rendered_scene is InteractionSceneManager:
 		transition_to_scene(load("res://scenes/dig.tscn"))

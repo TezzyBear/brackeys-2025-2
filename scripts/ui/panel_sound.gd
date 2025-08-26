@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 	_decrease_progress(delta)
 
 func _decrease_progress(delta: float) -> void:
-	progress_bar.value -= 3 * delta
+	progress_bar.value -= 5 * delta
 	if progress_bar.value <= 100 - treshold_value:
 		warning.visible = false
 	if progress_bar.value < 0:
@@ -46,6 +46,6 @@ func _get_noise_increment_by_intensity(intensity: Enums.DIG_INTENSITY):
 		Enums.DIG_INTENSITY.LOW:
 			return 3
 		Enums.DIG_INTENSITY.MID:
-			return 9
+			return 16
 		Enums.DIG_INTENSITY.HIGH:
-			return 27
+			return 40

@@ -14,10 +14,6 @@ var current_diggable_health: int
 func _ready() -> void:
 	GameManager.instance.dig_scene = self
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("hack_1"):
-		GameManager.instance.run_step()
-
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	current_diggable_health -= _get_intensity_damage(intensity)
 	print("Hp: ", current_diggable_health)
