@@ -9,7 +9,13 @@ const TIME_TO_LOSE: float = 480
 
 @onready var camera_2d: ShakeCamera = $Camera2D
 @onready var transition_manager: TransitionManager = $TransitionManager
+
 @onready var canvas_ui: CanvasLayer = $CanvasUI
+@onready var sound_ui: UISound = $CanvasUI/PanelSound
+@onready var fatigue_ui: UIFatigue = $CanvasUI/PanelFatigue
+@onready var gold_ui: UIGold = $CanvasUI/PanelGold
+@onready var time_ui: UITime = $CanvasUI/PanelTime
+@onready var inventory_ui: UIInventory = $CanvasUI/PanelInventory
 
 var rendered_scene: SceneManager = null
 var dig_scene: DigSceneManager = null
@@ -34,30 +40,32 @@ func _ready() -> void:
 	
 	transition_to_scene(load("res://scenes/dig.tscn"))
 	_initialize_time_wheel()
+	_initialize_sound_bar()
 	
-
 func _process(delta: float) -> void:
 	pass
 
 func _add_gold(value) -> void:
 	gold += value
-	(canvas_ui.get_node("PanelGold") as UIGold).update(gold)
+	gold_ui.update(gold)
 
 func _add_fatigue(value) -> void:
 	fatigue += value
-	(canvas_ui.get_node("PanelFatigue") as UIFatigue).update(fatigue)
+	fatigue_ui.update(fatigue)
 
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
-	print("A")
 	_add_gold(_get_gold_in_step_by_pick_hit_intensity(intensity))
 	_add_fatigue(0.2 + 1 * intensity)
-	(canvas_ui.get_node("PanelSound") as UISound).sound_increase(intensity)
+	sound_ui.sound_increase(intensity)
 
 func _initialize_time_wheel():
-	var ui_time: UITime = canvas_ui.get_node("PanelTime")
-	ui_time.start(TIME_TO_LOSE)
-	ui_time.on_time_end.connect(_setup_lose)
-	
+	time_ui.start(TIME_TO_LOSE)
+	time_ui.on_time_end.connect(_setup_lose)
+
+func _initialize_sound_bar():
+	sound_ui.update_bar_treshold(float(level_index) / STEPS_TO_WIN)
+	sound_ui.on_sound_treshold_passed.connect(_setup_lose)
+
 func _setup_lose():
 	loss_pending = true
 
@@ -68,7 +76,7 @@ func run_step():
 		
 	level_index += 1
 	print("Position: ", level_index)
-	(canvas_ui.get_node("PanelSound") as UISound).restart(level_index)
+	sound_ui.update_bar_treshold(float(level_index) / STEPS_TO_WIN)
 	
 	var current_step: Step = get_current_step()
 	

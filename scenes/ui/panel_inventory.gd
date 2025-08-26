@@ -1,3 +1,3 @@
 extends Panel
 
-class_name PanelInventory
+class_name UIInventory

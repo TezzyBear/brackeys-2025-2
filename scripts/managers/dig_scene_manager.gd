@@ -61,7 +61,7 @@ func _get_diggable_health(diggable: Enums.STEP_TYPE):
 		Enums.STEP_TYPE.DIRT:
 			return 8
 		Enums.STEP_TYPE.STONE:
-			return 40
+			return 48
 		Enums.STEP_TYPE.GOLD:
 			return 24
 
