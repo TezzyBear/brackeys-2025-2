@@ -13,6 +13,7 @@ const STEPS_TO_WIN = 30
 var rendered_scene: SceneManager = null
 var dig_scene: DigSceneManager = null
 var interaction_scene: InteractionSceneManager = null
+@export var time_until_lose: float = 480.0
 
 # Progress Variables
 var level_index := 0 # Position in level
@@ -31,6 +32,7 @@ func _ready() -> void:
 	add_chunk(random_chunk)
 	
 	transition_to_scene(load("res://scenes/dig.tscn"))
+	(canvas_ui.get_node("PanelTime") as UITime).start(time_until_lose)
 
 func _process(delta: float) -> void:
 	pass

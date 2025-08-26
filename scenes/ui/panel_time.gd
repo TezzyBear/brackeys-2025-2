@@ -1,6 +1,6 @@
 extends Panel
 
-class_name PanelTime
+class_name UITime
 
 @onready var wheel: TextureRect = $Wheel
 @onready var pin: TextureRect = $Pin
