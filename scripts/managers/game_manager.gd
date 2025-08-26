@@ -5,6 +5,7 @@ class_name GameManager
 static var instance: GameManager
 
 const STEPS_TO_WIN = 30
+const TIME_TO_LOSE: float = 480
 
 @onready var camera_2d: ShakeCamera = $Camera2D
 @onready var transition_manager: TransitionManager = $TransitionManager
@@ -13,7 +14,7 @@ const STEPS_TO_WIN = 30
 var rendered_scene: SceneManager = null
 var dig_scene: DigSceneManager = null
 var interaction_scene: InteractionSceneManager = null
-@export var time_until_lose: float = 480.0
+var loss_pending := false
 
 # Progress Variables
 var level_index := 0 # Position in level
@@ -32,7 +33,8 @@ func _ready() -> void:
 	add_chunk(random_chunk)
 	
 	transition_to_scene(load("res://scenes/dig.tscn"))
-	(canvas_ui.get_node("PanelTime") as UITime).start(time_until_lose)
+	_initialize_time_wheel()
+	
 
 func _process(delta: float) -> void:
 	pass
@@ -46,11 +48,24 @@ func _add_fatigue(value) -> void:
 	(canvas_ui.get_node("PanelFatigue") as UIFatigue).update(fatigue)
 
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
+	print("A")
 	_add_gold(_get_gold_in_step_by_pick_hit_intensity(intensity))
-	_add_fatigue(0.2)
+	_add_fatigue(0.2 + 1 * intensity)
 	(canvas_ui.get_node("PanelSound") as UISound).sound_increase(intensity)
 
+func _initialize_time_wheel():
+	var ui_time: UITime = canvas_ui.get_node("PanelTime")
+	ui_time.start(TIME_TO_LOSE)
+	ui_time.on_time_end.connect(_setup_lose)
+	
+func _setup_lose():
+	loss_pending = true
+
 func run_step():
+	if dig_scene and loss_pending:
+		dig_scene.handle_loss()
+		return
+		
 	level_index += 1
 	print("Position: ", level_index)
 	(canvas_ui.get_node("PanelSound") as UISound).restart(level_index)
@@ -72,10 +87,13 @@ func transition_to_scene(scene: PackedScene):
 		rendered_scene.queue_free()
 		
 	rendered_scene = scene.instantiate()
-	
 	camera_2d.add_child(rendered_scene)
+	
+	if rendered_scene is DigSceneManager:
+		rendered_scene.pick.on_dig.connect(_handle_pick_hit) # <- This needs to be before, so it logs gold previous to ran step
+		rendered_scene.connect_signal_handlers()
+		
 	rendered_scene.travel_to_step(level_index)
-	dig_scene.pick.on_dig.connect(_handle_pick_hit)
 	
 	await transition_manager.fade_in()
 

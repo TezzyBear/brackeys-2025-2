@@ -13,7 +13,6 @@ var current_diggable_health: int
 
 func _ready() -> void:
 	GameManager.instance.dig_scene = self
-	pick.on_dig.connect(_handle_pick_hit)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("hack_1"):
@@ -25,20 +24,27 @@ func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	if current_diggable_health <= 0:
 		pick.set_block(true)
 		GameManager.instance.run_step()
-		
+
+func _fade_bg_out_in(diggable: Step) -> void:
+	pick.set_block(false)
+	texture_rect.texture = _get_diggable_texture(diggable.type)
+	await GameManager.instance.transition_manager.fade_in()
+
 func update_diggable(diggable: Step):
 	current_diggable_health = _get_diggable_health(diggable.type)
 	_fade_bg_out_in(diggable)
 
-func _fade_bg_out_in(diggable: Step) -> void:
-	texture_rect.texture = _get_diggable_texture(diggable.type)
-	pick.set_block(false)
-	await GameManager.instance.transition_manager.fade_in()
+func handle_loss():
+	pick.set_block(true)
+	texture_rect.texture = load("res://assets/images/bgs/bg_eye.jpg")
 
 func travel_to_step(step_index: int) -> void:
 	var step = GameManager.instance.get_step_at(step_index)
 	update_diggable(step)
 	super(step_index)
+	
+func connect_signal_handlers():
+	pick.on_dig.connect(_handle_pick_hit)
 	
 # Mapping
 func _get_diggable_texture(diggable: Enums.STEP_TYPE):
