@@ -21,16 +21,12 @@ func travel_to_step(current_step: Enums.STEP_TYPE) -> void:
 func get_chunk_type_from_card_type(selected_card_type: Enums.CARD):
 	match selected_card_type:
 		Enums.CARD.DIRT_PATH:
-			return Enums.CHUNK_TYPES.DIRT
+			return Enums.CHUNK_TYPE.DIRT
 		Enums.CARD.GOLD_PATH:
-			return Enums.CHUNK_TYPES.GOLD
+			return Enums.CHUNK_TYPE.GOLD
 
 func transition_to_dig(selected_card_type: Enums.CARD) -> void:
 	var next_chunk_type = get_chunk_type_from_card_type(selected_card_type)
 	GameManager.instance.add_chunk(Chunks.get_random_chunk(next_chunk_type))
-	GameManager.instance.run_step()
-	
-	await GameManager.instance.transition_manager.fade_out()
 	GameManager.instance.interaction_scene = null
-	GameManager.instance.transition_to_scene(load("res://scenes/dig.tscn"))
-	
+	GameManager.instance.run_step()

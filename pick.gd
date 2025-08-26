@@ -8,7 +8,7 @@ var block := false
 var digging := false
 var digging_intensity := Enums.DIG_INTENSITY.LOW
 var hits_since_dig_start := 0
-const HITS_PER_INTENSITY := 3
+const HITS_PER_INTENSITY := 2
 
 signal on_dig(intensity: Enums.DIG_INTENSITY)
 
@@ -39,7 +39,6 @@ func _animation_player_dig_hit() -> void:
 	hits_since_dig_start += 1
 	var intensity = min((hits_since_dig_start - 1) / HITS_PER_INTENSITY, Enums.DIG_INTENSITY.HIGH)
 	on_dig.emit(intensity)
-	pass
 
 func set_block(value: bool):
 	if block != value:

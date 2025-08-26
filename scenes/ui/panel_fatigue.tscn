@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://ces3wna4uuv0e"]
+
+[ext_resource type="Script" uid="uid://cmkj81uknj2lw" path="res://scripts/ui/panel_fatigue.gd" id="1_mbjrt"]
+[ext_resource type="PackedScene" uid="uid://dcqc5nsh7hakq" path="res://scenes/ui/status_effects_bar.tscn" id="2_e6uho"]
+
+[node name="PanelFatigue" type="Panel"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -65.0
+offset_right = 350.0
+offset_bottom = -40.0
+grow_vertical = 0
+script = ExtResource("1_mbjrt")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0/100"
+horizontal_alignment = 1
+
+[node name="StatusEffectsBar" parent="." instance=ExtResource("2_e6uho")]
+offset_top = -42.0
+offset_bottom = -2.0

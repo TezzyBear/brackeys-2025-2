@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xihcqwlccco0"
-path="res://.godot/imported/warning-caution-sign-on-transparent-background-free-png.png-6392d87649d89ffb19aa6a19d17925f9.ctex"
+path="res://.godot/imported/warning-caution-sign-on-transparent-background-free-png.png-df24ec5b71e335135bd6e3171aae55f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ui/warning-caution-sign-on-transparent-background-free-png.png"
-dest_files=["res://.godot/imported/warning-caution-sign-on-transparent-background-free-png.png-6392d87649d89ffb19aa6a19d17925f9.ctex"]
+source_file="res://assets/images/warning-caution-sign-on-transparent-background-free-png.png"
+dest_files=["res://.godot/imported/warning-caution-sign-on-transparent-background-free-png.png-df24ec5b71e335135bd6e3171aae55f6.ctex"]
 
 [params]
 

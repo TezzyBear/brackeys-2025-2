@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://1s8icgqleh81"]
+[gd_scene load_steps=4 format=3 uid="uid://1s8icgqleh81"]
 
 [ext_resource type="PackedScene" uid="uid://umwejshud0lh" path="res://scenes/ui/panel_sound.tscn" id="1_y2vrh"]
-[ext_resource type="PackedScene" uid="uid://ces3wna4uuv0e" path="res://scenes/ui/panel_stamina.tscn" id="2_h1r6l"]
+[ext_resource type="PackedScene" uid="uid://ces3wna4uuv0e" path="res://scenes/ui/panel_fatigue.tscn" id="2_h1r6l"]
+[ext_resource type="PackedScene" uid="uid://48sf2wuwhoul" path="res://scenes/ui/panel_gold.tscn" id="3_h1r6l"]
 
 [node name="CanvasUI" type="CanvasLayer"]
 
 [node name="PanelSound" parent="." instance=ExtResource("1_y2vrh")]
 
-[node name="PanelStamina" parent="." instance=ExtResource("2_h1r6l")]
+[node name="PanelFatigue" parent="." instance=ExtResource("2_h1r6l")]
+
+[node name="PanelGold" parent="." instance=ExtResource("3_h1r6l")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -82.0
+offset_right = 0.0
+offset_bottom = 40.0
+grow_horizontal = 0

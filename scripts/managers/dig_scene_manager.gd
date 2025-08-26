@@ -31,20 +31,20 @@ func _get_diggable_texture(diggable: Enums.STEP_TYPE):
 func _get_diggable_health(diggable: Enums.STEP_TYPE):
 	match diggable:
 		Enums.STEP_TYPE.DIRT:
-			return 5
+			return 3
 		Enums.STEP_TYPE.STONE:
-			return 15
+			return 20
 		Enums.STEP_TYPE.GOLD:
-			return 8
+			return 12
 
 func _get_intensity_damage(intensity: Enums.DIG_INTENSITY):
 	match intensity:
 		Enums.DIG_INTENSITY.LOW:
 			return 1
 		Enums.DIG_INTENSITY.MID:
-			return 2
+			return 3
 		Enums.DIG_INTENSITY.HIGH:
-			return 4
+			return 6
 
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	current_diggable_health -= _get_intensity_damage(intensity)
@@ -52,28 +52,17 @@ func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	if current_diggable_health <= 0:
 		pick.set_block(true)
 		GameManager.instance.run_step()
-		var current_step: Step = GameManager.instance.get_current_step()
-		if current_step.diggable:
-			_transition_to_diggable(current_step)
-		else:
-			_transition_to_interaction()
-
-func _transition_to_diggable(diggable: Step, first: bool = false):
+		
+func update_diggable(diggable: Step):
 	current_diggable_health = _get_diggable_health(diggable.type)
-	_transition_bg(diggable, first)
+	_fade_bg_out_in(diggable)
 
-func _transition_bg(diggable: Step, first: bool = false) -> void:
-	if not first: await GameManager.instance.transition_manager.fade_out()
+func _fade_bg_out_in(diggable: Step) -> void:
 	texture_rect.texture = _get_diggable_texture(diggable.type)
 	pick.set_block(false)
 	await GameManager.instance.transition_manager.fade_in()
 
-func _transition_to_interaction() -> void:
-	await GameManager.instance.transition_manager.fade_out()
-	GameManager.instance.dig_scene = null
-	GameManager.instance.transition_to_scene(load("res://scenes/interaction.tscn"))
-
 func travel_to_step(step_index: int) -> void:
 	var step = GameManager.instance.get_step_at(step_index)
-	_transition_to_diggable(step, true)
+	update_diggable(step)
 	super(step_index)

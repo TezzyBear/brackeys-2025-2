@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://48sf2wuwhoul"]
+
+[ext_resource type="Script" uid="uid://bdb2vkahjl1ku" path="res://scripts/ui/panel_gold.gd" id="1_houf1"]
+
+[node name="PanelGold" type="Panel"]
+offset_right = 121.0
+offset_bottom = 57.0
+script = ExtResource("1_houf1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"

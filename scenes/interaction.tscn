@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwybf42x85ren"]
 
-[ext_resource type="Script" uid="uid://dx4x0askgka2b" path="res://scripts/interaction_scene_manager.gd" id="1_krms6"]
+[ext_resource type="Script" uid="uid://dx4x0askgka2b" path="res://scripts/managers/interaction_scene_manager.gd" id="1_krms6"]
 [ext_resource type="PackedScene" uid="uid://drm43ldv2plwx" path="res://scenes/selection_card.tscn" id="2_pcrba"]
 
 [node name="Interaction" type="Node2D"]
