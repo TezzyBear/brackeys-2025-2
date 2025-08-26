@@ -51,3 +51,5 @@ mouse_filter = 0
 expand_mode = 1
 
 [connection signal="gui_input" from="Item" to="." method="use"]
+[connection signal="mouse_entered" from="Item" to="." method="_on_item_mouse_entered"]
+[connection signal="mouse_exited" from="Item" to="." method="_on_item_mouse_exited"]
