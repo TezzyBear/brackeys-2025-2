@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://f3b0yxes8yir"]
+[gd_scene load_steps=8 format=3 uid="uid://f3b0yxes8yir"]
 
 [ext_resource type="Script" uid="uid://coav3rmane0sl" path="res://scenes/ui/panel_inventory.gd" id="1_50mbj"]
+[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scenes/items/item.gd" id="2_fextn"]
 [ext_resource type="Texture2D" uid="uid://qjfwmc0ddmxy" path="res://scenes/ui/backpack.png" id="2_r3ega"]
-[ext_resource type="Texture2D" uid="uid://dxmaeqq5wtj48" path="res://scenes/ui/inventory_empty.png" id="3_n7ico"]
-[ext_resource type="Script" uid="uid://bma8br4xtgt3m" path="res://scenes/ui/inventory_slot.gd" id="4_n7ico"]
+[ext_resource type="Resource" uid="uid://w0okck8oqg32" path="res://scenes/items/shield.tres" id="3_35il2"]
+[ext_resource type="PackedScene" uid="uid://bowcgs084lko4" path="res://scenes/ui/panel_inventory_slot.tscn" id="3_r3ega"]
+[ext_resource type="Resource" uid="uid://6owr6je2421v" path="res://scenes/items/steadfast.tres" id="4_vw61q"]
+[ext_resource type="Resource" uid="uid://ckj0uefenttl" path="res://scenes/items/strength.tres" id="5_qdn47"]
 
 [node name="PanelInventory" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -18,6 +21,7 @@ offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_50mbj")
+items = Array[ExtResource("2_fextn")]([ExtResource("3_35il2"), ExtResource("4_vw61q"), ExtResource("5_qdn47"), ExtResource("3_35il2")])
 
 [node name="Backpack" type="TextureRect" parent="."]
 layout_mode = 1
@@ -35,87 +39,37 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_r3ega")
 
-[node name="Slot" type="TextureRect" parent="."]
+[node name="Slot" parent="." instance=ExtResource("3_r3ega")]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -118.0
-offset_right = 59.0
-offset_bottom = 22.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_n7ico")
-script = ExtResource("4_n7ico")
+offset_left = -64.0
+offset_top = -112.0
+offset_right = -24.0
+offset_bottom = -72.0
 
-[node name="Slot2" type="TextureRect" parent="."]
+[node name="Slot2" parent="." instance=ExtResource("3_r3ega")]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -60.0
-offset_right = 59.0
-offset_bottom = 80.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_n7ico")
-script = ExtResource("4_n7ico")
+offset_left = -64.0
+offset_top = -52.0
+offset_right = -24.0
+offset_bottom = -12.0
 
-[node name="Slot3" type="TextureRect" parent="."]
+[node name="Slot3" parent="." instance=ExtResource("3_r3ega")]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -1.00001
-offset_right = 59.0
-offset_bottom = 139.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_n7ico")
-script = ExtResource("4_n7ico")
+offset_left = -63.0
+offset_top = 10.0
+offset_right = -23.0
+offset_bottom = 50.0
 
-[node name="Slot4" type="TextureRect" parent="."]
+[node name="Slot4" parent="." instance=ExtResource("3_r3ega")]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = 59.0
-offset_right = 59.0
-offset_bottom = 199.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_n7ico")
-script = ExtResource("4_n7ico")
+offset_left = -63.0
+offset_top = 72.0
+offset_right = -23.0
+offset_bottom = 112.0
 
-[node name="Slot5" type="TextureRect" parent="."]
+[node name="Slot5" parent="." instance=ExtResource("3_r3ega")]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = 118.0
-offset_right = 59.0
-offset_bottom = 258.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_n7ico")
-script = ExtResource("4_n7ico")
+offset_left = -63.0
+offset_top = 136.0
+offset_right = -23.0
+offset_bottom = 176.0
