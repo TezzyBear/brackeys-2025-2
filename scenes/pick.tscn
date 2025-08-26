@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3uocdmladqm4"]
+[gd_scene load_steps=8 format=3 uid="uid://b3uocdmladqm4"]
 
 [ext_resource type="Texture2D" uid="uid://dvhgpdq7kp300" path="res://assets/images/pick_mock.png" id="1_egge6"]
 [ext_resource type="Script" uid="uid://bjl8xrie0wy7s" path="res://pick.gd" id="1_qch5m"]
@@ -31,8 +31,9 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_egge6"]
-resource_name = "pick"
+resource_name = "pick_hit_mid"
 loop_mode = 1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -40,10 +41,10 @@ tracks/0/path = NodePath("Sprite:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.561398, 0.7, 0.9),
+"transitions": PackedFloat32Array(0.5, 1.3, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.172828, -1.18714, 0.0]
+"values": [0.0, 0.253073, -0.836746, -0.836746, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -52,10 +53,10 @@ tracks/1/path = NodePath("Sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.561398, 0.7, 0.9),
+"transitions": PackedFloat32Array(0.5, 1.3, 1, 1, 1),
 "update": 0,
-"values": [Vector2(728, 352), Vector2(762, 217), Vector2(538, 256), Vector2(728, 352)]
+"values": [Vector2(728, 352), Vector2(758.695, 292.225), Vector2(591.694, 264.813), Vector2(591.694, 264.813), Vector2(728, 352)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -64,18 +65,116 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.55, 1),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"_animation_player_dig_hit"
+}, {
+"args": [],
+"method": &"_animation_finished_loop"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_f8cps"]
+resource_name = "pick_hit_soft"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(728, 352), Vector2(705, 336)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.386456]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_animation_player_dig_hit"
+}, {
+"args": [],
+"method": &"_animation_finished_loop"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_e4xkl"]
+resource_name = "pick_hit_hard"
+length = 2.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9, 1.05, 1.6, 1.9),
+"transitions": PackedFloat32Array(1, 0.7, 1.6, 1, 1, 1),
+"update": 0,
+"values": [Vector2(728, 352), Vector2(720, 365), Vector2(822, 230), Vector2(559, 203), Vector2(559, 203), Vector2(728, 352)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9, 1.05, 1.6, 1.9),
+"transitions": PackedFloat32Array(1, 0.7, 1.6, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0291644, 0.576805, -1.26161, -1.26161, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.05, 2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_animation_player_dig_hit"
+}, {
+"args": [],
+"method": &"_animation_finished_loop"
 }]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qch5m"]
 _data = {
 &"RESET": SubResource("Animation_qch5m"),
-&"pick": SubResource("Animation_egge6")
+&"pick_hit_hard": SubResource("Animation_e4xkl"),
+&"pick_hit_mid": SubResource("Animation_egge6"),
+&"pick_hit_soft": SubResource("Animation_f8cps")
 }
 
 [node name="Pick" type="Node2D"]

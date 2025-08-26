@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcqc5nsh7hakq"]
+[gd_scene load_steps=2 format=3 uid="uid://dcqc5nsh7hakq"]
 
 [ext_resource type="Script" uid="uid://dt5j0edyjsp5k" path="res://scripts/ui/status_effects_bar.gd" id="1_6ltf1"]
-[ext_resource type="Texture2D" uid="uid://buq46owx7nhq5" path="res://assets/images/icons/icon_heavy_1.png" id="1_78bht"]
 
 [node name="StatusEffectsBar" type="Control"]
 layout_mode = 3
@@ -17,13 +16,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("1_78bht")
-expand_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("1_78bht")
-expand_mode = 2

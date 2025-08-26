@@ -6,10 +6,10 @@ const DIRT_TEXTURE = preload("res://assets/images/bgs/bg_dirt.jpg")
 const STONE_TEXTURE = preload("res://assets/images/bgs/bg_stone.jpg")
 const GOLD_TEXTURE = preload("res://assets/images/bgs/bg_gold.jpg")
 
-@onready var pick: Pick = $CanvasGame/Pick
+@onready var pick: Pick = $Pick
 
 var current_diggable_health: int
-@onready var texture_rect: TextureRect = $CanvasGame/TextureRect
+@onready var texture_rect: TextureRect = $TextureRect
 
 func _ready() -> void:
 	GameManager.instance.dig_scene = self
@@ -31,11 +31,11 @@ func _get_diggable_texture(diggable: Enums.STEP_TYPE):
 func _get_diggable_health(diggable: Enums.STEP_TYPE):
 	match diggable:
 		Enums.STEP_TYPE.DIRT:
-			return 3
+			return 6
 		Enums.STEP_TYPE.STONE:
-			return 20
+			return 40
 		Enums.STEP_TYPE.GOLD:
-			return 12
+			return 24
 
 func _get_intensity_damage(intensity: Enums.DIG_INTENSITY):
 	match intensity:
@@ -44,11 +44,11 @@ func _get_intensity_damage(intensity: Enums.DIG_INTENSITY):
 		Enums.DIG_INTENSITY.MID:
 			return 3
 		Enums.DIG_INTENSITY.HIGH:
-			return 6
+			return 8
 
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	current_diggable_health -= _get_intensity_damage(intensity)
-	print(current_diggable_health)
+	print("Hp: ", current_diggable_health)
 	if current_diggable_health <= 0:
 		pick.set_block(true)
 		GameManager.instance.run_step()

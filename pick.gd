@@ -2,13 +2,15 @@ extends Node2D
 
 class_name Pick
 
+const HITS_PER_INTENSITY := [5, 8, INF]
+const ANIM_PER_INTENSITY := ["pick_hit_soft", "pick_hit_mid", "pick_hit_hard"]
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var block := false
 var digging := false
 var digging_intensity := Enums.DIG_INTENSITY.LOW
 var hits_since_dig_start := 0
-const HITS_PER_INTENSITY := 2
 
 signal on_dig(intensity: Enums.DIG_INTENSITY)
 
@@ -27,7 +29,7 @@ func _start_digging() -> void:
 	digging = true
 	hits_since_dig_start = 0
 	digging_intensity = 0
-	animation_player.play("pick")
+	_play_hit_by_intensity()
 
 func _stop_digging() -> void:
 	digging = false
@@ -35,11 +37,30 @@ func _stop_digging() -> void:
 
 func _animation_player_dig_hit() -> void:
 	# TODO: Add sound
-	print("Hit!")
+	var shake_strenght = _get_shake_strenght_for_intensity(digging_intensity)
+	ShakeCamera.apply_shake(shake_strenght)
+	
 	hits_since_dig_start += 1
-	var intensity = min((hits_since_dig_start - 1) / HITS_PER_INTENSITY, Enums.DIG_INTENSITY.HIGH)
-	on_dig.emit(intensity)
+	if hits_since_dig_start > HITS_PER_INTENSITY[digging_intensity]:
+		digging_intensity += 1
+	
+	on_dig.emit(digging_intensity)
 
+func _animation_finished_loop() -> void:
+	_play_hit_by_intensity()
+
+func _play_hit_by_intensity():
+	animation_player.play(ANIM_PER_INTENSITY[digging_intensity])
+
+func _get_shake_strenght_for_intensity(intensity: Enums.DIG_INTENSITY):
+	match intensity:
+		Enums.DIG_INTENSITY.LOW:
+			return 0
+		Enums.DIG_INTENSITY.MID:
+			return 3
+		Enums.DIG_INTENSITY.HIGH:
+			return 10
+			
 func set_block(value: bool):
 	if block != value:
 		block = value

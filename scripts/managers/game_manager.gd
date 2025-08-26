@@ -6,6 +6,7 @@ static var instance: GameManager
 
 const STEPS_TO_WIN = 30
 
+@onready var camera_2d: ShakeCamera = $Camera2D
 @onready var transition_manager: TransitionManager = $TransitionManager
 @onready var canvas_ui: CanvasLayer = $CanvasUI
 
@@ -20,7 +21,6 @@ var level_layout := []
 # Player Stats
 var time_steps_passed := 0
 var fatigue := 0.0 #cap 100
-var weight := 0.0
 var gold := 0
 
 func _ready() -> void:
@@ -53,6 +53,7 @@ func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 
 func run_step():
 	level_index += 1
+	print("Position: ", level_index)
 	(canvas_ui.get_node("PanelSound") as UISound).restart(level_index)
 	
 	var current_step: Step = get_current_step()
@@ -73,7 +74,7 @@ func transition_to_scene(scene: PackedScene):
 		
 	rendered_scene = scene.instantiate()
 	
-	get_tree().current_scene.add_child(rendered_scene)
+	camera_2d.add_child(rendered_scene)
 	rendered_scene.travel_to_step(level_index)
 	dig_scene.pick.on_dig.connect(_handle_pick_hit)
 	
