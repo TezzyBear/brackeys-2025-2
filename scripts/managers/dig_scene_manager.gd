@@ -19,33 +19,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("hack_1"):
 		GameManager.instance.run_step()
 
-func _get_diggable_texture(diggable: Enums.STEP_TYPE):
-	match diggable:
-		Enums.STEP_TYPE.DIRT:
-			return DIRT_TEXTURE
-		Enums.STEP_TYPE.STONE:
-			return STONE_TEXTURE
-		Enums.STEP_TYPE.GOLD:
-			return GOLD_TEXTURE
-
-func _get_diggable_health(diggable: Enums.STEP_TYPE):
-	match diggable:
-		Enums.STEP_TYPE.DIRT:
-			return 6
-		Enums.STEP_TYPE.STONE:
-			return 40
-		Enums.STEP_TYPE.GOLD:
-			return 24
-
-func _get_intensity_damage(intensity: Enums.DIG_INTENSITY):
-	match intensity:
-		Enums.DIG_INTENSITY.LOW:
-			return 1
-		Enums.DIG_INTENSITY.MID:
-			return 3
-		Enums.DIG_INTENSITY.HIGH:
-			return 8
-
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	current_diggable_health -= _get_intensity_damage(intensity)
 	print("Hp: ", current_diggable_health)
@@ -66,3 +39,31 @@ func travel_to_step(step_index: int) -> void:
 	var step = GameManager.instance.get_step_at(step_index)
 	update_diggable(step)
 	super(step_index)
+	
+# Mapping
+func _get_diggable_texture(diggable: Enums.STEP_TYPE):
+	match diggable:
+		Enums.STEP_TYPE.DIRT:
+			return DIRT_TEXTURE
+		Enums.STEP_TYPE.STONE:
+			return STONE_TEXTURE
+		Enums.STEP_TYPE.GOLD:
+			return GOLD_TEXTURE
+
+func _get_diggable_health(diggable: Enums.STEP_TYPE):
+	match diggable:
+		Enums.STEP_TYPE.DIRT:
+			return 8
+		Enums.STEP_TYPE.STONE:
+			return 40
+		Enums.STEP_TYPE.GOLD:
+			return 24
+
+func _get_intensity_damage(intensity: Enums.DIG_INTENSITY):
+	match intensity:
+		Enums.DIG_INTENSITY.LOW:
+			return 1
+		Enums.DIG_INTENSITY.MID:
+			return 8
+		Enums.DIG_INTENSITY.HIGH:
+			return 16

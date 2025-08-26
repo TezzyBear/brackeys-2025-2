@@ -40,11 +40,11 @@ func _animation_player_dig_hit() -> void:
 	var shake_strenght = _get_shake_strenght_for_intensity(digging_intensity)
 	ShakeCamera.apply_shake(shake_strenght)
 	
+	on_dig.emit(digging_intensity)
+	
 	hits_since_dig_start += 1
 	if hits_since_dig_start > HITS_PER_INTENSITY[digging_intensity]:
-		digging_intensity += 1
-	
-	on_dig.emit(digging_intensity)
+		digging_intensity += 1	
 
 func _animation_finished_loop() -> void:
 	_play_hit_by_intensity()

@@ -21,11 +21,11 @@ func sound_increase(intensity: Enums.DIG_INTENSITY) -> void:
 	var noise_increment: int = 0
 	match intensity:
 		Enums.DIG_INTENSITY.LOW:
-			noise_increment = 4
+			noise_increment = 3
 		Enums.DIG_INTENSITY.MID:
-			noise_increment = 12
+			noise_increment = 9
 		Enums.DIG_INTENSITY.HIGH:
-			noise_increment = 20
+			noise_increment = 27
 			
 	progress_bar.value += noise_increment
 	progress_bar_warning_update()

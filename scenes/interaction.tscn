@@ -17,16 +17,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="GoldCard" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("2_pcrba")]
-offset_left = 180.0
-offset_top = 63.0
-offset_right = 180.0
-offset_bottom = 63.0
+offset_left = 173.0
+offset_top = 48.0
+offset_right = 173.0
+offset_bottom = 48.0
 title_text = "More gold"
 
 [node name="DirtCard" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("2_pcrba")]
-offset_left = 572.0
-offset_top = 57.0
-offset_right = 572.0
-offset_bottom = 57.0
+offset_left = 578.0
+offset_top = 50.0
+offset_right = 578.0
+offset_bottom = 50.0
 type = 1
 title_text = "More dirt"

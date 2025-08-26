@@ -44,10 +44,7 @@ func _add_fatigue(value) -> void:
 	(canvas_ui.get_node("PanelFatigue") as UIFatigue).update(fatigue)
 
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
-	match get_current_step().type:
-		Enums.STEP_TYPE.GOLD:
-			_add_gold((intensity + 1) * randi_range(1, 3))
-			
+	_add_gold(_get_gold_in_step_by_pick_hit_intensity(intensity))
 	_add_fatigue(0.2)
 	(canvas_ui.get_node("PanelSound") as UISound).sound_increase(intensity)
 
@@ -92,3 +89,12 @@ func get_current_step() -> Step:
 
 func get_step_at(step_index) -> Step:
 	return level_layout[step_index]
+	
+# Mapping
+func _get_gold_in_step_by_pick_hit_intensity(intensity: Enums.DIG_INTENSITY):
+	match get_current_step().type:
+		Enums.STEP_TYPE.GOLD:
+			return(intensity + 1) * randi_range(1, 3)
+		_:
+			return 1 if randi_range(0, 3) == 3 else 0
+		
