@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 class_name Pick
 
@@ -16,14 +16,6 @@ signal on_dig(intensity: Enums.DIG_INTENSITY)
 
 func _ready() -> void:
 	pass # Replace with function body.
-
-func _process(delta: float) -> void:
-	if block: return
-	
-	if Input.is_action_just_pressed("click"):
-		_start_digging()
-	if Input.is_action_just_released('click'):
-		_stop_digging()
 	
 func _start_digging() -> void:
 	digging = true
@@ -66,4 +58,12 @@ func set_block(value: bool):
 		block = value
 		if block:
 			_stop_digging()
+
+func _on_click_rect_gui_input(event: InputEvent) -> void:
+	if block: return
 		
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			_start_digging()
+		else:
+			_stop_digging()

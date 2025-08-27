@@ -30,6 +30,53 @@ tracks/1/keys = {
 "values": [Vector2(728, 352)]
 }
 
+[sub_resource type="Animation" id="Animation_e4xkl"]
+resource_name = "pick_hit_hard"
+length = 2.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9, 1.05, 1.6, 1.9),
+"transitions": PackedFloat32Array(1, 0.7, 1.6, 1, 1, 1),
+"update": 0,
+"values": [Vector2(728, 352), Vector2(720, 365), Vector2(822, 230), Vector2(559, 203), Vector2(559, 203), Vector2(728, 352)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9, 1.05, 1.6, 1.9),
+"transitions": PackedFloat32Array(1, 0.7, 1.6, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0291644, 0.576805, -1.26161, -1.26161, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.05, 2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_animation_player_dig_hit"
+}, {
+"args": [],
+"method": &"_animation_finished_loop"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_egge6"]
 resource_name = "pick_hit_mid"
 loop_mode = 1
@@ -122,53 +169,6 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_e4xkl"]
-resource_name = "pick_hit_hard"
-length = 2.0
-loop_mode = 1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.9, 1.05, 1.6, 1.9),
-"transitions": PackedFloat32Array(1, 0.7, 1.6, 1, 1, 1),
-"update": 0,
-"values": [Vector2(728, 352), Vector2(720, 365), Vector2(822, 230), Vector2(559, 203), Vector2(559, 203), Vector2(728, 352)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.9, 1.05, 1.6, 1.9),
-"transitions": PackedFloat32Array(1, 0.7, 1.6, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0291644, 0.576805, -1.26161, -1.26161, 0.0]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1.05, 2),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"_animation_player_dig_hit"
-}, {
-"args": [],
-"method": &"_animation_finished_loop"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qch5m"]
 _data = {
 &"RESET": SubResource("Animation_qch5m"),
@@ -177,8 +177,16 @@ _data = {
 &"pick_hit_soft": SubResource("Animation_f8cps")
 }
 
-[node name="Pick" type="Node2D"]
+[node name="Pick" type="CanvasLayer"]
 script = ExtResource("1_qch5m")
+
+[node name="ClickRect" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(728, 352)
@@ -189,3 +197,5 @@ texture = ExtResource("1_egge6")
 libraries = {
 &"": SubResource("AnimationLibrary_qch5m")
 }
+
+[connection signal="gui_input" from="ClickRect" to="." method="_on_click_rect_gui_input"]

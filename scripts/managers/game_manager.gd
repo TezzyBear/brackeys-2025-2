@@ -65,10 +65,9 @@ func _add_fatigue(value) -> void:
 func _handle_fatigue_treshold_reached():
 	
 	fatigue_manager.animate_fatigue_with_callback(func():
-		print("AAA")
-		_add_gold(-100)
-		_add_fatigue(-100)
-		time_ui.shift_time(180)
+		_add_gold(-30)
+		_add_fatigue(-80)
+		time_ui.shift_time(120)
 	)
 	
 
