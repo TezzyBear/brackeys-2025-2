@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bkxmhuaq72onl"]
 
 [ext_resource type="Script" uid="uid://d1y42hnlvqw81" path="res://scripts/managers/shop_scene_manager.gd" id="1_xfvoa"]
-[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://assets/data/items/item.gd" id="2_1v8qu"]
+[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item.gd" id="2_1v8qu"]
 [ext_resource type="PackedScene" uid="uid://ba8kfeeihbvtt" path="res://scenes/cards/item_card.tscn" id="3_2fc2m"]
 [ext_resource type="Resource" uid="uid://papvl4lpxojr" path="res://assets/data/items/alchemists_stick.tres" id="3_44xle"]
 [ext_resource type="Resource" uid="uid://c0djs48rmsxxh" path="res://assets/data/items/cursed_runestone.tres" id="4_24it5"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmu6i0bpf61ur"]
+
+[ext_resource type="Script" uid="uid://b5e4xsnqitsy8" path="res://assets/data/buffs/buff_sound.gd" id="1_ofbhc"]
+
+[node name="BuffSound" type="Node"]
+script = ExtResource("1_ofbhc")
+name_on_screen = "Feather Walk"
+description = "your feet are enhanced. you make less noise"
