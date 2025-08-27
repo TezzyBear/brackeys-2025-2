@@ -4,6 +4,7 @@ class_name UIInventorySlot
 
 @onready var texture_rect_border: TextureRect = $Border
 @onready var texture_rect_item: TextureRect = $Item
+@export var slot_id: int
 
 var _item: Item = null
 
@@ -33,10 +34,9 @@ func use(event: InputEvent) -> void:
 		return
 	if !event.pressed:
 		return
-	#code for using the item
-	#code for telling the game_manager we've used the itemx
 	print("using item ", _item.name)
-	take()
+	#code for using the item
+	GameManager.instance.item_delete(slot_id)
 
 func _on_item_mouse_entered() -> void:
 	texture_rect_item.modulate = Color(1, 1, 1, 0.7)

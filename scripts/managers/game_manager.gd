@@ -97,7 +97,7 @@ func _initialize_buffs() -> void:
 
 func _setup_lose():
 	loss_pending = true
-	
+
 func _transition_to_random_interaction_scene():
 	var random_for_scene = randi_range(0, 1)
 	if random_for_scene == 0:
@@ -173,4 +173,6 @@ func add_item(item: Item) -> bool:
 
 func item_delete(slot_id: int) -> bool:
 	var is_deleted: bool = inventory_ui.delete_item(slot_id)
+	if is_deleted == true:
+		inventory[slot_id] = null
 	return is_deleted
