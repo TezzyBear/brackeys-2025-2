@@ -12,3 +12,4 @@ effect = "+2 to hits."
 consumable = false
 description = "A rune that sharpens force, making every hit a stronger blow."
 texture = ExtResource("2_epfbp")
+buff_id = 6

@@ -12,3 +12,4 @@ effect = "+6 to hits, accumulate more fatigue."
 consumable = false
 description = "Cursed, this runestone grants great power… yet always at a hidden cost."
 texture = ExtResource("2_8reqc")
+buff_id = 1

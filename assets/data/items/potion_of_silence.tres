@@ -12,3 +12,4 @@ effect = "Reduce sound completely"
 consumable = true
 description = "Sip to quiet every sound you cause, leaving only silence behind."
 texture = ExtResource("2_03yse")
+buff_id = 5

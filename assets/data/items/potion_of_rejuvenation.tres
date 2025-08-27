@@ -12,3 +12,4 @@ effect = "Reduce fatigue by 20"
 consumable = true
 description = "Drink to reduce exhaustion and regain strength for the road ahead."
 texture = ExtResource("2_4nldb")
+buff_id = 4

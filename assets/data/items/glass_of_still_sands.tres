@@ -12,3 +12,4 @@ effect = "Pause time for a moment."
 consumable = true
 description = "The sands within stand still; use your time wisely — for it is not running out."
 texture = ExtResource("2_iuims")
+buff_id = 2

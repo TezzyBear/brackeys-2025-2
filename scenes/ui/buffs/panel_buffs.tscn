@@ -5,24 +5,43 @@
 
 [node name="PanelBuffs" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 62.0
+offset_top = -134.0
+offset_right = 102.0
+offset_bottom = -94.0
+grow_vertical = 0
 script = ExtResource("1_xugkv")
 
 [node name="Slot" parent="." instance=ExtResource("2_1tlni")]
-offset_left = 29.0
-offset_top = 13.0
-offset_right = 69.0
-offset_bottom = 53.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = 0.0
+grow_vertical = 0
 
 [node name="Slot2" parent="." instance=ExtResource("2_1tlni")]
-offset_left = 71.0
-offset_top = 14.0
-offset_right = 111.0
-offset_bottom = 54.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 47.0
+offset_top = -42.0
+offset_right = 87.0
+offset_bottom = -2.0
+grow_vertical = 0
 
 [node name="Slot3" parent="." instance=ExtResource("2_1tlni")]
-offset_left = 113.0
-offset_top = 15.0
-offset_right = 153.0
-offset_bottom = 55.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = -40.0
+offset_right = 134.0
+offset_bottom = 0.0
+grow_vertical = 0

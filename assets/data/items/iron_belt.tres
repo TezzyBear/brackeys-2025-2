@@ -12,3 +12,4 @@ effect = "Reduce fatigue generation"
 consumable = false
 description = "Forged of iron, this belt guards the bearer’s back. Lightweight baby!"
 texture = ExtResource("2_tbyex")
+buff_id = 3
