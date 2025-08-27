@@ -2,7 +2,7 @@ extends Panel
 
 class_name UIInventory
 
-@onready var slots: Array[UIInventorySlot] = [$Slot,$Slot2,$Slot3,$Slot4,$Slot5]
+@onready var slots: Array[UIInventorySlot] = [$Slot,$Slot2,$Slot3]
 
 func place_item(item: Item, slot_id: int) -> bool:
 	var placed: bool = slots[slot_id].place(item)

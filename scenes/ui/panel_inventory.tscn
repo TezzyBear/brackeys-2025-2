@@ -54,17 +54,3 @@ offset_left = -63.0
 offset_top = 10.0
 offset_right = -23.0
 offset_bottom = 50.0
-
-[node name="Slot4" parent="." instance=ExtResource("3_r3ega")]
-layout_mode = 1
-offset_left = -63.0
-offset_top = 72.0
-offset_right = -23.0
-offset_bottom = 112.0
-
-[node name="Slot5" parent="." instance=ExtResource("3_r3ega")]
-layout_mode = 1
-offset_left = -63.0
-offset_top = 136.0
-offset_right = -23.0
-offset_bottom = 176.0

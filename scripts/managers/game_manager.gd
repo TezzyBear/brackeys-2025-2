@@ -32,7 +32,7 @@ var level_layout := []
 var time_steps_passed := 0
 var fatigue := 0.0 #cap 100
 var gold := 0
-var inventory: Array[Item] = [null, null, null, null, null]
+var inventory: Array[Item] = [null, null, null]
 
 func _ready() -> void:
 	if not instance:

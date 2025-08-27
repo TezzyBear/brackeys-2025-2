@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dxxcvro4vwo2"]
+[gd_scene load_steps=17 format=3 uid="uid://dxxcvro4vwo2"]
 
 [ext_resource type="Script" uid="uid://cem63el5ke0x3" path="res://scripts/ui/canvas_overlay.gd" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cijyoj7k13whn" path="res://scripts/managers/game_manager.gd" id="1_yqjtg"]
@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://6owr6je2421v" path="res://scenes/items/steadfast.tres" id="4_dinhu"]
 [ext_resource type="PackedScene" uid="uid://1s8icgqleh81" path="res://scenes/ui/canvas_ui.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://dssauy6hmvle5" path="res://scripts/camera_shake.gd" id="5_iywne"]
-[ext_resource type="Resource" uid="uid://ckj0uefenttl" path="res://scenes/items/strength.tres" id="5_kvuet"]
 [ext_resource type="Script" uid="uid://btd5qtk6rhcyl" path="res://scenes/fatigue_manager.gd" id="6_p57ef"]
 
 [sub_resource type="Animation" id="Animation_7p6dd"]
@@ -127,7 +126,7 @@ _data = {
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_yqjtg")
-items = Array[ExtResource("2_vtaks")]([ExtResource("3_kvpfn"), ExtResource("4_dinhu"), ExtResource("5_kvuet"), ExtResource("3_kvpfn")])
+items = Array[ExtResource("2_vtaks")]([ExtResource("3_kvpfn"), ExtResource("4_dinhu")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
