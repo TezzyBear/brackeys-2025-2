@@ -34,6 +34,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_p1vdq")
 
 [node name="Item" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

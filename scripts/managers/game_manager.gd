@@ -16,6 +16,12 @@ const TIME_TO_LOSE: float = 480
 @onready var gold_ui: UIGold = $CanvasUI/PanelGold
 @onready var time_ui: UITime = $CanvasUI/PanelTime
 @onready var inventory_ui: UIInventory = $CanvasUI/PanelInventory
+@onready var buffs_ui: UIBuffs = $CanvasUI/PanelBuffs
+@onready var buffs: Array[Buff] = [
+	$Buffs/BuffSound, 
+	$Buffs/BuffStamina, 
+	$Buffs/BuffTime
+]
 
 var rendered_scene: SceneManager = null
 var dig_scene: DigSceneManager = null
@@ -42,6 +48,7 @@ func _ready() -> void:
 	transition_to_scene(load("res://scenes/dig.tscn"))
 	_initialize_time_wheel()
 	_initialize_sound_bar()
+	_initialize_buffs()
 	fatigue_ui.on_fatigue_treshold_reached.connect(_handle_fatigue_treshold_reached)
 
 func _process(delta: float) -> void:
@@ -82,6 +89,11 @@ func _initialize_time_wheel():
 func _initialize_sound_bar():
 	sound_ui.update_bar_treshold(float(level_index) / STEPS_TO_WIN)
 	sound_ui.on_sound_treshold_passed.connect(_setup_lose)
+
+func _initialize_buffs() -> void:
+	for i in range(buffs.size()):
+		buffs_ui.place_buff(buffs[i], i)
+	pass
 
 func _setup_lose():
 	loss_pending = true

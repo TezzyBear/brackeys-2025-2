@@ -1,8 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxxcvro4vwo2"]
+[gd_scene load_steps=17 format=3 uid="uid://dxxcvro4vwo2"]
 
 [ext_resource type="Script" uid="uid://cem63el5ke0x3" path="res://scripts/ui/canvas_overlay.gd" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cijyoj7k13whn" path="res://scripts/managers/game_manager.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dmu6i0bpf61ur" path="res://assets/data/buffs/buff_sound.tscn" id="2_0tnpc"]
 [ext_resource type="Script" uid="uid://ntmuc3fp4f5s" path="res://scripts/managers/transition_manager.gd" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://m8hsklqf5o6a" path="res://assets/data/buffs/buff_stamina.tscn" id="3_vtaks"]
+[ext_resource type="PackedScene" uid="uid://c0wmb51o2b3jc" path="res://assets/data/buffs/buff_time.tscn" id="4_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://1s8icgqleh81" path="res://scenes/ui/canvas_ui.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://dssauy6hmvle5" path="res://scripts/camera_shake.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://btd5qtk6rhcyl" path="res://scripts/managers/fatigue_manager.gd" id="6_p57ef"]
@@ -123,6 +126,14 @@ _data = {
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_yqjtg")
+
+[node name="Buffs" type="Node" parent="."]
+
+[node name="BuffSound" parent="Buffs" instance=ExtResource("2_0tnpc")]
+
+[node name="BuffStamina" parent="Buffs" instance=ExtResource("3_vtaks")]
+
+[node name="BuffTime" parent="Buffs" instance=ExtResource("4_kvpfn")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

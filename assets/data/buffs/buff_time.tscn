@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0wmb51o2b3jc"]
+[gd_scene load_steps=3 format=3 uid="uid://c0wmb51o2b3jc"]
 
 [ext_resource type="Script" uid="uid://yxsuer2f6duq" path="res://assets/data/buffs/buff_time.gd" id="1_em0vu"]
+[ext_resource type="Texture2D" uid="uid://cv5dkb4rpb3cd" path="res://assets/images/icons/steadfast.png" id="2_jj5vl"]
 
 [node name="BuffTime" type="Node"]
 script = ExtResource("1_em0vu")
 name_on_screen = "Time Miracle"
 description = "you're able to stop time for a while"
+texture = ExtResource("2_jj5vl")

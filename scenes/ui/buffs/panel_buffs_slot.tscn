@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0crnturcb611"]
+
+[ext_resource type="Script" uid="uid://cph12x2gb4d6n" path="res://scenes/ui/buffs/panel_buffs_slot.gd" id="1_bmj8j"]
+
+[node name="Slot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bmj8j")
+
+[node name="Buff" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1

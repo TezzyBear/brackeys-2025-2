@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://1s8icgqleh81"]
+[gd_scene load_steps=7 format=3 uid="uid://1s8icgqleh81"]
 
 [ext_resource type="PackedScene" uid="uid://umwejshud0lh" path="res://scenes/ui/panel_sound.tscn" id="1_y2vrh"]
 [ext_resource type="PackedScene" uid="uid://ces3wna4uuv0e" path="res://scenes/ui/panel_fatigue.tscn" id="2_h1r6l"]
 [ext_resource type="PackedScene" uid="uid://48sf2wuwhoul" path="res://scenes/ui/panel_gold.tscn" id="3_h1r6l"]
 [ext_resource type="PackedScene" uid="uid://drj7yjmmqwon8" path="res://scenes/ui/panel_time.tscn" id="4_thgxd"]
 [ext_resource type="PackedScene" uid="uid://f3b0yxes8yir" path="res://scenes/ui/inventory/panel_inventory.tscn" id="5_cxcp1"]
+[ext_resource type="PackedScene" uid="uid://csfcjyab42t1l" path="res://scenes/ui/buffs/panel_buffs.tscn" id="6_cxcp1"]
 
 [node name="CanvasUI" type="CanvasLayer"]
 
@@ -24,3 +25,5 @@ grow_horizontal = 0
 [node name="PanelTime" parent="." instance=ExtResource("4_thgxd")]
 
 [node name="PanelInventory" parent="." instance=ExtResource("5_cxcp1")]
+
+[node name="PanelBuffs" parent="." instance=ExtResource("6_cxcp1")]

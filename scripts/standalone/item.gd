@@ -9,3 +9,4 @@ class_name Item
 @export var consumable: bool
 @export var description: String
 @export var texture: Texture2D
+@export var buff_id: int = 0

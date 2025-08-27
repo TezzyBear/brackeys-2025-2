@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://m8hsklqf5o6a"]
+[gd_scene load_steps=3 format=3 uid="uid://m8hsklqf5o6a"]
 
 [ext_resource type="Script" uid="uid://b1o2s1qpp47u0" path="res://assets/data/buffs/buff_stamina.gd" id="1_ok3ab"]
+[ext_resource type="Texture2D" uid="uid://dvj5mpq5op1qi" path="res://assets/images/icons/strength.png" id="2_3o32d"]
 
 [node name="BuffStamina" type="Node"]
 script = ExtResource("1_ok3ab")
 name_on_screen = "Magical Endurance"
 description = "your stamina buildup is reduced"
+texture = ExtResource("2_3o32d")

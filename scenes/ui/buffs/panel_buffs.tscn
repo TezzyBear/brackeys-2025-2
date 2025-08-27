@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://csfcjyab42t1l"]
+
+[ext_resource type="Script" uid="uid://bncc1mji4jcov" path="res://scenes/ui/buffs/panel_buffs.gd" id="1_xugkv"]
+[ext_resource type="PackedScene" uid="uid://d0crnturcb611" path="res://scenes/ui/buffs/panel_buffs_slot.tscn" id="2_1tlni"]
+
+[node name="PanelBuffs" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_xugkv")
+
+[node name="Slot" parent="." instance=ExtResource("2_1tlni")]
+offset_left = 29.0
+offset_top = 13.0
+offset_right = 69.0
+offset_bottom = 53.0
+
+[node name="Slot2" parent="." instance=ExtResource("2_1tlni")]
+offset_left = 71.0
+offset_top = 14.0
+offset_right = 111.0
+offset_bottom = 54.0
+
+[node name="Slot3" parent="." instance=ExtResource("2_1tlni")]
+offset_left = 113.0
+offset_top = 15.0
+offset_right = 153.0
+offset_bottom = 55.0
