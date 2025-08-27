@@ -18,11 +18,6 @@ enum STEP_TYPE {
 
 # Add risk factor by adding sneaky enemies/characters that will say truth or not to a path
 
-enum CARD {
-	GOLD_PATH,
-	DIRT_PATH,
-}
-
 enum DIG_INTENSITY {
 	LOW,
 	MID,

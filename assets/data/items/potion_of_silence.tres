@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://7topo47l7cdk"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://7topo47l7cdk"]
 
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://assets/data/items/item.gd" id="1_7yqfw"]
+[ext_resource type="Texture2D" uid="uid://b3g0mffb3n0sv" path="res://assets/images/icons/items/icon_1.png" id="2_03yse"]
 
 [resource]
 script = ExtResource("1_7yqfw")
@@ -10,3 +11,4 @@ cost = 20
 effect = "Reduce sound completely"
 consumable = true
 description = "Sip to quiet every sound you cause, leaving only silence behind."
+texture = ExtResource("2_03yse")

@@ -1,20 +1,24 @@
 extends Control
 
-# TODO: Inheritance from Card
+# TODO: Inheritance from Card - Not sure yet... Not enough overlap it seems like.
 class_name ItemCard
 
-@export var item: Item
+var item: Item
 
 @onready var title: Label = $Panel/Title
 @onready var description: Label = $Panel/Description
 @onready var texture_rect: TextureRect = $Panel/TextureRect
 
-signal on_purchased(type: Item)
+# TODO add price
 
-func _ready() -> void:
+signal on_purchased(item: Item)
+
+func update_item(item: Item):
+	self.item = item
 	title.text = item.name
 	description.text = item.description
 	texture_rect.texture = item.texture
+	texture_rect.tooltip_text = item.effect
 
 func _process(delta: float) -> void:
 	pass

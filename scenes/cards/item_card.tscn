@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba8kfeeihbvtt"]
+[gd_scene load_steps=3 format=3 uid="uid://ba8kfeeihbvtt"]
 
 [ext_resource type="Script" uid="uid://7456ruvf4c4w" path="res://scripts/cards/item_card.gd" id="1_dgw7t"]
-[ext_resource type="Resource" uid="uid://papvl4lpxojr" path="res://assets/data/items/alchemists_stick.tres" id="2_axih0"]
 [ext_resource type="Texture2D" uid="uid://dvj5mpq5op1qi" path="res://assets/images/icons/strength.png" id="2_dgw7t"]
 
 [node name="ItemCard" type="Control"]
@@ -9,7 +8,6 @@ layout_mode = 3
 anchors_preset = 0
 pivot_offset = Vector2(100, 200)
 script = ExtResource("1_dgw7t")
-item = ExtResource("2_axih0")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0

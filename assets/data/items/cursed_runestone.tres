@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://c0djs48rmsxxh"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c0djs48rmsxxh"]
 
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://assets/data/items/item.gd" id="1_tr3qd"]
+[ext_resource type="Texture2D" uid="uid://c2pbm581rur2d" path="res://assets/images/icons/items/item_2.png" id="2_8reqc"]
 
 [resource]
 script = ExtResource("1_tr3qd")
 name = "Cursed Runestone"
 rarity = 1
-cost = 70
+cost = 60
 effect = "+6 to hits, accumulate more fatigue."
 consumable = false
 description = "Cursed, this runestone grants great power… yet always at a hidden cost."
+texture = ExtResource("2_8reqc")

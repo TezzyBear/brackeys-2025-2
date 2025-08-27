@@ -42,7 +42,7 @@ func travel_to_step(step_index: int) -> void:
 func connect_signal_handlers():
 	pick.on_dig.connect(_handle_pick_hit)
 	
-# Mapping
+# Mappings
 func _get_diggable_texture(diggable: Enums.STEP_TYPE):
 	match diggable:
 		Enums.STEP_TYPE.DIRT:

@@ -1,0 +1,52 @@
+[gd_scene load_steps=12 format=3 uid="uid://bkxmhuaq72onl"]
+
+[ext_resource type="Script" uid="uid://d1y42hnlvqw81" path="res://scripts/managers/shop_scene_manager.gd" id="1_xfvoa"]
+[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://assets/data/items/item.gd" id="2_1v8qu"]
+[ext_resource type="PackedScene" uid="uid://ba8kfeeihbvtt" path="res://scenes/cards/item_card.tscn" id="3_2fc2m"]
+[ext_resource type="Resource" uid="uid://papvl4lpxojr" path="res://assets/data/items/alchemists_stick.tres" id="3_44xle"]
+[ext_resource type="Resource" uid="uid://c0djs48rmsxxh" path="res://assets/data/items/cursed_runestone.tres" id="4_24it5"]
+[ext_resource type="Resource" uid="uid://cgx1gex8mrgpg" path="res://assets/data/items/glass_of_still_sands.tres" id="5_7mqwv"]
+[ext_resource type="Resource" uid="uid://bb1qtdkmnhnmk" path="res://assets/data/items/iron_belt.tres" id="6_gobkm"]
+[ext_resource type="Resource" uid="uid://cn63f3s2w3snv" path="res://assets/data/items/potion_of_rejuvenation.tres" id="7_j14q8"]
+[ext_resource type="Resource" uid="uid://7topo47l7cdk" path="res://assets/data/items/potion_of_silence.tres" id="8_5u241"]
+[ext_resource type="Resource" uid="uid://b7b38iekvx65g" path="res://assets/data/items/rune_of_might.tres" id="9_pqync"]
+[ext_resource type="Resource" uid="uid://grfq1etyk0xr" path="res://assets/data/items/whispering_plume.tres" id="10_yuijs"]
+
+[node name="Shop" type="Node2D" node_paths=PackedStringArray("cards")]
+script = ExtResource("1_xfvoa")
+items = Array[ExtResource("2_1v8qu")]([ExtResource("3_44xle"), ExtResource("4_24it5"), ExtResource("5_7mqwv"), ExtResource("6_gobkm"), ExtResource("7_j14q8"), ExtResource("8_5u241"), ExtResource("9_pqync"), ExtResource("10_yuijs")])
+cards = NodePath("CanvasInteractionDisplay/Cards")
+
+[node name="CanvasGame" type="CanvasLayer" parent="."]
+
+[node name="CanvasInteractionDisplay" type="CanvasLayer" parent="."]
+
+[node name="Cards" type="Control" parent="CanvasInteractionDisplay"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ItemCard" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("3_2fc2m")]
+offset_left = 56.0
+offset_top = 89.0
+offset_right = 56.0
+offset_bottom = 89.0
+
+[node name="ItemCard2" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("3_2fc2m")]
+offset_left = 272.0
+offset_top = 88.0
+offset_right = 272.0
+offset_bottom = 88.0
+
+[node name="ItemCard3" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("3_2fc2m")]
+offset_left = 488.0
+offset_top = 88.0
+offset_right = 488.0
+offset_bottom = 88.0
+
+[node name="ItemCard4" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("3_2fc2m")]
+offset_left = 704.0
+offset_top = 88.0
+offset_right = 704.0
+offset_bottom = 88.0

@@ -17,8 +17,6 @@ const TIME_TO_LOSE: float = 480
 @onready var time_ui: UITime = $CanvasUI/PanelTime
 @onready var inventory_ui: UIInventory = $CanvasUI/PanelInventory
 
-@export var items: Array[Item]
-
 var rendered_scene: SceneManager = null
 var dig_scene: DigSceneManager = null
 var interaction_scene: InteractionSceneManager = null
@@ -45,14 +43,6 @@ func _ready() -> void:
 	_initialize_time_wheel()
 	_initialize_sound_bar()
 	fatigue_ui.on_fatigue_treshold_reached.connect(_handle_fatigue_treshold_reached)
-	
-	#NO BORRAR - necesario para pruebas de inventario
-	var item_dups: Array[Item] = []
-	item_dups.resize(items.size())
-	for i in range(items.size()):
-		item_dups[i] = items[i].duplicate(true)
-	for i in range(item_dups.size()):
-		item_add(item_dups[i])
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("hack_1"):
@@ -95,6 +85,13 @@ func _initialize_sound_bar():
 
 func _setup_lose():
 	loss_pending = true
+	
+func _transition_to_random_interaction_scene():
+	var random_for_scene = randi_range(0, 1)
+	if random_for_scene == 0:
+		transition_to_scene(load("res://scenes/shop.tscn"))
+	else:
+		transition_to_scene(load("res://scenes/path_selection.tscn"))
 
 func run_step():
 	if dig_scene and loss_pending:
@@ -116,7 +113,7 @@ func run_step():
 		if current_step.diggable:
 			(rendered_scene as DigSceneManager).update_diggable(current_step)
 		else:
-			transition_to_scene(load("res://scenes/interaction.tscn"))
+			_transition_to_random_interaction_scene()
 
 func transition_to_scene(scene: PackedScene):
 	if rendered_scene:
@@ -146,7 +143,7 @@ func get_current_step() -> Step:
 func get_step_at(step_index) -> Step:
 	return level_layout[step_index]
 
-# Mapping
+# Mappings
 func _get_gold_in_step_by_pick_hit_intensity(intensity: Enums.DIG_INTENSITY):
 	match get_current_step().type:
 		Enums.STEP_TYPE.GOLD:
@@ -154,7 +151,7 @@ func _get_gold_in_step_by_pick_hit_intensity(intensity: Enums.DIG_INTENSITY):
 		_:
 			return 1 if randi_range(0, 3) == 3 else 0
 
-func item_add(item: Item) -> bool:
+func add_item(item: Item) -> bool:
 	for i in range(inventory.size()):
 		if inventory[i] == null:
 			inventory[i] = item

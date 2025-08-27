@@ -12,7 +12,7 @@ func place(item: Item) -> bool:
 		return false
 	_item = item
 	texture_rect_item.texture = _item.texture
-	texture_rect_item.tooltip_text = _item.description
+	texture_rect_item.tooltip_text = _item.effect
 	texture_rect_item.visible = true
 	return true
 
@@ -35,7 +35,7 @@ func use(event: InputEvent) -> void:
 		return
 	#code for using the item
 	#code for telling the game_manager we've used the itemx
-	print("using item ", _item.name_on_screen)
+	print("using item ", _item.name)
 	take()
 
 func _on_item_mouse_entered() -> void:
