@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://f3b0yxes8yir"]
 
-[ext_resource type="Script" uid="uid://coav3rmane0sl" path="res://scenes/ui/panel_inventory.gd" id="1_50mbj"]
-[ext_resource type="Texture2D" uid="uid://qjfwmc0ddmxy" path="res://scenes/ui/backpack.png" id="2_r3ega"]
-[ext_resource type="PackedScene" uid="uid://bowcgs084lko4" path="res://scenes/ui/panel_inventory_slot.tscn" id="3_r3ega"]
+[ext_resource type="Script" uid="uid://coav3rmane0sl" path="res://scripts/ui/panel_inventory.gd" id="1_50mbj"]
+[ext_resource type="Texture2D" uid="uid://qjfwmc0ddmxy" path="res://assets/images/icons/backpack.png" id="2_r3ega"]
+[ext_resource type="PackedScene" uid="uid://uvgraeqbp3rf" path="res://scenes/ui/inventory/panel_inventory_slot.tscn" id="3_r3ega"]
 
 [node name="PanelInventory" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)

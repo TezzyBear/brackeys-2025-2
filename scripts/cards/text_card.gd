@@ -1,6 +1,6 @@
 extends Control
 
-class_name SelectionCard
+class_name TextCard
 
 @export var type: Enums.CARD
 @export var title_text = "Title" #Maybe remove? I mean title should depend on type so...

@@ -28,3 +28,8 @@ enum DIG_INTENSITY {
 	MID,
 	HIGH
 }
+
+enum RARITY {
+	COMMON,
+	RARE
+}

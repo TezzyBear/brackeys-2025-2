@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxmaeqq5wtj48"
-path="res://.godot/imported/inventory_empty.png-07bf059102c216314f1305361f5c3154.ctex"
+uid="uid://sot74c3pkq68"
+path="res://.godot/imported/shield.png-44c86d07385d3810851061c152c7bbcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ui/inventory_empty.png"
-dest_files=["res://.godot/imported/inventory_empty.png-07bf059102c216314f1305361f5c3154.ctex"]
+source_file="res://assets/images/icons/shield.png"
+dest_files=["res://.godot/imported/shield.png-44c86d07385d3810851061c152c7bbcc.ctex"]
 
 [params]
 

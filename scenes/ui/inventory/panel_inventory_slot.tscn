@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bowcgs084lko4"]
+[gd_scene load_steps=3 format=3 uid="uid://uvgraeqbp3rf"]
 
-[ext_resource type="Script" uid="uid://bma8br4xtgt3m" path="res://scenes/ui/panel_inventory_slot.gd" id="1_7xkdm"]
-[ext_resource type="Texture2D" uid="uid://dxmaeqq5wtj48" path="res://scenes/ui/inventory_empty.png" id="1_n1j5c"]
+[ext_resource type="Script" uid="uid://bma8br4xtgt3m" path="res://scripts/ui/panel_inventory_slot.gd" id="1_d1jbh"]
+[ext_resource type="Texture2D" uid="uid://dxmaeqq5wtj48" path="res://assets/images/inventory_empty.png" id="2_p1vdq"]
 
 [node name="Slot" type="Control"]
 layout_mode = 3
@@ -15,7 +15,7 @@ offset_top = -20.0
 offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
-script = ExtResource("1_7xkdm")
+script = ExtResource("1_d1jbh")
 
 [node name="Border" type="TextureRect" parent="."]
 layout_mode = 1
@@ -31,7 +31,7 @@ offset_bottom = 112.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_n1j5c")
+texture = ExtResource("2_p1vdq")
 
 [node name="Item" type="TextureRect" parent="."]
 visible = false

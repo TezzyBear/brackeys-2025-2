@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cgx1gex8mrgpg"]
+
+[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://assets/data/items/item.gd" id="1_asbc0"]
+
+[resource]
+script = ExtResource("1_asbc0")
+name = "Glass of Still Sands"
+rarity = 1
+cost = 100
+effect = "Pause time for a moment."
+consumable = true
+description = "The sands within stand still; use your time wisely — for it is not running out."

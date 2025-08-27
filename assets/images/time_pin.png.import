@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvj5mpq5op1qi"
-path="res://.godot/imported/strength.png-d1dffa7681637ee4ee92d0d1ee034a2d.ctex"
+uid="uid://custll5dtpuni"
+path="res://.godot/imported/time_pin.png-79756366c69b0c8b03374423758ca47e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/items/strength.png"
-dest_files=["res://.godot/imported/strength.png-d1dffa7681637ee4ee92d0d1ee034a2d.ctex"]
+source_file="res://assets/images/time_pin.png"
+dest_files=["res://.godot/imported/time_pin.png-79756366c69b0c8b03374423758ca47e.ctex"]
 
 [params]
 

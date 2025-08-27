@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sot74c3pkq68"
-path="res://.godot/imported/shield.png-2313f4acb12ef52475454ec135d465b4.ctex"
+uid="uid://btyuxdih8rpam"
+path="res://.godot/imported/icon_alchemists_stick.png-01dd67ac8e52abee9697b520804298f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/items/shield.png"
-dest_files=["res://.godot/imported/shield.png-2313f4acb12ef52475454ec135d465b4.ctex"]
+source_file="res://assets/images/icons/icon_alchemists_stick.png"
+dest_files=["res://.godot/imported/icon_alchemists_stick.png-01dd67ac8e52abee9697b520804298f8.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qjfwmc0ddmxy"
-path="res://.godot/imported/backpack.png-339aaf57f55217064190b02ebb31c5e5.ctex"
+uid="uid://pd8egpwkcy0x"
+path="res://.godot/imported/time_wheel.png-7d2c58a247356d881e13423708ee7bd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ui/backpack.png"
-dest_files=["res://.godot/imported/backpack.png-339aaf57f55217064190b02ebb31c5e5.ctex"]
+source_file="res://assets/images/time_wheel.png"
+dest_files=["res://.godot/imported/time_wheel.png-7d2c58a247356d881e13423708ee7bd7.ctex"]
 
 [params]
 

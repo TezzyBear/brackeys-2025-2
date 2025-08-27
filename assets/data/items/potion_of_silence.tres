@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://7topo47l7cdk"]
+
+[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://assets/data/items/item.gd" id="1_7yqfw"]
+
+[resource]
+script = ExtResource("1_7yqfw")
+name = "Potion of Silence"
+rarity = 0
+cost = 20
+effect = "Reduce sound completely"
+consumable = true
+description = "Sip to quiet every sound you cause, leaving only silence behind."

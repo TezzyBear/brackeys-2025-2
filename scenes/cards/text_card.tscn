@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://drm43ldv2plwx"]
 
-[ext_resource type="Script" uid="uid://da2hxyqxn47kb" path="res://scripts/selection_card.gd" id="1_4it2i"]
+[ext_resource type="Script" uid="uid://da2hxyqxn47kb" path="res://scripts/cards/text_card.gd" id="1_4it2i"]
 
-[node name="SelectionCard" type="Control"]
+[node name="TextCard" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 pivot_offset = Vector2(100, 200)

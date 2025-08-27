@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://grfq1etyk0xr"]
+
+[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://assets/data/items/item.gd" id="1_0fjkm"]
+
+[resource]
+script = ExtResource("1_0fjkm")
+name = "Whispering Plume"
+rarity = 0
+cost = 40
+effect = "Half sound made for a moment."
+consumable = true
+description = "Delicate feather that shall grants silence — but for a brief moment."

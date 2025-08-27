@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cn63f3s2w3snv"]
+
+[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://assets/data/items/item.gd" id="1_byk6x"]
+
+[resource]
+script = ExtResource("1_byk6x")
+name = "Potion of Rejuvenation"
+rarity = 0
+cost = 20
+effect = "Reduce fatigue by 20"
+consumable = true
+description = "Drink to reduce exhaustion and regain strength for the road ahead."

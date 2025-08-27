@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://papvl4lpxojr"]
+
+[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://assets/data/items/item.gd" id="1_woc0l"]
+[ext_resource type="Texture2D" uid="uid://btyuxdih8rpam" path="res://assets/images/icons/icon_alchemists_stick.png" id="2_x1rn7"]
+
+[resource]
+script = ExtResource("1_woc0l")
+name = "Alchemist's Stick"
+rarity = 1
+cost = 80
+effect = "Instantly blow up any wall."
+consumable = true
+description = "Ignite and flee — this alchemical rod spares none who linger near."
+texture = ExtResource("2_x1rn7")

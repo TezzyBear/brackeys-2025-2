@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bb1qtdkmnhnmk"]
+
+[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://assets/data/items/item.gd" id="1_gcxo1"]
+
+[resource]
+script = ExtResource("1_gcxo1")
+name = "Iron Belt"
+rarity = 0
+cost = 40
+effect = "Reduce fatigue generation"
+consumable = false
+description = "Forged of iron, this belt guards the bearer’s back. Lightweight baby!"

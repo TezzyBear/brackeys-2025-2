@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pd8egpwkcy0x"
-path="res://.godot/imported/time_wheel.png-8f0ac58ce82ef2ed1fb946b5910af5f3.ctex"
+uid="uid://dvj5mpq5op1qi"
+path="res://.godot/imported/strength.png-64fd8862b408a1d4a051d571d10c61ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ui/time_wheel.png"
-dest_files=["res://.godot/imported/time_wheel.png-8f0ac58ce82ef2ed1fb946b5910af5f3.ctex"]
+source_file="res://assets/images/icons/strength.png"
+dest_files=["res://.godot/imported/strength.png-64fd8862b408a1d4a051d571d10c61ba.ctex"]
 
 [params]
 

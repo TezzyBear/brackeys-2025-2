@@ -9,7 +9,11 @@ var in_transition := false
 func _ready() -> void:
 	GameManager.instance.interaction_scene = self
 	for card in cards.get_children():
-		(card as SelectionCard).on_selected.connect(transition_to_dig)
+		if card is TextCard:
+			card.on_selected.connect(transition_to_dig)
+		if card is ItemCard:
+			# TODO
+			pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
