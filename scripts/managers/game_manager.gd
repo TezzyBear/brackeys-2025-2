@@ -81,7 +81,6 @@ func _handle_fatigue_treshold_reached():
 		_add_fatigue(-100)
 		time_ui.shift_time(180)
 	)
-	
 
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	_add_gold(_get_gold_in_step_by_pick_hit_intensity(intensity))
@@ -148,7 +147,7 @@ func get_current_step() -> Step:
 
 func get_step_at(step_index) -> Step:
 	return level_layout[step_index]
-	
+
 # Mapping
 func _get_gold_in_step_by_pick_hit_intensity(intensity: Enums.DIG_INTENSITY):
 	match get_current_step().type:
