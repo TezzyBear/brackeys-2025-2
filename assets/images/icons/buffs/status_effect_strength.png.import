@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxipm8ipv6acu"
-path="res://.godot/imported/status_effect_fatigue.png-9f45b450baae8b1a29cca6d82ef0048a.ctex"
+uid="uid://bo6ionsqtq0gc"
+path="res://.godot/imported/status_effect_strength.png-37abfa825181b0b8b9cd60623a742542.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/status_effect_fatigue.png"
-dest_files=["res://.godot/imported/status_effect_fatigue.png-9f45b450baae8b1a29cca6d82ef0048a.ctex"]
+source_file="res://assets/images/icons/buffs/status_effect_strength.png"
+dest_files=["res://.godot/imported/status_effect_strength.png-37abfa825181b0b8b9cd60623a742542.ctex"]
 
 [params]
 

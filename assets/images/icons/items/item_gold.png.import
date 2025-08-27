@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu0hkkfhrv65u"
-path="res://.godot/imported/item_fatigue_potion.png-726b105ae14fc26366f48f0102b073da.ctex"
+uid="uid://o3do67ndk0i1"
+path="res://.godot/imported/item_gold.png-94bf328d9ccd8bd63e549f39e6db0a0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/item_fatigue_potion.png"
-dest_files=["res://.godot/imported/item_fatigue_potion.png-726b105ae14fc26366f48f0102b073da.ctex"]
+source_file="res://assets/images/icons/items/item_gold.png"
+dest_files=["res://.godot/imported/item_gold.png-94bf328d9ccd8bd63e549f39e6db0a0b.ctex"]
 
 [params]
 

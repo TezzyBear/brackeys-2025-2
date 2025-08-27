@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djq2cw1recmsy"
-path="res://.godot/imported/item_whispering_plume.png-8c35302fd5abe89ed3095264bb73f3ba.ctex"
+uid="uid://dchxrsxdx4sws"
+path="res://.godot/imported/item_noise_potion.png-ff42a2b638982ad59ad37eb028635b64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/item_whispering_plume.png"
-dest_files=["res://.godot/imported/item_whispering_plume.png-8c35302fd5abe89ed3095264bb73f3ba.ctex"]
+source_file="res://assets/images/icons/items/item_noise_potion.png"
+dest_files=["res://.godot/imported/item_noise_potion.png-ff42a2b638982ad59ad37eb028635b64.ctex"]
 
 [params]
 

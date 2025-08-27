@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dchxrsxdx4sws"
-path="res://.godot/imported/item_noise_potion.png-3ec91a5ccac0f83c0588e29db9936ecd.ctex"
+uid="uid://wietxt5sqn8b"
+path="res://.godot/imported/item_cursed_runestone.png-ba1d10481018715b48a7483c4ca96d03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/item_noise_potion.png"
-dest_files=["res://.godot/imported/item_noise_potion.png-3ec91a5ccac0f83c0588e29db9936ecd.ctex"]
+source_file="res://assets/images/icons/items/item_cursed_runestone.png"
+dest_files=["res://.godot/imported/item_cursed_runestone.png-ba1d10481018715b48a7483c4ca96d03.ctex"]
 
 [params]
 

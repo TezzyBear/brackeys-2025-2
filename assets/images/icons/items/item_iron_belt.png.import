@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wietxt5sqn8b"
-path="res://.godot/imported/item_cursed_runestone.png-b5e753d4a703dcb1409d692ea406aa58.ctex"
+uid="uid://bhuf6f2ccqxji"
+path="res://.godot/imported/item_iron_belt.png-30d08e63456ea9d86b815465bf9546ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/item_cursed_runestone.png"
-dest_files=["res://.godot/imported/item_cursed_runestone.png-b5e753d4a703dcb1409d692ea406aa58.ctex"]
+source_file="res://assets/images/icons/items/item_iron_belt.png"
+dest_files=["res://.godot/imported/item_iron_belt.png-30d08e63456ea9d86b815465bf9546ab.ctex"]
 
 [params]
 

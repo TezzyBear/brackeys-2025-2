@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmiegy0mlhi5o"
-path="res://.godot/imported/status_effect_time_stop.png-9e38212b061f93e5c5a7277dc2429ac4.ctex"
+uid="uid://8budqedeysyh"
+path="res://.godot/imported/item_alchemist_stick.png-e3084be13555fa8397ff8bcca5c64092.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/status_effect_time_stop.png"
-dest_files=["res://.godot/imported/status_effect_time_stop.png-9e38212b061f93e5c5a7277dc2429ac4.ctex"]
+source_file="res://assets/images/icons/items/item_alchemist_stick.png"
+dest_files=["res://.godot/imported/item_alchemist_stick.png-e3084be13555fa8397ff8bcca5c64092.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pe1nl6jo0xfe"
-path="res://.godot/imported/status_effect_silent.png-7418f972db0d934516f705fd6f6a157f.ctex"
+path="res://.godot/imported/status_effect_silent.png-ac911dc18551a0d6c2c10fe4f2207760.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/status_effect_silent.png"
-dest_files=["res://.godot/imported/status_effect_silent.png-7418f972db0d934516f705fd6f6a157f.ctex"]
+source_file="res://assets/images/icons/buffs/status_effect_silent.png"
+dest_files=["res://.godot/imported/status_effect_silent.png-ac911dc18551a0d6c2c10fe4f2207760.ctex"]
 
 [params]
 

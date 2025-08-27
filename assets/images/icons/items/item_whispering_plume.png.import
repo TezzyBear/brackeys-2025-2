@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhuf6f2ccqxji"
-path="res://.godot/imported/item_iron_belt.png-709e0cb9978aa5ac6cf385cabb4939e5.ctex"
+uid="uid://djq2cw1recmsy"
+path="res://.godot/imported/item_whispering_plume.png-332d0df0332a6ab58f1ae7ff5d555d36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/item_iron_belt.png"
-dest_files=["res://.godot/imported/item_iron_belt.png-709e0cb9978aa5ac6cf385cabb4939e5.ctex"]
+source_file="res://assets/images/icons/items/item_whispering_plume.png"
+dest_files=["res://.godot/imported/item_whispering_plume.png-332d0df0332a6ab58f1ae7ff5d555d36.ctex"]
 
 [params]
 
