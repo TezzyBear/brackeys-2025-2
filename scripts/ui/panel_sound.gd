@@ -38,9 +38,8 @@ func _decrease_progress(delta: float) -> void:
 		warning.visible = false
 	if progress_bar.value < 0:
 		progress_bar.value = 0
-		
-# Mapping
 
+# Mapping
 func _get_noise_increment_by_intensity(intensity: Enums.DIG_INTENSITY):
 	match intensity:
 		Enums.DIG_INTENSITY.LOW:

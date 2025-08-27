@@ -10,13 +10,14 @@ const TIME_TO_LOSE: float = 480
 @onready var camera_2d: ShakeCamera = $Camera2D
 @onready var transition_manager: TransitionManager = $TransitionManager
 @onready var fatigue_manager: FatigueManager = $FatigueManager
-
 @onready var canvas_ui: CanvasLayer = $CanvasUI
 @onready var sound_ui: UISound = $CanvasUI/PanelSound
 @onready var fatigue_ui: UIFatigue = $CanvasUI/PanelFatigue
 @onready var gold_ui: UIGold = $CanvasUI/PanelGold
 @onready var time_ui: UITime = $CanvasUI/PanelTime
 @onready var inventory_ui: UIInventory = $CanvasUI/PanelInventory
+
+@export var items: Array[Item]
 
 var rendered_scene: SceneManager = null
 var dig_scene: DigSceneManager = null
@@ -31,6 +32,7 @@ var level_layout := []
 var time_steps_passed := 0
 var fatigue := 0.0 #cap 100
 var gold := 0
+var inventory: Array[Item] = [null, null, null, null, null]
 
 func _ready() -> void:
 	if not instance:
@@ -44,6 +46,14 @@ func _ready() -> void:
 	_initialize_sound_bar()
 	fatigue_ui.on_fatigue_treshold_reached.connect(_handle_fatigue_treshold_reached)
 	
+	#NO BORRAR - necesario para pruebas de inventario
+	var item_dups: Array[Item] = []
+	item_dups.resize(items.size())
+	for i in range(items.size()):
+		item_dups[i] = items[i].duplicate(true)
+	for i in range(item_dups.size()):
+		item_add(item_dups[i])
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("hack_1"):
 		run_step()
@@ -69,7 +79,6 @@ func _handle_fatigue_treshold_reached():
 		_add_fatigue(-80)
 		time_ui.shift_time(120)
 	)
-	
 
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	_add_gold(_get_gold_in_step_by_pick_hit_intensity(intensity))
@@ -136,7 +145,7 @@ func get_current_step() -> Step:
 
 func get_step_at(step_index) -> Step:
 	return level_layout[step_index]
-	
+
 # Mapping
 func _get_gold_in_step_by_pick_hit_intensity(intensity: Enums.DIG_INTENSITY):
 	match get_current_step().type:
@@ -144,4 +153,15 @@ func _get_gold_in_step_by_pick_hit_intensity(intensity: Enums.DIG_INTENSITY):
 			return(intensity + 1) * randi_range(1, 3)
 		_:
 			return 1 if randi_range(0, 3) == 3 else 0
-		
+
+func item_add(item: Item) -> bool:
+	for i in range(inventory.size()):
+		if inventory[i] == null:
+			inventory[i] = item
+			inventory_ui.place_item(item, i)
+			return true
+	return false
+
+func item_delete(slot_id: int) -> bool:
+	var is_deleted: bool = inventory_ui.delete_item(slot_id)
+	return is_deleted
