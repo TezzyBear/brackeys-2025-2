@@ -13,6 +13,7 @@ offset_top = -134.0
 offset_right = 102.0
 offset_bottom = -94.0
 grow_vertical = 0
+mouse_filter = 2
 script = ExtResource("1_xugkv")
 
 [node name="Slot" parent="." instance=ExtResource("2_1tlni")]

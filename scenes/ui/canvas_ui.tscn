@@ -27,3 +27,7 @@ grow_horizontal = 0
 [node name="PanelInventory" parent="." instance=ExtResource("5_cxcp1")]
 
 [node name="PanelBuffs" parent="." instance=ExtResource("6_cxcp1")]
+offset_left = 72.0
+offset_top = -111.0
+offset_right = 112.0
+offset_bottom = -71.0
