@@ -10,7 +10,6 @@ const TIME_TO_LOSE: float = 480
 @onready var camera_2d: ShakeCamera = $Camera2D
 @onready var transition_manager: TransitionManager = $TransitionManager
 @onready var fatigue_manager: FatigueManager = $FatigueManager
-
 @onready var canvas_ui: CanvasLayer = $CanvasUI
 @onready var sound_ui: UISound = $CanvasUI/PanelSound
 @onready var fatigue_ui: UIFatigue = $CanvasUI/PanelFatigue
