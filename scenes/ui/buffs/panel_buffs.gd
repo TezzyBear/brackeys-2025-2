@@ -2,7 +2,11 @@ extends Panel
 
 class_name UIBuffs
 
-@onready var slots: Array[UIBuffsSlot] = [$Slot,$Slot2,$Slot3]
+@onready var slots: Array[UIBuffsSlot] = [
+	$HBoxContainer/Slot,
+	$HBoxContainer/Slot2,
+	$HBoxContainer/Slot3
+]
 
 func place_buff(buff: Buff, slot_id: int) -> bool:
 	var placed: bool = slots[slot_id].place(buff)

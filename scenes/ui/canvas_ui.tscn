@@ -32,6 +32,6 @@ grow_vertical = 2
 
 [node name="PanelBuffs" parent="." instance=ExtResource("6_cxcp1")]
 offset_left = 72.0
-offset_top = -111.0
+offset_top = -140.0
 offset_right = 112.0
-offset_bottom = -71.0
+offset_bottom = -100.0
