@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_yap6c")
-increase_to_hit = 6
-description = "+{value} to hits."
+increase_to_hit = 2
+description = "+{value} str, applied to hits."
 duration = 15.0
 texture = ExtResource("2_fd5xj")

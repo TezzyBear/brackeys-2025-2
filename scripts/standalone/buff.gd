@@ -6,8 +6,8 @@ class_name Buff
 @export var duration: float = 15.0
 @export var texture: Texture2D
 
-func activate(target: Node) -> void:
+func activate(agent: BuffApplicationAgent) -> void:
 	pass
 
-func remove(target: Node) -> void:
+func remove(agent: BuffApplicationAgent) -> void:
 	pass

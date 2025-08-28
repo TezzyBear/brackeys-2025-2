@@ -9,7 +9,6 @@ func place(buff: Buff) -> bool:
 		return false
 	_buff = buff
 	texture = _buff.texture
-	tooltip_text = _buff.description
 	#visible = true
 	return true
 

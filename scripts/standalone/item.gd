@@ -9,9 +9,11 @@ class_name Item
 @export var consumable: bool
 @export var description: String
 @export var texture: Texture2D
-@export var buffs: Array[Buff]
+@export var buff_modifier_entries: Array[BuffEntry]
+#@export var buff_modifiers: Array
 
 func apply_item():
-	for buff in buffs:
-		if buff:
-			GameManager.instance.add_buff(buff)
+	for buff_modifier_entry in buff_modifier_entries:
+		if buff_modifier_entry:
+			var modifiers: Dictionary[String, Variant] = { "str": buff_modifier_entry.modifiers }
+			GameManager.instance.add_buff(buff_modifier_entry.buff, modifiers)

@@ -17,7 +17,6 @@ const TIME_TO_LOSE: float = 480
 @onready var gold_ui: UIGold = $CanvasUI/PanelGold
 @onready var time_ui: UITime = $CanvasUI/PanelTime
 @onready var inventory_ui: UIInventory = $CanvasUI/PanelInventory
-@onready var buffs_ui: UIBuffs = $CanvasUI/PanelBuffs
 
 var rendered_scene: SceneManager = null
 var dig_scene: DigSceneManager = null
@@ -45,8 +44,8 @@ func _ready() -> void:
 	_initialize_time_wheel()
 	_initialize_sound_bar()
 	fatigue_ui.on_fatigue_treshold_reached.connect(_handle_fatigue_treshold_reached)
-	print(dig_scene)
-	add_buff(load("res://assets/data/status_effects/strength_buff.tres"))
+	add_item(load("res://assets/data/items/cursed_runestone.tres"))
+	add_item(load("res://assets/data/items/rune_of_might.tres"))
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("hack_1"):
@@ -141,10 +140,8 @@ func add_chunk(chunk: Array):
 		pretty_print_str += str(step.type) +', '
 	print(pretty_print_str)
 
-func add_buff(buff: Buff):
-	# This order is important!
-	buff_manager.apply_buff(buff)
-	buffs_ui.place_buff(buff, 1)
+func add_buff(buff: Buff, modifiers: Dictionary[String, Variant]):
+	buff_manager.apply_buff(buff, modifiers)
 	pass
 
 func get_current_step() -> Step:
@@ -162,6 +159,7 @@ func _get_gold_in_step_by_pick_hit_intensity(intensity: Enums.DIG_INTENSITY):
 			return 1 if randi_range(0, 3) == 3 else 0
 
 func add_item(item: Item) -> bool:
+	item.apply_item()
 	for i in range(inventory.size()):
 		if inventory[i] == null:
 			inventory[i] = item
