@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://cawt5snli5r2t"]
+
+[ext_resource type="Script" uid="uid://3oi1pejo445l" path="res://scripts/ui/panel_distance.gd" id="1_dtkio"]
+
+[node name="PanelDistance" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("1_dtkio")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = -280.0
+offset_top = 5.0
+offset_right = -156.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 25
+text = "Dragon's Lair"
+
+[node name="Value" type="Label" parent="."]
+layout_mode = 0
+offset_left = -348.0
+offset_top = 30.0
+offset_right = -218.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 25
+text = "-1"
+horizontal_alignment = 2
+
+[node name="Units" type="Label" parent="."]
+layout_mode = 0
+offset_left = -211.0
+offset_top = 29.0
+offset_right = -171.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 25
+text = "mts"
