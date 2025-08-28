@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://cudfa2v0654jx"]
+
+[ext_resource type="Script" uid="uid://boejdnp2toq5i" path="res://scripts/ui/credits.gd" id="1_jkvjv"]
+[ext_resource type="Texture2D" uid="uid://p2hrjl3wxg81" path="res://assets/images/ui/eb84e6b4-2f87-4662-843d-27d2eada54aa.png" id="1_oap8i"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_jkvjv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = -61.0
+offset_top = -257.0
+offset_right = 611.0
+offset_bottom = 679.0
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("1_oap8i")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 88.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 33
+text = "Return"
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_right = 171.0
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 66
+text = "CREDITS"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContentNames" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 287.0
+offset_top = 288.0
+offset_right = 482.0
+offset_bottom = 500.0
+theme_override_font_sizes/normal_font_size = 33
+text = "Nakyo
+TezzyBear
+GoDie910
+Maru Ichiro"
+horizontal_alignment = 2
+
+[node name="ContextRoles" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 500.0
+offset_top = 286.0
+offset_right = 792.0
+offset_bottom = 499.0
+theme_override_font_sizes/normal_font_size = 33
+text = "Game Artist & Designer
+Lead Programmer
+Producer & Programmer
+Game Composer"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

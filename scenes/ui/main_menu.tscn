@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs3c0gd2rsjhw"]
+
+[ext_resource type="Script" uid="uid://djxfo7m3q7on0" path="res://scripts/ui/main_menu.gd" id="1_fe2o3"]
+[ext_resource type="Texture2D" uid="uid://dfmr5ymutwyuj" path="res://assets/images/ui/main_menu_background.png" id="1_sl1te"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_fe2o3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+offset_left = -231.0
+offset_top = -336.0
+offset_right = 1357.0
+offset_bottom = 1252.0
+scale = Vector2(0.88, 0.88)
+texture = ExtResource("1_sl1te")
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -314.0
+offset_right = 314.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 66
+text = "Depths of Avarice"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="CanvasLayer"]
+offset_left = 76.0
+offset_top = 201.0
+offset_right = 213.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 33
+text = "to the Depths"
+
+[node name="Credits" type="Button" parent="CanvasLayer"]
+offset_left = 76.0
+offset_top = 247.0
+offset_right = 159.0
+offset_bottom = 292.0
+theme_override_font_sizes/font_size = 33
+text = "Credits"
+
+[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Credits" to="." method="_on_credits_pressed"]
