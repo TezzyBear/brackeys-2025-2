@@ -5,19 +5,21 @@ class_name UISound
 var MAX_TRESHOLD = 50
 var MIN_THRESHOLD = 5
 
-@export var progress_bar: ProgressBar
-@export var warning: TextureRect
-@export var treshold_rect: ColorRect
+@onready var progress_bar: TextureProgressBar = $TextureProgressBar
+@onready var warning: TextureRect = $Warning
+@onready var treshold_rect: TextureRect = $TextureProgressBar/TextureRect
 var treshold_value: int
+var treshold_visual_height: int
 
 signal on_sound_treshold_passed()
 
 func _ready() -> void:
 	warning.visible = false
+	treshold_visual_height = progress_bar.size.y / 100
 
 func update_bar_treshold(progress: float) -> void:
 	treshold_value = MIN_THRESHOLD + (MAX_TRESHOLD - MIN_THRESHOLD) * progress
-	treshold_rect.position.y = treshold_value * 2
+	treshold_rect.position.y = treshold_value * treshold_visual_height
 
 func sound_increase(intensity: Enums.DIG_INTENSITY) -> void:
 	var noise_increment = _get_noise_increment_by_intensity(intensity)

@@ -1,53 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://uvgraeqbp3rf"]
+[gd_scene load_steps=2 format=3 uid="uid://uvgraeqbp3rf"]
 
 [ext_resource type="Script" uid="uid://bma8br4xtgt3m" path="res://scripts/ui/panel_inventory_slot.gd" id="1_d1jbh"]
-[ext_resource type="Texture2D" uid="uid://ci4tr8qhfv5u8" path="res://assets/images/ui/icon_slot_inventory.png" id="2_d1jbh"]
 
-[node name="Slot" type="Control"]
-layout_mode = 3
+[node name="Slot" type="TextureRect"]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
+offset_left = -30.0
+offset_top = -15.0
+offset_bottom = 15.0
 grow_horizontal = 0
 grow_vertical = 2
-script = ExtResource("1_d1jbh")
-
-[node name="Border" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -57.0
-offset_top = -38.0
-offset_right = 156.0
-offset_bottom = 162.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_d1jbh")
-
-[node name="Item" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
-mouse_filter = 0
 expand_mode = 1
-
-[connection signal="gui_input" from="Item" to="." method="use"]
-[connection signal="mouse_entered" from="Item" to="." method="_on_item_mouse_entered"]
-[connection signal="mouse_exited" from="Item" to="." method="_on_item_mouse_exited"]
+script = ExtResource("1_d1jbh")

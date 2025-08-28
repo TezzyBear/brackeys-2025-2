@@ -1,9 +1,7 @@
-extends Control
+extends TextureRect
 
 class_name UIInventorySlot
 
-@onready var texture_rect_border: TextureRect = $Border
-@onready var texture_rect_item: TextureRect = $Item
 @export var slot_id: int
 
 var _item: Item = null
@@ -12,17 +10,15 @@ func place(item: Item) -> bool:
 	if _item != null:
 		return false
 	_item = item
-	texture_rect_item.texture = _item.texture
-	texture_rect_item.tooltip_text = _item.effect
-	texture_rect_item.visible = true
+	texture = _item.texture
+	tooltip_text = _item.effect
 	return true
 
 func take() -> Item:
 	if _item == null:
 		return null
-	texture_rect_item.texture = null
-	texture_rect_item.tooltip_text = ""
-	texture_rect_item.visible = false
+	texture = null
+	tooltip_text = ""
 	var aux_item: Item = _item
 	_item = null
 	return aux_item
@@ -39,7 +35,7 @@ func use(event: InputEvent) -> void:
 	GameManager.instance.item_delete(slot_id)
 
 func _on_item_mouse_entered() -> void:
-	texture_rect_item.modulate = Color(1, 1, 1, 0.7)
+	modulate = Color(1, 1, 1, 0.7)
 
 func _on_item_mouse_exited() -> void:
-	texture_rect_item.modulate = Color(1, 1, 1, 1)
+	modulate = Color(1, 1, 1, 1)
