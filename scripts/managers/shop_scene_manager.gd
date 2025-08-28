@@ -3,6 +3,7 @@ extends InteractionSceneManager
 class_name ShopSceneManager
 
 @export var items: Array[Item]
+@export var dialog_merchant: DialogCharacter
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_randomize_items()

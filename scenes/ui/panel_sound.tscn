@@ -40,6 +40,7 @@ texture = ExtResource("2_vcbjg")
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 302.0
+step = 0.01
 fill_mode = 3
 texture_under = ExtResource("3_7keyu")
 texture_progress = ExtResource("4_01a3q")

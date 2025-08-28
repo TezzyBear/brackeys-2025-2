@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkxmhuaq72onl"]
+[gd_scene load_steps=14 format=3 uid="uid://bkxmhuaq72onl"]
 
 [ext_resource type="Script" uid="uid://d1y42hnlvqw81" path="res://scripts/managers/shop_scene_manager.gd" id="1_xfvoa"]
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item.gd" id="2_1v8qu"]
@@ -11,6 +11,8 @@
 [ext_resource type="Resource" uid="uid://7topo47l7cdk" path="res://assets/data/items/potion_of_silence.tres" id="8_5u241"]
 [ext_resource type="Resource" uid="uid://b7b38iekvx65g" path="res://assets/data/items/rune_of_might.tres" id="9_pqync"]
 [ext_resource type="Resource" uid="uid://grfq1etyk0xr" path="res://assets/data/items/whispering_plume.tres" id="10_yuijs"]
+[ext_resource type="Texture2D" uid="uid://dctnnu1kf2w05" path="res://assets/images/characters/merchant-removebg-preview.png" id="11_44xle"]
+[ext_resource type="PackedScene" uid="uid://bdyp107cfu4iw" path="res://scenes/ui/dialog_box.tscn" id="13_24it5"]
 
 [node name="Shop" type="Node2D" node_paths=PackedStringArray("cards")]
 script = ExtResource("1_xfvoa")
@@ -21,32 +23,97 @@ cards = NodePath("CanvasInteractionDisplay/Cards")
 
 [node name="CanvasInteractionDisplay" type="CanvasLayer" parent="."]
 
+[node name="TextureRect" type="TextureRect" parent="CanvasInteractionDisplay"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -394.0
+offset_right = 434.0
+offset_bottom = 106.0
+grow_vertical = 0
+texture = ExtResource("11_44xle")
+
 [node name="Cards" type="Control" parent="CanvasInteractionDisplay"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -23.0
+offset_right = 47.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemCard" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("3_2fc2m")]
-offset_left = 56.0
-offset_top = 89.0
-offset_right = 56.0
-offset_bottom = 89.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -329.0
+offset_right = -170.0
+offset_bottom = -329.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
 
 [node name="ItemCard2" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("3_2fc2m")]
-offset_left = 272.0
-offset_top = 88.0
-offset_right = 272.0
-offset_bottom = 88.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -328.0
+offset_right = -31.0
+offset_bottom = -328.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
 
 [node name="ItemCard3" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("3_2fc2m")]
-offset_left = 488.0
-offset_top = 88.0
-offset_right = 488.0
-offset_bottom = 88.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -74.0
+offset_right = -168.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
 
 [node name="ItemCard4" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("3_2fc2m")]
-offset_left = 704.0
-offset_top = 88.0
-offset_right = 704.0
-offset_bottom = 88.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -73.0
+offset_right = -32.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+
+[node name="DialogBox" parent="CanvasInteractionDisplay" instance=ExtResource("13_24it5")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -154.0
+offset_right = 340.0
+offset_bottom = -31.0
+grow_vertical = 0

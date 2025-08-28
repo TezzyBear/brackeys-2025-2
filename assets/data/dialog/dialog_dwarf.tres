@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogCharacter" load_steps=2 format=3 uid="uid://birubrctimgqa"]
+
+[ext_resource type="Script" uid="uid://c0647wsnljt7h" path="res://scripts/dialog/dialog_character.gd" id="1_l0kcl"]
+
+[resource]
+script = ExtResource("1_l0kcl")
+first_interaction = "ininitialized dialog"
+first_interaction_active = true
+lines_repeat = Array[String]([])
+lines = Array[String]([])
+metadata/_custom_type_script = "uid://c0647wsnljt7h"
