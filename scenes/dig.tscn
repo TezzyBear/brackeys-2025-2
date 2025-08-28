@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cun7vhbhw8oyh"]
+[gd_scene load_steps=6 format=3 uid="uid://cun7vhbhw8oyh"]
 
 [ext_resource type="Script" uid="uid://degi8mgv1o5lo" path="res://scripts/managers/dig_scene_manager.gd" id="1_cd2qk"]
 [ext_resource type="PackedScene" uid="uid://b3uocdmladqm4" path="res://scenes/pick.tscn" id="2_cd2qk"]
+[ext_resource type="AudioStream" uid="uid://c71c7lgsjafbs" path="res://assets/sound_effects/surface_hard.mp3" id="3_mhjl4"]
+[ext_resource type="Script" uid="uid://b57xqv1q2q8i" path="res://scripts/managers/dig_sound.gd" id="4_2j10d"]
+[ext_resource type="AudioStream" uid="uid://cxgw1l2agwa11" path="res://assets/sound_effects/surface_soft.mp3" id="5_ywxjt"]
 
 [node name="Dig" type="Node2D"]
 script = ExtResource("1_cd2qk")
@@ -10,3 +13,11 @@ script = ExtResource("1_cd2qk")
 metadata/_edit_use_anchors_ = true
 
 [node name="Pick" parent="." instance=ExtResource("2_cd2qk")]
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mhjl4")
+bus = &"SFX"
+script = ExtResource("4_2j10d")
+streams = Array[AudioStream]([ExtResource("5_ywxjt"), ExtResource("3_mhjl4"), ExtResource("3_mhjl4")])
+
+[connection signal="on_step_end" from="." to="AudioPlayer" method="on_step_end"]

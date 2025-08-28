@@ -9,8 +9,11 @@ const GOLD_TEXTURE = preload("res://assets/images/bgs/bg_gold.jpg")
 @onready var pick: Pick = $Pick
 
 var current_diggable_health: int
+var current_step_type: Enums.STEP_TYPE
 @onready var texture_rect: TextureRect = $TextureRect
 var hit_bonus := 0
+
+signal on_step_end(current_step_type: Enums.STEP_TYPE)
 
 func _ready() -> void:
 	GameManager.instance.dig_scene = self
@@ -20,6 +23,7 @@ func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	print("Hp: ", current_diggable_health)
 	if current_diggable_health <= 0:
 		pick.set_block(true)
+		on_step_end.emit(current_step_type)
 		GameManager.instance.run_step()
 
 func _fade_bg_out_in(diggable: Step) -> void:
@@ -29,6 +33,7 @@ func _fade_bg_out_in(diggable: Step) -> void:
 
 func update_diggable(diggable: Step):
 	current_diggable_health = _get_diggable_health(diggable.type)
+	current_step_type = diggable.type
 	_fade_bg_out_in(diggable)
 
 func handle_loss():

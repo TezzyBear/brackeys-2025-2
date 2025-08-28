@@ -1,7 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3uocdmladqm4"]
+[gd_scene load_steps=12 format=3 uid="uid://b3uocdmladqm4"]
 
 [ext_resource type="Texture2D" uid="uid://dvhgpdq7kp300" path="res://assets/images/pick_mock.png" id="1_egge6"]
 [ext_resource type="Script" uid="uid://bjl8xrie0wy7s" path="res://scripts/pick.gd" id="1_qch5m"]
+[ext_resource type="Script" uid="uid://q131112arybh" path="res://scripts/pick_sound.gd" id="3_e4xkl"]
+[ext_resource type="AudioStream" uid="uid://bbe0uhogdcmtg" path="res://assets/sound_effects/pick_hard.mp3" id="4_b5ukk"]
+[ext_resource type="AudioStream" uid="uid://gbhibo4mdk2k" path="res://assets/sound_effects/pick_medium.mp3" id="5_eu4py"]
+[ext_resource type="AudioStream" uid="uid://cfd32l1y7rkl3" path="res://assets/sound_effects/pick_soft.mp3" id="6_6vr26"]
 
 [sub_resource type="Animation" id="Animation_qch5m"]
 length = 0.001
@@ -198,4 +202,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_qch5m")
 }
 
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+script = ExtResource("3_e4xkl")
+streams = Array[AudioStream]([ExtResource("6_6vr26"), ExtResource("5_eu4py"), ExtResource("4_b5ukk")])
+
+[connection signal="on_dig" from="." to="AudioPlayer" method="on_dig"]
 [connection signal="gui_input" from="ClickRect" to="." method="_on_click_rect_gui_input"]
