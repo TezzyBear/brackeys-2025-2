@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://fuitvjo8m31v"]
+
+[ext_resource type="Script" uid="uid://eks0qwwc3gmf" path="res://scripts/standalone/status_effects/feather_step_buff.gd" id="1_d81cx"]
+[ext_resource type="Texture2D" uid="uid://pe1nl6jo0xfe" path="res://assets/images/icons/buffs/status_effect_silent.png" id="2_imail"]
+
+[resource]
+script = ExtResource("1_d81cx")
+description = "50% noise reduction."
+duration = 15.0
+texture = ExtResource("2_imail")

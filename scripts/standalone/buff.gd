@@ -1,13 +1,13 @@
-extends Node
+extends Resource
 
 class_name Buff
 
-@export var name_on_screen: String
 @export var description: String
+@export var duration: float = 15.0
 @export var texture: Texture2D
 
-func activate() -> void:
+func activate(target: Node) -> void:
 	pass
 
-func remove() -> void:
+func remove(target: Node) -> void:
 	pass

@@ -9,6 +9,7 @@ const TIME_TO_LOSE: float = 480
 
 @onready var camera_2d: ShakeCamera = $Camera2D
 @onready var transition_manager: TransitionManager = $TransitionManager
+@onready var buff_manager: BuffManager = $BuffManager
 @onready var fatigue_manager: FatigueManager = $FatigueManager
 @onready var canvas_ui: CanvasLayer = $CanvasUI
 @onready var sound_ui: UISound = $CanvasUI/PanelSound
@@ -17,11 +18,6 @@ const TIME_TO_LOSE: float = 480
 @onready var time_ui: UITime = $CanvasUI/PanelTime
 @onready var inventory_ui: UIInventory = $CanvasUI/PanelInventory
 @onready var buffs_ui: UIBuffs = $CanvasUI/PanelBuffs
-@onready var buffs: Array[Buff] = [
-	$Buffs/BuffSound, 
-	$Buffs/BuffStamina, 
-	$Buffs/BuffTime
-]
 
 var rendered_scene: SceneManager = null
 var dig_scene: DigSceneManager = null
@@ -48,8 +44,9 @@ func _ready() -> void:
 	transition_to_scene(load("res://scenes/dig.tscn"))
 	_initialize_time_wheel()
 	_initialize_sound_bar()
-	_initialize_buffs()
 	fatigue_ui.on_fatigue_treshold_reached.connect(_handle_fatigue_treshold_reached)
+	print(dig_scene)
+	add_buff(load("res://assets/data/status_effects/strength_buff.tres"))
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("hack_1"):
@@ -89,11 +86,6 @@ func _initialize_time_wheel():
 func _initialize_sound_bar():
 	sound_ui.update_bar_treshold(float(level_index) / STEPS_TO_WIN)
 	sound_ui.on_sound_treshold_passed.connect(_setup_lose)
-
-func _initialize_buffs() -> void:
-	for i in range(buffs.size()):
-		buffs_ui.place_buff(buffs[i], i)
-	pass
 
 func _setup_lose():
 	loss_pending = true
@@ -148,6 +140,12 @@ func add_chunk(chunk: Array):
 	for step in level_layout:
 		pretty_print_str += str(step.type) +', '
 	print(pretty_print_str)
+
+func add_buff(buff: Buff):
+	# This order is important!
+	buff_manager.apply_buff(buff)
+	buffs_ui.place_buff(buff, 1)
+	pass
 
 func get_current_step() -> Step:
 	return level_layout[level_index]

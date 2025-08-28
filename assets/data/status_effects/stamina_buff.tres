@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cx2ofmafatbwa"]
+
+[ext_resource type="Script" uid="uid://beocqi3ytimsc" path="res://scripts/standalone/status_effects/stamina_buff.gd" id="1_5ujub"]
+[ext_resource type="Texture2D" uid="uid://dxipm8ipv6acu" path="res://assets/images/icons/buffs/status_effect_fatigue.png" id="2_82pu7"]
+
+[resource]
+script = ExtResource("1_5ujub")
+description = "{value}% decrease to fatigue generation."
+duration = 15.0
+texture = ExtResource("2_82pu7")

@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c0djs48rmsxxh"]
+[gd_resource type="Resource" script_class="Item" load_steps=6 format=3 uid="uid://c0djs48rmsxxh"]
 
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item.gd" id="1_tr3qd"]
+[ext_resource type="Script" uid="uid://b15wq2merf8l7" path="res://scripts/standalone/buff.gd" id="1_ytgs5"]
 [ext_resource type="Texture2D" uid="uid://c2pbm581rur2d" path="res://assets/images/icons/items/item_2.png" id="2_8reqc"]
+[ext_resource type="Resource" uid="uid://6d6uqhl6lvh5" path="res://assets/data/status_effects/strength_buff.tres" id="2_fbrtc"]
+[ext_resource type="Resource" uid="uid://bl22ht5v5b0q1" path="res://assets/data/status_effects/heavy_debuff.tres" id="3_aar7v"]
 
 [resource]
 script = ExtResource("1_tr3qd")
@@ -12,4 +15,4 @@ effect = "+6 to hits, accumulate more fatigue."
 consumable = false
 description = "Cursed, this runestone grants great power… yet always at a hidden cost."
 texture = ExtResource("2_8reqc")
-buff_id = 1
+buffs = Array[ExtResource("1_ytgs5")]([ExtResource("2_fbrtc"), ExtResource("3_aar7v")])

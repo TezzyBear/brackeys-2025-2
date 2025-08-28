@@ -17,7 +17,9 @@ func _randomize_items():
 		item_cards[i].update_item(items_to_show[i]) 
 
 func _handle_item_purchased(item: Item):
-	GameManager.instance.add_item(item.duplicate(true))
+	var duplicated_item = item.duplicate(true) as Item
+	duplicated_item.apply_item()
+	GameManager.instance.add_item(duplicated_item)
 	transition_to_dig()
 
 func _process(delta: float) -> void:

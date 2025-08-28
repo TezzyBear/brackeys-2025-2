@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://6d6uqhl6lvh5"]
+
+[ext_resource type="Script" uid="uid://gtxyt1idoewt" path="res://scripts/standalone/status_effects/strength_buff.gd" id="1_yap6c"]
+[ext_resource type="Texture2D" uid="uid://bo6ionsqtq0gc" path="res://assets/images/icons/buffs/status_effect_strength.png" id="2_fd5xj"]
+
+[resource]
+script = ExtResource("1_yap6c")
+increase_to_hit = 6
+description = "+{value} to hits."
+duration = 15.0
+texture = ExtResource("2_fd5xj")

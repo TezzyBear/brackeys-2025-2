@@ -12,4 +12,3 @@ effect = "Instantly blow up any wall."
 consumable = true
 description = "Ignite and flee — this alchemical rod spares none who linger near."
 texture = ExtResource("2_x1rn7")
-buff_id = 0

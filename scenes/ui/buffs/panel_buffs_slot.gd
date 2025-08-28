@@ -8,7 +8,6 @@ func place(buff: Buff) -> bool:
 	if _buff != null:
 		return false
 	_buff = buff
-	_buff.activate()
 	texture = _buff.texture
 	tooltip_text = _buff.description
 	#visible = true
@@ -21,6 +20,5 @@ func take() -> Buff:
 	tooltip_text = ""
 	#visible = false
 	var aux_item: Buff = _buff
-	_buff.remove()
 	_buff = null
 	return aux_item

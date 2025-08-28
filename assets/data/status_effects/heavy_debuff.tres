@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bl22ht5v5b0q1"]
+
+[ext_resource type="Script" uid="uid://yu70btr54sj7" path="res://scripts/standalone/status_effects/heavy_debuff.gd" id="1_wj8m7"]
+[ext_resource type="Texture2D" uid="uid://85dnlk41av5v" path="res://assets/images/icons/buffs/status_effect_weight.png" id="2_fj5y4"]
+
+[resource]
+script = ExtResource("1_wj8m7")
+description = "{value}% increase to fatigue generation."
+duration = 15.0
+texture = ExtResource("2_fj5y4")

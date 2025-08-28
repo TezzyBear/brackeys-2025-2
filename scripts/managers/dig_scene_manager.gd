@@ -10,12 +10,13 @@ const GOLD_TEXTURE = preload("res://assets/images/bgs/bg_gold.jpg")
 
 var current_diggable_health: int
 @onready var texture_rect: TextureRect = $TextureRect
+var hit_bonus := 0
 
 func _ready() -> void:
 	GameManager.instance.dig_scene = self
 
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
-	current_diggable_health -= _get_intensity_damage(intensity)
+	current_diggable_health -= _get_intensity_damage(intensity) + hit_bonus
 	print("Hp: ", current_diggable_health)
 	if current_diggable_health <= 0:
 		pick.set_block(true)
