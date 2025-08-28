@@ -61,6 +61,11 @@ func _add_gold(value) -> void:
 	gold = min(999, max(0, uncapped_gold))
 	gold_ui.update(gold)
 
+func substract_gold(value: int) -> void:
+	var uncapped_gold = gold - value
+	gold = min(999, max(0, uncapped_gold))
+	gold_ui.update(gold)
+
 func _add_fatigue(value) -> void:
 	var uncapped_fatigue = fatigue + value
 	fatigue = min(100, max(0, uncapped_fatigue))
