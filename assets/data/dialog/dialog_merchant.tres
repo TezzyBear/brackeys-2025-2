@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogCharacter" load_steps=2 format=3 uid="uid://35gba000b31v"]
+
+[ext_resource type="Script" uid="uid://c0647wsnljt7h" path="res://scripts/dialog/dialog_character.gd" id="1_o2inp"]
+
+[resource]
+script = ExtResource("1_o2inp")
+first_interaction = "Ah… another fool drawn by their own avarice. Welcome to my shop. What you see is what you can buy… but remember: the price of greed is always higher than you imagine."
+first_interaction_active = true
+lines_repeat = Array[String](["Wise choice or foolish… time will tell.", "Gold always demands a price, even when you spend it."])
+lines = Array[String](["Still breathing… interesting.Few make it this far without being swallowed by the dark or by their own ambition.Looking for more tools? A brief respite?", "Already back? Hm… I thought you might be different.Careful, goblin… every pause is a gamble.The dragon’s patience is shorter than you think.", "", "", ""])
+metadata/_custom_type_script = "uid://c0647wsnljt7h"
