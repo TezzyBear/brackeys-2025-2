@@ -3,7 +3,7 @@ extends Control
 # TODO: Inheritance from Card - Not sure yet... Not enough overlap it seems like.
 class_name ItemCard
 
-var item: Item
+var item: ItemResource
 
 @onready var title: Label = $Panel/Title
 @onready var description: Label = $Panel/Description
@@ -11,9 +11,9 @@ var item: Item
 
 # TODO add price
 
-signal on_purchased(item: Item)
+signal on_purchased(item: ItemResource)
 
-func update_item(item: Item):
+func update_item(item: ItemResource):
 	self.item = item
 	title.text = item.name
 	description.text = item.description

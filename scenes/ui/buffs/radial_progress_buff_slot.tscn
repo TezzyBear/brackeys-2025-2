@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://iqbl8lokvwf3"]
+
+[ext_resource type="Texture2D" uid="uid://dxipm8ipv6acu" path="res://assets/images/icons/buffs/status_effect_fatigue.png" id="1_ap7lv"]
+[ext_resource type="Texture2D" uid="uid://cpw88b482l40e" path="res://assets/images/icons/buffs/overlay.png" id="2_enuo5"]
+[ext_resource type="Script" uid="uid://c8fn8cjl6abx4" path="res://scenes/ui/buffs/radial_progress_buff_slot.gd" id="3_enuo5"]
+
+[node name="RadialProgressBuffSlot" type="TextureProgressBar"]
+offset_left = 12.0
+offset_right = 83.0
+offset_bottom = 69.0
+fill_mode = 4
+texture_under = ExtResource("1_ap7lv")
+texture_progress = ExtResource("2_enuo5")
+texture_progress_offset = Vector2(7, 7)
+tint_progress = Color(0, 0, 0, 0.803922)
+script = ExtResource("3_enuo5")

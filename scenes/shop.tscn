@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bkxmhuaq72onl"]
 
 [ext_resource type="Script" uid="uid://d1y42hnlvqw81" path="res://scripts/managers/shop_scene_manager.gd" id="1_xfvoa"]
-[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item.gd" id="2_1v8qu"]
+[ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="2_1v8qu"]
 [ext_resource type="PackedScene" uid="uid://ba8kfeeihbvtt" path="res://scenes/cards/item_card.tscn" id="3_2fc2m"]
 [ext_resource type="Resource" uid="uid://papvl4lpxojr" path="res://assets/data/items/alchemists_stick.tres" id="3_44xle"]
 [ext_resource type="Resource" uid="uid://c0djs48rmsxxh" path="res://assets/data/items/cursed_runestone.tres" id="4_24it5"]
@@ -12,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://b7b38iekvx65g" path="res://assets/data/items/rune_of_might.tres" id="9_pqync"]
 [ext_resource type="Resource" uid="uid://grfq1etyk0xr" path="res://assets/data/items/whispering_plume.tres" id="10_yuijs"]
 [ext_resource type="Texture2D" uid="uid://dctnnu1kf2w05" path="res://assets/images/characters/merchant-removebg-preview.png" id="11_44xle"]
-[ext_resource type="PackedScene" uid="uid://bdyp107cfu4iw" path="res://scenes/ui/dialog_box.tscn" id="13_24it5"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialog_box.tscn" id="13_24it5"]
 
 [node name="Shop" type="Node2D" node_paths=PackedStringArray("cards")]
 script = ExtResource("1_xfvoa")

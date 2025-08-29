@@ -1,10 +1,10 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b0mfoqg5b6rx0"]
+[gd_resource type="Resource" script_class="BuffResource" load_steps=3 format=3 uid="uid://b0mfoqg5b6rx0"]
 
-[ext_resource type="Script" uid="uid://bxhtfxvjvafr0" path="res://scripts/standalone/status_effects/time_freeze_buff.gd" id="1_c6d7j"]
+[ext_resource type="Script" uid="uid://b15wq2merf8l7" path="res://scripts/standalone/buff_resource_base.gd" id="1_c6d7j"]
 [ext_resource type="Texture2D" uid="uid://bmiegy0mlhi5o" path="res://assets/images/icons/buffs/status_effect_time_stop.png" id="2_h6c4j"]
 
 [resource]
 script = ExtResource("1_c6d7j")
-description = "Freeze time for 30 seconds."
-duration = 15.0
+description = "Time is frozen for 30 seconds."
+duration = 30.0
 texture = ExtResource("2_h6c4j")

@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 		_wheel_rotate(delta)
 
 func _wheel_rotate(delta: float) -> void:
+	
 	elapsed_time += delta
 	
 	if elapsed_time >= rotation_duration:

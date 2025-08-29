@@ -8,9 +8,12 @@ const STEPS_TO_WIN = 30
 const TIME_TO_LOSE: float = 480
 
 @onready var camera_2d: ShakeCamera = $Camera2D
+
 @onready var transition_manager: TransitionManager = $TransitionManager
 @onready var buff_manager: BuffManager = $BuffManager
+@onready var item_manager: ItemManager = $ItemManager
 @onready var fatigue_manager: FatigueManager = $FatigueManager
+
 @onready var canvas_ui: CanvasLayer = $CanvasUI
 @onready var sound_ui: UISound = $CanvasUI/PanelSound
 @onready var fatigue_ui: UIFatigue = $CanvasUI/PanelFatigue
@@ -31,11 +34,14 @@ var level_layout := []
 var time_steps_passed := 0
 var fatigue := 0.0 #cap 100
 var gold := 0
-var inventory: Array[Item] = [null, null, null]
+var inventory: Array[ActiveItemAgent] = [null, null, null]
 
 func _ready() -> void:
 	if not instance:
 		GameManager.instance = self
+	
+	buff_manager.initialize_behaviours()
+	item_manager.initialize_behaviours()
 	
 	var random_chunk = Chunks.get_random_chunk(Enums.CHUNK_TYPE.DIRT)
 	add_chunk(random_chunk)
@@ -44,8 +50,9 @@ func _ready() -> void:
 	_initialize_time_wheel()
 	_initialize_sound_bar()
 	fatigue_ui.on_fatigue_treshold_reached.connect(_handle_fatigue_treshold_reached)
-	add_item(load("res://assets/data/items/cursed_runestone.tres"))
-	add_item(load("res://assets/data/items/rune_of_might.tres"))
+	
+	#add_item(ItemManager.create_item_from_resource(load("res://assets/data/items/cursed_runestone.tres")))
+	add_item(item_manager.create_item_from_name("Glass of Still Sands"))
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("hack_1"):
@@ -140,9 +147,11 @@ func add_chunk(chunk: Array):
 		pretty_print_str += str(step.type) +', '
 	print(pretty_print_str)
 
-func add_buff(buff: Buff, modifiers: Dictionary[String, Variant]):
+func add_buff(buff: BuffResource, modifiers: Dictionary[String, Variant] = {}) -> void:
 	buff_manager.apply_buff(buff, modifiers)
-	pass
+
+func remove_buff(buff: ActiveBuffAgent)  -> void:
+	buff_manager.remove_buff(buff)
 
 func get_current_step() -> Step:
 	return level_layout[level_index]
@@ -158,14 +167,10 @@ func _get_gold_in_step_by_pick_hit_intensity(intensity: Enums.DIG_INTENSITY):
 		_:
 			return 1 if randi_range(0, 3) == 3 else 0
 
-func add_item(item: Item) -> bool:
+func add_item(item: ActiveItemAgent) -> bool:
 	item.apply_item()
-	for i in range(inventory.size()):
-		if inventory[i] == null:
-			inventory[i] = item
-			inventory_ui.place_item(item, i)
-			return true
-	return false
+	return inventory_ui.place_item(item)
+	
 
 func item_delete(slot_id: int) -> bool:
 	var is_deleted: bool = inventory_ui.delete_item(slot_id)

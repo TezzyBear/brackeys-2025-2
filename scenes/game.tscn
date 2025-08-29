@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dxxcvro4vwo2"]
+[gd_scene load_steps=16 format=3 uid="uid://dxxcvro4vwo2"]
 
 [ext_resource type="Script" uid="uid://cem63el5ke0x3" path="res://scripts/ui/canvas_overlay.gd" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cijyoj7k13whn" path="res://scripts/managers/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://ntmuc3fp4f5s" path="res://scripts/managers/transition_manager.gd" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://1s8icgqleh81" path="res://scenes/ui/canvas_ui.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://chna0rx53rhgv" path="res://scenes/buff_manager.gd" id="4_u5sy4"]
+[ext_resource type="Script" uid="uid://lrlojey7a3og" path="res://scripts/managers/item_manager.gd" id="5_gee14"]
 [ext_resource type="Script" uid="uid://dssauy6hmvle5" path="res://scripts/camera_shake.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://btd5qtk6rhcyl" path="res://scripts/managers/fatigue_manager.gd" id="6_p57ef"]
 
@@ -134,6 +135,9 @@ script = ExtResource("2_lnu2h")
 
 [node name="BuffManager" type="Node" parent="."]
 script = ExtResource("4_u5sy4")
+
+[node name="ItemManager" type="Node" parent="."]
+script = ExtResource("5_gee14")
 
 [node name="CanvasOverlay" type="CanvasLayer" parent="."]
 layer = 10
