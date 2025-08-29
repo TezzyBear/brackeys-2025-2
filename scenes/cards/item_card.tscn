@@ -31,10 +31,10 @@ autowrap_mode = 3
 
 [node name="Description" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 14.0
-offset_top = 171.0
-offset_right = 185.0
-offset_bottom = 331.0
+offset_left = 16.0
+offset_top = 207.0
+offset_right = 187.0
+offset_bottom = 372.0
 theme_override_font_sizes/font_size = 22
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
 horizontal_alignment = 3
@@ -64,5 +64,25 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 20
 text = "Purchase"
+
+[node name="Cost" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 176.0
+offset_right = 92.0
+offset_bottom = 201.0
+theme_override_font_sizes/font_size = 22
+text = "-1"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 173.0
+offset_right = 141.0
+offset_bottom = 198.0
+theme_override_font_sizes/font_size = 22
+text = "gold"
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

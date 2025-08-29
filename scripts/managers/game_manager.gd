@@ -52,7 +52,7 @@ func _ready() -> void:
 	fatigue_ui.on_fatigue_treshold_reached.connect(_handle_fatigue_treshold_reached)
 	
 	#add_item(ItemManager.create_item_from_resource(load("res://assets/data/items/cursed_runestone.tres")))
-	add_item(item_manager.create_item_from_name("Glass of Still Sands"))
+	#add_item(item_manager.create_item_from_name("Glass of Still Sands"))
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("hack_1"):
@@ -64,6 +64,11 @@ func _process(delta: float) -> void:
 
 func _add_gold(value) -> void:
 	var uncapped_gold = gold + value
+	gold = min(999, max(0, uncapped_gold))
+	gold_ui.update(gold)
+
+func substract_gold(value: int) -> void:
+	var uncapped_gold = gold - value
 	gold = min(999, max(0, uncapped_gold))
 	gold_ui.update(gold)
 

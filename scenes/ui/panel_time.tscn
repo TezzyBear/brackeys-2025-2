@@ -52,3 +52,12 @@ offset_right = 23.5
 offset_bottom = 110.0
 grow_horizontal = 2
 texture = ExtResource("3_c2p8i")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 14.0
+offset_right = 268.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 25
+text = "Days"

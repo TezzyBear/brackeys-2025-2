@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkxmhuaq72onl"]
+[gd_scene load_steps=15 format=3 uid="uid://bkxmhuaq72onl"]
 
 [ext_resource type="Script" uid="uid://d1y42hnlvqw81" path="res://scripts/managers/shop_scene_manager.gd" id="1_xfvoa"]
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="2_1v8qu"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://grfq1etyk0xr" path="res://assets/data/items/whispering_plume.tres" id="10_yuijs"]
 [ext_resource type="Texture2D" uid="uid://dctnnu1kf2w05" path="res://assets/images/characters/merchant-removebg-preview.png" id="11_44xle"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialog_box.tscn" id="13_24it5"]
+[ext_resource type="Texture2D" uid="uid://if30l1lfspwn" path="res://assets/images/icons/exit.png" id="14_7mqwv"]
 
 [node name="Shop" type="Node2D" node_paths=PackedStringArray("cards")]
 script = ExtResource("1_xfvoa")
@@ -117,3 +118,18 @@ offset_top = -154.0
 offset_right = 340.0
 offset_bottom = -31.0
 grow_vertical = 0
+
+[node name="Exit" type="Button" parent="CanvasInteractionDisplay"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -167.0
+offset_top = 8.0
+offset_right = 41.0
+offset_bottom = 216.0
+grow_horizontal = 0
+scale = Vector2(0.33, 0.33)
+icon = ExtResource("14_7mqwv")
+flat = true
+
+[connection signal="pressed" from="CanvasInteractionDisplay/Exit" to="." method="_on_exit_pressed"]

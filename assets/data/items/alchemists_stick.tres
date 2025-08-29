@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://papvl4lpxojr"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://papvl4lpxojr"]
 
 [ext_resource type="Script" uid="uid://unw4stmmdlee" path="res://scripts/standalone/status_effects/buff_entry.gd" id="1_pw1vw"]
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="1_woc0l"]
