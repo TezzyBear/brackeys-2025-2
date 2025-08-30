@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ces3wna4uuv0e"]
+[gd_scene load_steps=5 format=3 uid="uid://ces3wna4uuv0e"]
 
 [ext_resource type="Script" uid="uid://cmkj81uknj2lw" path="res://scripts/ui/panel_fatigue.gd" id="1_mbjrt"]
+[ext_resource type="Texture2D" uid="uid://deg33yt2n3ar5" path="res://assets/images/ui/fatigue_bar_off.png" id="2_yiote"]
+[ext_resource type="Texture2D" uid="uid://sdmt8rd7cmqn" path="res://assets/images/ui/fatigue_bar_on.png" id="3_s4jjg"]
+[ext_resource type="Texture2D" uid="uid://cy4w5po8vaucb" path="res://assets/images/ui/fatigue_bar_pin.png" id="4_s4jjg"]
 
 [node name="PanelFatigue" type="Panel"]
 anchors_preset = 2
@@ -13,22 +16,25 @@ offset_bottom = -40.0
 grow_vertical = 0
 script = ExtResource("1_mbjrt")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -8.0
+offset_right = 64.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
-show_percentage = false
+texture_under = ExtResource("2_yiote")
+texture_progress = ExtResource("3_s4jjg")
 
-[node name="Label" type="Label" parent="ProgressBar"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 22
-text = "0/100"
-horizontal_alignment = 1
+[node name="TextureRect" type="TextureRect" parent="ProgressBar"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 20.0
+offset_bottom = 50.0
+pivot_offset = Vector2(7, 28)
+texture = ExtResource("4_s4jjg")

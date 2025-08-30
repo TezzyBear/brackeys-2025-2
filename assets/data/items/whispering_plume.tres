@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=6 format=3 uid="uid://grfq1etyk0xr"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=7 format=3 uid="uid://grfq1etyk0xr"]
 
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="1_0fjkm"]
 [ext_resource type="Script" uid="uid://unw4stmmdlee" path="res://scripts/standalone/status_effects/buff_entry.gd" id="1_04be8"]
 [ext_resource type="Texture2D" uid="uid://dur6m358r2ulo" path="res://assets/images/icons/items/item_5.png" id="2_ewjjl"]
 [ext_resource type="Resource" uid="uid://fuitvjo8m31v" path="res://assets/data/status_effects/feather_step_buff.tres" id="2_gorkg"]
+[ext_resource type="Texture2D" uid="uid://djq2cw1recmsy" path="res://assets/images/icons/items/item_whispering_plume.png" id="3_gorkg"]
 
 [sub_resource type="Resource" id="Resource_rwjkm"]
 script = ExtResource("1_04be8")
@@ -20,4 +21,5 @@ effect = "Half sound made for a moment."
 consumable = true
 description = "Delicate feather that shall grants silence — but for a brief moment."
 texture = ExtResource("2_ewjjl")
+icon_texure = ExtResource("3_gorkg")
 buff_modifier_entries = Array[ExtResource("1_04be8")]([SubResource("Resource_rwjkm")])

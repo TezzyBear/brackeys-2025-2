@@ -50,10 +50,10 @@ offset_right = 19.0
 offset_bottom = 43.0
 
 [node name="PanelInventory" parent="." instance=ExtResource("5_cxcp1")]
-offset_left = -33.0
-offset_top = 60.0
-offset_right = 7.0
-offset_bottom = 100.0
+offset_left = -34.0
+offset_top = 23.0
+offset_right = 6.0
+offset_bottom = 63.0
 
 [node name="PanelBuffs" parent="." instance=ExtResource("6_cxcp1")]
 offset_left = 72.0

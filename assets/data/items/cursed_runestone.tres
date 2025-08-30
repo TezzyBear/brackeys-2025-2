@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=8 format=3 uid="uid://c0djs48rmsxxh"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=9 format=3 uid="uid://c0djs48rmsxxh"]
 
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="1_tr3qd"]
 [ext_resource type="Texture2D" uid="uid://c2pbm581rur2d" path="res://assets/images/icons/items/item_2.png" id="2_8reqc"]
 [ext_resource type="Resource" uid="uid://6d6uqhl6lvh5" path="res://assets/data/status_effects/strength_buff.tres" id="2_fbrtc"]
 [ext_resource type="Script" uid="uid://unw4stmmdlee" path="res://scripts/standalone/status_effects/buff_entry.gd" id="2_lat3n"]
 [ext_resource type="Resource" uid="uid://bl22ht5v5b0q1" path="res://assets/data/status_effects/heavy_debuff.tres" id="3_aar7v"]
+[ext_resource type="Texture2D" uid="uid://wietxt5sqn8b" path="res://assets/images/icons/items/item_cursed_runestone.png" id="4_fbrtc"]
 
 [sub_resource type="Resource" id="Resource_ytgs5"]
 script = ExtResource("2_lat3n")
@@ -27,4 +28,5 @@ effect = "+{value} str +2 weight."
 consumable = false
 description = "Cursed, this runestone grants great power… yet always at a hidden cost."
 texture = ExtResource("2_8reqc")
+icon_texure = ExtResource("4_fbrtc")
 buff_modifier_entries = Array[ExtResource("2_lat3n")]([SubResource("Resource_ytgs5"), SubResource("Resource_fbrtc")])

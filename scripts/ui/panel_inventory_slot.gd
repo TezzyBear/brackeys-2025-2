@@ -8,7 +8,7 @@ var item: ActiveItemAgent = null
 
 func place(item: ActiveItemAgent) -> bool:
 	self.item = item
-	texture = item.resource.texture
+	texture = item.resource.icon_texure
 	tooltip_text = item.resource.effect
 	connect("gui_input", handle_gui_input)
 	return true

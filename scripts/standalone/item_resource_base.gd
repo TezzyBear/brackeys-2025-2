@@ -9,4 +9,5 @@ class_name ItemResource
 @export var consumable: bool
 @export var description: String
 @export var texture: Texture2D
+@export var icon_texure: Texture2D
 @export var buff_modifier_entries: Array[BuffEntry]

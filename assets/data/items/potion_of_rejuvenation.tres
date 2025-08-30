@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cn63f3s2w3snv"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=5 format=3 uid="uid://cn63f3s2w3snv"]
 
+[ext_resource type="Script" uid="uid://unw4stmmdlee" path="res://scripts/standalone/status_effects/buff_entry.gd" id="1_bdpm8"]
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="1_byk6x"]
 [ext_resource type="Texture2D" uid="uid://djttoqx6l2rpl" path="res://assets/images/icons/items/item_3.png" id="2_4nldb"]
+[ext_resource type="Texture2D" uid="uid://bu0hkkfhrv65u" path="res://assets/images/icons/items/item_fatigue_potion.png" id="2_r5af4"]
 
 [resource]
 script = ExtResource("1_byk6x")
@@ -12,4 +14,5 @@ effect = "Reduce fatigue by 20"
 consumable = true
 description = "Drink to reduce exhaustion and regain strength for the road ahead."
 texture = ExtResource("2_4nldb")
-buff_id = 4
+icon_texure = ExtResource("2_r5af4")
+buff_modifier_entries = Array[ExtResource("1_bdpm8")]([])
