@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba8kfeeihbvtt"]
+[gd_scene load_steps=5 format=3 uid="uid://ba8kfeeihbvtt"]
 
 [ext_resource type="Script" uid="uid://7456ruvf4c4w" path="res://scripts/cards/item_card.gd" id="1_dgw7t"]
-[ext_resource type="Texture2D" uid="uid://dvj5mpq5op1qi" path="res://assets/images/icons/strength.png" id="2_dgw7t"]
 [ext_resource type="Texture2D" uid="uid://dawwpltr506yo" path="res://assets/images/cards/paths/card_item.png" id="3_nmfn8"]
 [ext_resource type="Texture2D" uid="uid://df3r0lwkfuxs5" path="res://assets/images/cards/items/card_gold.png" id="5_f7vou"]
 [ext_resource type="Texture2D" uid="uid://cbqdsa2bqx57s" path="res://assets/images/cards/items/card_buy.png" id="6_y3k3y"]
@@ -10,83 +9,6 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_dgw7t")
-
-[node name="Panel" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 200.0
-offset_bottom = 400.0
-
-[node name="Title" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -98.0
-offset_top = 10.0
-offset_right = 98.0
-offset_bottom = 33.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 24
-text = "This title is actually pretty long"
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="Description" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 207.0
-offset_right = 187.0
-offset_bottom = 372.0
-theme_override_font_sizes/font_size = 22
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-horizontal_alignment = 3
-autowrap_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 74.0
-offset_right = 145.0
-offset_bottom = 165.0
-texture = ExtResource("2_dgw7t")
-expand_mode = 2
-
-[node name="Button" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -73.0
-offset_top = -56.0
-offset_right = 74.0
-offset_bottom = -14.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 20
-text = "Purchase"
-
-[node name="Cost" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 176.0
-offset_right = 92.0
-offset_bottom = 201.0
-theme_override_font_sizes/font_size = 22
-text = "-1"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 101.0
-offset_top = 173.0
-offset_right = 141.0
-offset_bottom = 198.0
-theme_override_font_sizes/font_size = 22
-text = "gold"
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -135,5 +57,4 @@ offset_right = 144.0
 offset_bottom = 234.0
 icon = ExtResource("6_y3k3y")
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Background/Button" to="." method="_on_button_pressed"]

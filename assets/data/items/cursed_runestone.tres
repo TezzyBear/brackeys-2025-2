@@ -32,5 +32,5 @@ description = "Cursed, this runestone grants great power… yet always at a hidd
 texture = ExtResource("2_8reqc")
 icon_texure = ExtResource("4_fbrtc")
 buff_modifier_entries = Array[ExtResource("2_lat3n")]([SubResource("Resource_ytgs5"), SubResource("Resource_fbrtc")])
-texture_name = ExtResource("8_aut82")
 texture_bg = ExtResource("7_aar7v")
+texture_name = ExtResource("8_aut82")

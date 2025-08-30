@@ -9,7 +9,7 @@ var item: ItemResource
 @onready var title: TextureRect = $Background/Title
 @onready var description: RichTextLabel = $Background/Description
 @onready var cost: Label = $Background/Cost
-@onready var btn_purchase: Button = $Panel/Button
+@onready var btn_purchase: Button = $Background/Button
 
 # TODO add price
 
@@ -22,10 +22,8 @@ func update_item(item: ItemResource):
 	description.text = item.description
 	cost.text = str(item.cost)
 	background.tooltip_text = item.effect
-	if GameManager.instance.gold >= item.cost:
-		btn_purchase.disabled = false
-	else:
-		btn_purchase.disabled = true
+	print(item.name, GameManager.instance.gold >= item.cost)
+	btn_purchase.disabled = GameManager.instance.gold <= item.cost
 
 func _process(delta: float) -> void:
 	pass

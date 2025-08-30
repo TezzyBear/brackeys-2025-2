@@ -25,5 +25,5 @@ description = "The sands within stand still; use your time wisely — for it is 
 texture = ExtResource("2_iuims")
 icon_texure = ExtResource("3_7dlvv")
 buff_modifier_entries = Array[ExtResource("1_lchim")]([SubResource("Resource_8fucl")])
-texture_name = ExtResource("7_lviul")
 texture_bg = ExtResource("6_ng4tx")
+texture_name = ExtResource("7_lviul")
