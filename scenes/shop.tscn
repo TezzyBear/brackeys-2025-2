@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bkxmhuaq72onl"]
+[gd_scene load_steps=16 format=3 uid="uid://bkxmhuaq72onl"]
 
 [ext_resource type="Script" uid="uid://d1y42hnlvqw81" path="res://scripts/managers/shop_scene_manager.gd" id="1_xfvoa"]
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="2_1v8qu"]
@@ -11,9 +11,10 @@
 [ext_resource type="Resource" uid="uid://7topo47l7cdk" path="res://assets/data/items/potion_of_silence.tres" id="8_5u241"]
 [ext_resource type="Resource" uid="uid://b7b38iekvx65g" path="res://assets/data/items/rune_of_might.tres" id="9_pqync"]
 [ext_resource type="Resource" uid="uid://grfq1etyk0xr" path="res://assets/data/items/whispering_plume.tres" id="10_yuijs"]
-[ext_resource type="Texture2D" uid="uid://dctnnu1kf2w05" path="res://assets/images/characters/merchant-removebg-preview.png" id="11_44xle"]
-[ext_resource type="PackedScene" uid="uid://bdyp107cfu4iw" path="res://scenes/ui/dialog_box.tscn" id="13_24it5"]
-[ext_resource type="Texture2D" uid="uid://if30l1lfspwn" path="res://assets/images/icons/exit.png" id="14_7mqwv"]
+[ext_resource type="Texture2D" uid="uid://cyxtmq8ga2l4l" path="res://assets/images/characters/merchant_placeholder.png" id="11_7mqwv"]
+[ext_resource type="Texture2D" uid="uid://sctht7ra7k4m" path="res://assets/images/characters/card_dialog.png" id="12_gobkm"]
+[ext_resource type="Texture2D" uid="uid://cdh66sxnum3fd" path="res://assets/images/characters/card_name_merchant.png" id="13_j14q8"]
+[ext_resource type="Texture2D" uid="uid://be5x8dbq7f5e2" path="res://assets/images/ui/icon_back.png" id="15_gobkm"]
 
 [node name="Shop" type="Node2D" node_paths=PackedStringArray("cards")]
 script = ExtResource("1_xfvoa")
@@ -24,16 +25,31 @@ cards = NodePath("CanvasInteractionDisplay/Cards")
 
 [node name="CanvasInteractionDisplay" type="CanvasLayer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasInteractionDisplay"]
+[node name="PortraitMerchant" type="TextureRect" parent="CanvasInteractionDisplay"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -66.0
-offset_top = -394.0
-offset_right = 434.0
-offset_bottom = 106.0
+offset_top = -500.0
+offset_right = 500.0
 grow_vertical = 0
-texture = ExtResource("11_44xle")
+texture = ExtResource("11_7mqwv")
+
+[node name="DialogCard" type="TextureRect" parent="CanvasInteractionDisplay"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -157.0
+offset_right = 371.0
+grow_vertical = 0
+texture = ExtResource("12_gobkm")
+
+[node name="DialogName" type="TextureRect" parent="CanvasInteractionDisplay/DialogCard"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 178.0
+offset_bottom = 42.0
+texture = ExtResource("13_j14q8")
 
 [node name="Cards" type="Control" parent="CanvasInteractionDisplay"]
 layout_mode = 3
@@ -42,10 +58,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 7.0
-offset_top = -23.0
-offset_right = 47.0
-offset_bottom = 17.0
+offset_left = 107.0
+offset_top = -24.0
+offset_right = 147.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -109,27 +125,14 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 
-[node name="DialogBox" parent="CanvasInteractionDisplay" instance=ExtResource("13_24it5")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 19.0
-offset_top = -154.0
-offset_right = 340.0
-offset_bottom = -31.0
-grow_vertical = 0
-
 [node name="Exit" type="Button" parent="CanvasInteractionDisplay"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -167.0
-offset_top = 8.0
-offset_right = 41.0
-offset_bottom = 216.0
+offset_left = -85.0
+offset_bottom = 84.0
 grow_horizontal = 0
-scale = Vector2(0.33, 0.33)
-icon = ExtResource("14_7mqwv")
+icon = ExtResource("15_gobkm")
 flat = true
 
 [connection signal="pressed" from="CanvasInteractionDisplay/Exit" to="." method="_on_exit_pressed"]

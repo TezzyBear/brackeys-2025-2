@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj6q60e18xsd6"]
+[gd_scene load_steps=6 format=3 uid="uid://bj6q60e18xsd6"]
 
 [ext_resource type="Script" uid="uid://1q7my61isycj" path="res://scripts/managers/path_selection_scene_manager.gd" id="1_5kb67"]
 [ext_resource type="PackedScene" uid="uid://drm43ldv2plwx" path="res://scenes/cards/text_card.tscn" id="2_dsqr0"]
+[ext_resource type="Texture2D" uid="uid://7kaum7hrt4mm" path="res://assets/images/characters/dwarf_placeholder.png" id="2_xxyx6"]
+[ext_resource type="Texture2D" uid="uid://sctht7ra7k4m" path="res://assets/images/characters/card_dialog.png" id="3_xxyx6"]
+[ext_resource type="Texture2D" uid="uid://cxdlqcr753blu" path="res://assets/images/characters/card_name_dwarf.png" id="4_x1agc"]
 
 [node name="PathSelection" type="Node2D" node_paths=PackedStringArray("cards")]
 script = ExtResource("1_5kb67")
@@ -11,6 +14,32 @@ cards = NodePath("CanvasInteractionDisplay/Cards")
 
 [node name="CanvasInteractionDisplay" type="CanvasLayer" parent="."]
 
+[node name="PortraitDwarf" type="TextureRect" parent="CanvasInteractionDisplay"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -481.0
+offset_right = 376.0
+grow_vertical = 0
+texture = ExtResource("2_xxyx6")
+
+[node name="DialogCard" type="TextureRect" parent="CanvasInteractionDisplay"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -157.0
+offset_right = 371.0
+grow_vertical = 0
+texture = ExtResource("3_xxyx6")
+
+[node name="DialogName" type="TextureRect" parent="CanvasInteractionDisplay/DialogCard"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 111.0
+offset_bottom = 46.0
+texture = ExtResource("4_x1agc")
+
 [node name="Cards" type="Control" parent="CanvasInteractionDisplay"]
 layout_mode = 3
 anchors_preset = 0
@@ -18,10 +47,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="GoldCard" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("2_dsqr0")]
-offset_left = 167.0
-offset_top = 112.0
-offset_right = 167.0
-offset_bottom = 112.0
+offset_left = 381.0
+offset_top = 104.0
+offset_right = 381.0
+offset_bottom = 104.0
 type = 1
 title_text = "More gold"
 
