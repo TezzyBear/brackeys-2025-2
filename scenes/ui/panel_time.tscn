@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://drj7yjmmqwon8"]
+[gd_scene load_steps=6 format=3 uid="uid://drj7yjmmqwon8"]
 
 [ext_resource type="Script" uid="uid://bdky5puk52vfr" path="res://scripts/ui/panel_time.gd" id="1_vui22"]
 [ext_resource type="Texture2D" uid="uid://16h72thu33sb" path="res://assets/images/ui/time_div.png" id="2_c2p8i"]
 [ext_resource type="Texture2D" uid="uid://bfh0nyyk64018" path="res://assets/images/ui/time_wheel.png" id="2_wtyt8"]
 [ext_resource type="Texture2D" uid="uid://b1swl32d4hbjt" path="res://assets/images/ui/time_pin.png" id="3_c2p8i"]
+[ext_resource type="Theme" uid="uid://c4k537f21i1fb" path="res://theme.tres" id="5_lb3ov"]
 
 [node name="PanelTime" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -59,5 +60,7 @@ offset_left = 222.0
 offset_top = 14.0
 offset_right = 268.0
 offset_bottom = 51.0
+scale = Vector2(1.42409, 1.36737)
+theme = ExtResource("5_lb3ov")
 theme_override_font_sizes/font_size = 25
 text = "Days"

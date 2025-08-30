@@ -2,16 +2,15 @@ extends SceneManager
 
 class_name DigSceneManager
 
-const DIRT_TEXTURE = preload("res://assets/images/bgs/bg_dirt.jpg")
-const STONE_TEXTURE = preload("res://assets/images/bgs/bg_stone.jpg")
-const GOLD_TEXTURE = preload("res://assets/images/bgs/bg_gold.jpg")
-
+@onready var background: AnimatedSprite2D = $Background
 @onready var pick: Pick = $Pick
 
 var current_diggable_health: int
 var current_step_type: Enums.STEP_TYPE
-@onready var texture_rect: TextureRect = $TextureRect
 var hit_bonus := 0 #RESETING!
+
+var diggable_initial_health: int
+var diggable_open: bool = false
 
 signal on_step_end(current_step_type: Enums.STEP_TYPE)
 
@@ -20,25 +19,32 @@ func _ready() -> void:
 	
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	current_diggable_health -= _get_intensity_damage(intensity) + hit_bonus
+	if not diggable_open and current_diggable_health <= diggable_initial_health * 0.5:
+		diggable_open = true
+		background.frame = 1
 	print("Hp: ", current_diggable_health)
 	if current_diggable_health <= 0:
 		pick.set_block(true)
+		background.frame = 2
 		on_step_end.emit(current_step_type)
 		GameManager.instance.run_step()
 
 func _fade_bg_out_in(diggable: Step) -> void:
 	pick.set_block(false)
-	texture_rect.texture = _get_diggable_texture(diggable.type)
+	background.animation = _get_diggable_animation(diggable.type)
 	await GameManager.instance.transition_manager.fade_in()
 
 func update_diggable(diggable: Step):
 	current_diggable_health = _get_diggable_health(diggable.type)
+	diggable_initial_health = current_diggable_health
+	diggable_open = false
+	background.frame = 0
 	current_step_type = diggable.type
 	_fade_bg_out_in(diggable)
 
 func handle_loss():
 	pick.set_block(true)
-	texture_rect.texture = load("res://assets/images/bgs/bg_eye.jpg")
+	background.animation = "dragon"
 
 func travel_to_step(step_index: int) -> void:
 	var step = GameManager.instance.get_step_at(step_index)
@@ -49,14 +55,16 @@ func connect_signal_handlers():
 	pick.on_dig.connect(_handle_pick_hit)
 	
 # Mappings
-func _get_diggable_texture(diggable: Enums.STEP_TYPE):
+func _get_diggable_animation(diggable: Enums.STEP_TYPE):
 	match diggable:
 		Enums.STEP_TYPE.DIRT:
-			return DIRT_TEXTURE
+			return "dirt"
 		Enums.STEP_TYPE.STONE:
-			return STONE_TEXTURE
+			return "stone"
 		Enums.STEP_TYPE.GOLD:
-			return GOLD_TEXTURE
+			return "gold"
+		Enums.STEP_TYPE.OBSIDIAN:
+			return "obsidian"
 
 func _get_diggable_health(diggable: Enums.STEP_TYPE):
 	match diggable:

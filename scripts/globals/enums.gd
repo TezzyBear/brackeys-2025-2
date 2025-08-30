@@ -10,6 +10,7 @@ enum STEP_TYPE {
 	DIRT,
 	GOLD,
 	STONE,
+	OBSIDIAN,
 	# 3+ means interaction (non-diggables)
 	SHOP,
 	PATH_SELECTION,
