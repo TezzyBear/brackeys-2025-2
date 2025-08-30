@@ -20,6 +20,7 @@ const TIME_TO_LOSE: float = 480
 @onready var gold_ui: UIGold = $CanvasUI/PanelGold
 @onready var time_ui: UITime = $CanvasUI/PanelTime
 @onready var inventory_ui: UIInventory = $CanvasUI/PanelInventory
+@onready var distance_ui: UIDistance = $CanvasUI/PanelDistance
 
 var rendered_scene: SceneManager = null
 var dig_scene: DigSceneManager = null
@@ -35,6 +36,7 @@ var time_steps_passed := 0
 var fatigue := 0.0 
 var gold := 0
 var inventory: Array[ActiveItemAgent] = [null, null, null]
+var distance: int = 3000
 
 # Modifiers
 var weight_multiplier := 0
@@ -51,6 +53,7 @@ func _ready() -> void:
 	transition_to_scene(load("res://scenes/dig.tscn"))
 	_initialize_time_wheel()
 	_initialize_sound_bar()
+	distance_ui.distance_show(distance)
 	fatigue_ui.on_fatigue_treshold_reached.connect(_handle_fatigue_treshold_reached)
 	
 	buff_manager.initialize_behaviours()
@@ -119,6 +122,8 @@ func run_step():
 		return
 		
 	level_index += 1
+	distance -= 100
+	distance_ui.distance_show(distance)
 	print("Position: ", level_index)
 	
 	var current_step: Step = get_current_step()
