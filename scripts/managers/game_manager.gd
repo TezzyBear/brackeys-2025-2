@@ -22,6 +22,9 @@ const TIME_TO_LOSE: float = 480
 @onready var inventory_ui: UIInventory = $CanvasUI/PanelInventory
 @onready var distance_ui: UIDistance = $CanvasUI/PanelDistance
 
+@export var dialog_merchant: DialogCharacter
+@export var dialog_dwarf: DialogCharacter
+
 var rendered_scene: SceneManager = null
 var dig_scene: DigSceneManager = null
 var interaction_scene: InteractionSceneManager = null

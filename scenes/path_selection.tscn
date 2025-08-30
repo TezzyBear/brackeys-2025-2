@@ -1,15 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bj6q60e18xsd6"]
+[gd_scene load_steps=6 format=3 uid="uid://bj6q60e18xsd6"]
 
 [ext_resource type="Script" uid="uid://1q7my61isycj" path="res://scripts/managers/path_selection_scene_manager.gd" id="1_5kb67"]
 [ext_resource type="PackedScene" uid="uid://drm43ldv2plwx" path="res://scenes/cards/text_card.tscn" id="2_dsqr0"]
-[ext_resource type="Resource" path="res://assets/data/dialog/dialog_dwarf.tres" id="2_m5wwf"]
 [ext_resource type="Texture2D" uid="uid://7kaum7hrt4mm" path="res://assets/images/characters/dwarf_placeholder.png" id="2_xxyx6"]
 [ext_resource type="Texture2D" uid="uid://sctht7ra7k4m" path="res://assets/images/characters/card_dialog.png" id="3_xxyx6"]
 [ext_resource type="Texture2D" uid="uid://cxdlqcr753blu" path="res://assets/images/characters/card_name_dwarf.png" id="4_x1agc"]
 
 [node name="PathSelection" type="Node2D" node_paths=PackedStringArray("cards")]
 script = ExtResource("1_5kb67")
-dialog_dwarf = ExtResource("2_m5wwf")
 cards = NodePath("CanvasInteractionDisplay/Cards")
 
 [node name="CanvasGame" type="CanvasLayer" parent="."]
