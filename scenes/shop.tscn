@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkxmhuaq72onl"]
+[gd_scene load_steps=17 format=3 uid="uid://bkxmhuaq72onl"]
 
 [ext_resource type="Script" uid="uid://d1y42hnlvqw81" path="res://scripts/managers/shop_scene_manager.gd" id="1_xfvoa"]
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="2_1v8qu"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://b7b38iekvx65g" path="res://assets/data/items/rune_of_might.tres" id="9_pqync"]
 [ext_resource type="Resource" uid="uid://grfq1etyk0xr" path="res://assets/data/items/whispering_plume.tres" id="10_yuijs"]
 [ext_resource type="Texture2D" uid="uid://cyxtmq8ga2l4l" path="res://assets/images/characters/merchant_placeholder.png" id="11_7mqwv"]
+[ext_resource type="Resource" uid="uid://5gs6citr6hx7" path="res://assets/data/dialog/dialog_merchant.tres" id="11_j14q8"]
 [ext_resource type="Texture2D" uid="uid://sctht7ra7k4m" path="res://assets/images/characters/card_dialog.png" id="12_gobkm"]
 [ext_resource type="Texture2D" uid="uid://cdh66sxnum3fd" path="res://assets/images/characters/card_name_merchant.png" id="13_j14q8"]
 [ext_resource type="Texture2D" uid="uid://be5x8dbq7f5e2" path="res://assets/images/ui/icon_back.png" id="15_gobkm"]
@@ -19,18 +20,29 @@
 [node name="Shop" type="Node2D" node_paths=PackedStringArray("cards")]
 script = ExtResource("1_xfvoa")
 items = Array[ExtResource("2_1v8qu")]([ExtResource("3_44xle"), ExtResource("4_24it5"), ExtResource("5_7mqwv"), ExtResource("6_gobkm"), ExtResource("7_j14q8"), ExtResource("8_5u241"), ExtResource("9_pqync"), ExtResource("10_yuijs")])
+dialog_merchant = ExtResource("11_j14q8")
 cards = NodePath("CanvasInteractionDisplay/Cards")
 
 [node name="CanvasGame" type="CanvasLayer" parent="."]
 
 [node name="CanvasInteractionDisplay" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasInteractionDisplay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.666667)
 
 [node name="PortraitMerchant" type="TextureRect" parent="CanvasInteractionDisplay"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = -66.0
 offset_top = -500.0
-offset_right = 500.0
+offset_right = 434.0
 grow_vertical = 0
 texture = ExtResource("11_7mqwv")
 
@@ -50,6 +62,18 @@ offset_top = 16.0
 offset_right = 178.0
 offset_bottom = 42.0
 texture = ExtResource("13_j14q8")
+
+[node name="DialogText" type="RichTextLabel" parent="CanvasInteractionDisplay/DialogCard"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.5
+offset_top = 41.0
+offset_right = 160.5
+offset_bottom = 132.0
+grow_horizontal = 2
+scroll_active = false
 
 [node name="Cards" type="Control" parent="CanvasInteractionDisplay"]
 layout_mode = 3

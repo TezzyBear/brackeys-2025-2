@@ -4,11 +4,23 @@ class_name ShopSceneManager
 
 @export var items: Array[ItemResource]
 @export var dialog_merchant: DialogCharacter
+@onready var dialog_label_text: RichTextLabel = $CanvasInteractionDisplay/DialogCard/DialogText
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("dialog_merchant: ", dialog_merchant.first_interaction_active)
 	_randomize_items()
 	for card in cards.get_children():
 		card.on_purchased.connect(_handle_item_purchased)
+	_dialog_update()
+
+func _dialog_update() -> void:
+	if dialog_merchant.first_interaction_active:
+		dialog_label_text.text = dialog_merchant.first_interaction
+		dialog_merchant.first_interaction_active = false
+		ResourceSaver.save(dialog_merchant, dialog_merchant.resource_path)
+		return
+	
+	dialog_label_text.text = dialog_merchant.lines[randi_range(0, 1)]
 
 func _randomize_items():
 	var item_cards = cards.get_children()

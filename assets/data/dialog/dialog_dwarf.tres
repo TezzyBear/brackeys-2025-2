@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="DialogCharacter" load_steps=2 format=3 uid="uid://birubrctimgqa"]
+[gd_resource type="Resource" script_class="DialogCharacter" load_steps=2 format=3 uid="uid://eq6vow1e63wl"]
 
 [ext_resource type="Script" uid="uid://c0647wsnljt7h" path="res://scripts/dialog/dialog_character.gd" id="1_l0kcl"]
 
 [resource]
 script = ExtResource("1_l0kcl")
-first_interaction = "ininitialized dialog"
+first_interaction = "Hm… I’ve not seen so many like you in these places like this."
 first_interaction_active = true
-lines_repeat = Array[String]([])
-lines = Array[String]([])
+lines = Array[String](["Do not trust the silence. The earth shifts when greed stirs its sleep", "Rush the stone, and it will break you. Respect it, and it may yield", "Every rock has a voice. Listen and it’ll tell you where to hit"])
+advices = Array[String](["Gold blinds more than the sun. Once you see it you can lose your sight", "The dragon dreams near and every move is a whisper in its ear.", "Your steps grow steadier. The weight of gold feels lighter… for now."])
 metadata/_custom_type_script = "uid://c0647wsnljt7h"

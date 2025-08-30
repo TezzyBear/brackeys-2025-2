@@ -1,18 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj6q60e18xsd6"]
+[gd_scene load_steps=7 format=3 uid="uid://bj6q60e18xsd6"]
 
 [ext_resource type="Script" uid="uid://1q7my61isycj" path="res://scripts/managers/path_selection_scene_manager.gd" id="1_5kb67"]
 [ext_resource type="PackedScene" uid="uid://drm43ldv2plwx" path="res://scenes/cards/text_card.tscn" id="2_dsqr0"]
+[ext_resource type="Resource" path="res://assets/data/dialog/dialog_dwarf.tres" id="2_m5wwf"]
 [ext_resource type="Texture2D" uid="uid://7kaum7hrt4mm" path="res://assets/images/characters/dwarf_placeholder.png" id="2_xxyx6"]
 [ext_resource type="Texture2D" uid="uid://sctht7ra7k4m" path="res://assets/images/characters/card_dialog.png" id="3_xxyx6"]
 [ext_resource type="Texture2D" uid="uid://cxdlqcr753blu" path="res://assets/images/characters/card_name_dwarf.png" id="4_x1agc"]
 
 [node name="PathSelection" type="Node2D" node_paths=PackedStringArray("cards")]
 script = ExtResource("1_5kb67")
+dialog_dwarf = ExtResource("2_m5wwf")
 cards = NodePath("CanvasInteractionDisplay/Cards")
 
 [node name="CanvasGame" type="CanvasLayer" parent="."]
 
 [node name="CanvasInteractionDisplay" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasInteractionDisplay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.666667)
 
 [node name="PortraitDwarf" type="TextureRect" parent="CanvasInteractionDisplay"]
 anchors_preset = 2
@@ -39,6 +50,18 @@ offset_top = 16.0
 offset_right = 111.0
 offset_bottom = 46.0
 texture = ExtResource("4_x1agc")
+
+[node name="DialogText" type="RichTextLabel" parent="CanvasInteractionDisplay/DialogCard"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.5
+offset_top = 48.0
+offset_right = 157.5
+offset_bottom = 131.0
+grow_horizontal = 2
+scroll_active = false
 
 [node name="Cards" type="Control" parent="CanvasInteractionDisplay"]
 layout_mode = 3
