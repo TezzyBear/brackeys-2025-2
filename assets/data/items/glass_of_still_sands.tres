@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=7 format=3 uid="uid://cgx1gex8mrgpg"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=9 format=3 uid="uid://cgx1gex8mrgpg"]
 
 [ext_resource type="Script" uid="uid://unw4stmmdlee" path="res://scripts/standalone/status_effects/buff_entry.gd" id="1_lchim"]
 [ext_resource type="Resource" uid="uid://b0mfoqg5b6rx0" path="res://assets/data/status_effects/time_freeze_buff.tres" id="2_7dlvv"]
 [ext_resource type="Texture2D" uid="uid://ckhgmrwofmfon" path="res://assets/images/icons/items/item_6.png" id="2_iuims"]
 [ext_resource type="Texture2D" uid="uid://d1el3d7ha7uwr" path="res://assets/images/icons/items/item_glass_of_still_sands.png" id="3_7dlvv"]
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="3_lchim"]
+[ext_resource type="Texture2D" uid="uid://dbrhv03bgpn5x" path="res://assets/images/cards/items/card_item_glass_sand.png" id="6_ng4tx"]
+[ext_resource type="Texture2D" uid="uid://celmv0udnmyoa" path="res://assets/images/cards/items/card_name_item_g_sand.png" id="7_lviul"]
 
 [sub_resource type="Resource" id="Resource_8fucl"]
 script = ExtResource("1_lchim")
@@ -23,3 +25,5 @@ description = "The sands within stand still; use your time wisely — for it is 
 texture = ExtResource("2_iuims")
 icon_texure = ExtResource("3_7dlvv")
 buff_modifier_entries = Array[ExtResource("1_lchim")]([SubResource("Resource_8fucl")])
+texture_name = ExtResource("7_lviul")
+texture_bg = ExtResource("6_ng4tx")

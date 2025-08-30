@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbrhv03bgpn5x"
-path="res://.godot/imported/card_item_glass_sand.png-12f141049944c3375eba00cf60cc7733.ctex"
+uid="uid://c2lg8ik08m2ox"
+path="res://.godot/imported/card_name_item_w_plume.png-e6fceef8b9e796d37a1e49dfacd87bab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cards/card_item_glass_sand.png"
-dest_files=["res://.godot/imported/card_item_glass_sand.png-12f141049944c3375eba00cf60cc7733.ctex"]
+source_file="res://assets/images/cards/items/card_name_item_w_plume.png"
+dest_files=["res://.godot/imported/card_name_item_w_plume.png-e6fceef8b9e796d37a1e49dfacd87bab.ctex"]
 
 [params]
 

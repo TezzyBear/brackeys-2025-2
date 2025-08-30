@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8vcjankm8x83"
-path="res://.godot/imported/card_item_iron_belt.png-6d672b6761fd490bd211ec4266476514.ctex"
+uid="uid://clkxn8oohcbhp"
+path="res://.godot/imported/card_name_item_steel_pickaxe.png-a81b5102b1f88db9801b7476e63a4b52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cards/card_item_iron_belt.png"
-dest_files=["res://.godot/imported/card_item_iron_belt.png-6d672b6761fd490bd211ec4266476514.ctex"]
+source_file="res://assets/images/cards/items/card_name_item_steel_pickaxe.png"
+dest_files=["res://.godot/imported/card_name_item_steel_pickaxe.png-a81b5102b1f88db9801b7476e63a4b52.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="DialogCharacter" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="DialogCharacter" load_steps=2 format=3 uid="uid://brs0rp63h1hq2"]
 
-[ext_resource type="Script" path="res://scripts/dialog/dialog_character.gd" id="1_l0kcl"]
+[ext_resource type="Script" uid="uid://c0647wsnljt7h" path="res://scripts/dialog/dialog_character.gd" id="1_l0kcl"]
 
 [resource]
 script = ExtResource("1_l0kcl")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpw0bct4evyp1"
-path="res://.godot/imported/card_item_rune_might.png-cf83b5575605a1516f4dfcb7a4174054.ctex"
+uid="uid://cmtru68et6ppr"
+path="res://.godot/imported/card_name_stone.png-3268e024316f1d1e2a333fb80310bc0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cards/card_item_rune_might.png"
-dest_files=["res://.godot/imported/card_item_rune_might.png-cf83b5575605a1516f4dfcb7a4174054.ctex"]
+source_file="res://assets/images/cards/paths/card_name_stone.png"
+dest_files=["res://.godot/imported/card_name_stone.png-3268e024316f1d1e2a333fb80310bc0a.ctex"]
 
 [params]
 

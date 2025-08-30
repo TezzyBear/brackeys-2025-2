@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs2jaxx8avjyd"
-path="res://.godot/imported/card_item_silence_potion.png-91680e2176885c7988c80eb46835ba95.ctex"
+uid="uid://vvt36p31th2"
+path="res://.godot/imported/card_name_item_a_stick.png-872f8fd0b6d693001694ca11ab1f9bb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cards/card_item_silence_potion.png"
-dest_files=["res://.godot/imported/card_item_silence_potion.png-91680e2176885c7988c80eb46835ba95.ctex"]
+source_file="res://assets/images/cards/items/card_name_item_a_stick.png"
+dest_files=["res://.godot/imported/card_name_item_a_stick.png-872f8fd0b6d693001694ca11ab1f9bb0.ctex"]
 
 [params]
 

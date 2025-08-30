@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=7 format=3 uid="uid://bb1qtdkmnhnmk"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=9 format=3 uid="uid://bb1qtdkmnhnmk"]
 
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="1_gcxo1"]
 [ext_resource type="Script" uid="uid://unw4stmmdlee" path="res://scripts/standalone/status_effects/buff_entry.gd" id="1_hegm2"]
 [ext_resource type="Resource" uid="uid://cx2ofmafatbwa" path="res://assets/data/status_effects/stamina_buff.tres" id="2_fi7js"]
 [ext_resource type="Texture2D" uid="uid://cdde5hc7ygbxq" path="res://assets/images/icons/items/item_8.png" id="2_tbyex"]
 [ext_resource type="Texture2D" uid="uid://bhuf6f2ccqxji" path="res://assets/images/icons/items/item_iron_belt.png" id="3_fi7js"]
+[ext_resource type="Texture2D" uid="uid://b8vcjankm8x83" path="res://assets/images/cards/items/card_item_iron_belt.png" id="6_gcaig"]
+[ext_resource type="Texture2D" uid="uid://bfpy22rofgk44" path="res://assets/images/cards/items/card_name_item_i_belt.png" id="7_3agky"]
 
 [sub_resource type="Resource" id="Resource_1826g"]
 script = ExtResource("1_hegm2")
@@ -23,3 +25,5 @@ description = "Forged of iron, this belt guards the bearer’s back. Lightweight
 texture = ExtResource("2_tbyex")
 icon_texure = ExtResource("3_fi7js")
 buff_modifier_entries = Array[ExtResource("1_hegm2")]([SubResource("Resource_1826g")])
+texture_bg = ExtResource("6_gcaig")
+texture_name = ExtResource("7_3agky")

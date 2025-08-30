@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj6q60e18xsd6"]
+[gd_scene load_steps=14 format=3 uid="uid://bj6q60e18xsd6"]
 
 [ext_resource type="Script" uid="uid://1q7my61isycj" path="res://scripts/managers/path_selection_scene_manager.gd" id="1_5kb67"]
 [ext_resource type="PackedScene" uid="uid://drm43ldv2plwx" path="res://scenes/cards/text_card.tscn" id="2_dsqr0"]
 [ext_resource type="Texture2D" uid="uid://7kaum7hrt4mm" path="res://assets/images/characters/dwarf_placeholder.png" id="2_xxyx6"]
 [ext_resource type="Texture2D" uid="uid://sctht7ra7k4m" path="res://assets/images/characters/card_dialog.png" id="3_xxyx6"]
 [ext_resource type="Texture2D" uid="uid://cxdlqcr753blu" path="res://assets/images/characters/card_name_dwarf.png" id="4_x1agc"]
+[ext_resource type="Texture2D" uid="uid://opxohysscfir" path="res://assets/images/cards/paths/card_name_way_sloth.png" id="6_pa82w"]
+[ext_resource type="Texture2D" uid="uid://bpq7fvqonsquw" path="res://assets/images/cards/paths/card_name_dirt.png" id="7_s8e5q"]
+[ext_resource type="Texture2D" uid="uid://0etxthxjfu5k" path="res://assets/images/cards/paths/card_name_way_riches.png" id="8_poi3a"]
+[ext_resource type="Texture2D" uid="uid://bo1487o675mmf" path="res://assets/images/cards/paths/card_name_gold.png" id="9_f1iwf"]
+[ext_resource type="Texture2D" uid="uid://dqyluhx4qvufe" path="res://assets/images/cards/paths/card_name_way_solitude.png" id="10_yfmre"]
+[ext_resource type="Texture2D" uid="uid://bu7o1qmjyk5ts" path="res://assets/images/cards/paths/card_name_obsidian.png" id="11_hfs6f"]
+[ext_resource type="Texture2D" uid="uid://8shgxwbul1es" path="res://assets/images/cards/paths/card_name_way_wrath.png" id="12_7kqq2"]
+[ext_resource type="Texture2D" uid="uid://cmtru68et6ppr" path="res://assets/images/cards/paths/card_name_stone.png" id="13_y71bv"]
 
 [node name="PathSelection" type="Node2D" node_paths=PackedStringArray("cards")]
 script = ExtResource("1_5kb67")
@@ -21,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.666667)
+color = Color(0, 0, 0, 0.85098)
 
 [node name="PortraitDwarf" type="TextureRect" parent="CanvasInteractionDisplay"]
 anchors_preset = 2
@@ -63,21 +71,40 @@ scroll_active = false
 
 [node name="Cards" type="Control" parent="CanvasInteractionDisplay"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = 2.0
+offset_right = 94.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="GoldCard" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("2_dsqr0")]
-offset_left = 381.0
-offset_top = 104.0
-offset_right = 381.0
-offset_bottom = 104.0
+[node name="TextCard" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("2_dsqr0")]
+offset_left = -182.0
+offset_top = -251.0
+offset_right = -182.0
+offset_bottom = -251.0
+texture_title = ExtResource("6_pa82w")
+texture_step = ExtResource("7_s8e5q")
+
+[node name="TextCard2" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("2_dsqr0")]
+offset_top = -251.0
+offset_bottom = -251.0
 type = 1
-title_text = "More gold"
+texture_title = ExtResource("8_poi3a")
+texture_step = ExtResource("9_f1iwf")
 
-[node name="DirtCard" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("2_dsqr0")]
-offset_left = 616.0
-offset_top = 104.0
-offset_right = 616.0
-offset_bottom = 104.0
-title_text = "More dirt"
+[node name="TextCard3" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("2_dsqr0")]
+offset_left = -182.0
+offset_right = -182.0
+texture_title = ExtResource("10_yfmre")
+texture_step = ExtResource("11_hfs6f")
+
+[node name="TextCard4" parent="CanvasInteractionDisplay/Cards" instance=ExtResource("2_dsqr0")]
+type = 1
+texture_title = ExtResource("12_7kqq2")
+texture_step = ExtResource("13_y71bv")

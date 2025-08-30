@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnqx6fci1qyhv"
-path="res://.godot/imported/card_item_cursed_rune.png-a950eef77ef73bb9760b2ccd16e2ccd1.ctex"
+uid="uid://bo1487o675mmf"
+path="res://.godot/imported/card_name_gold.png-e18dc670e530cf91f667b835bb8b6d08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cards/card_item_cursed_rune.png"
-dest_files=["res://.godot/imported/card_item_cursed_rune.png-a950eef77ef73bb9760b2ccd16e2ccd1.ctex"]
+source_file="res://assets/images/cards/paths/card_name_gold.png"
+dest_files=["res://.godot/imported/card_name_gold.png-e18dc670e530cf91f667b835bb8b6d08.ctex"]
 
 [params]
 

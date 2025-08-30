@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=5 format=3 uid="uid://papvl4lpxojr"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=7 format=3 uid="uid://papvl4lpxojr"]
 
 [ext_resource type="Script" uid="uid://unw4stmmdlee" path="res://scripts/standalone/status_effects/buff_entry.gd" id="1_pw1vw"]
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="1_woc0l"]
 [ext_resource type="Texture2D" uid="uid://8budqedeysyh" path="res://assets/images/icons/items/item_alchemist_stick.png" id="2_jamvd"]
 [ext_resource type="Texture2D" uid="uid://e3o8x10f2orf" path="res://assets/images/icons/items/item_7.png" id="2_x1rn7"]
+[ext_resource type="Texture2D" uid="uid://cqecsmkc1ikf8" path="res://assets/images/cards/items/card_item_alchemist_stick.png" id="5_1qnjf"]
+[ext_resource type="Texture2D" uid="uid://vvt36p31th2" path="res://assets/images/cards/items/card_name_item_a_stick.png" id="6_31itm"]
 
 [resource]
 script = ExtResource("1_woc0l")
@@ -16,3 +18,5 @@ description = "Ignite and flee — this alchemical rod spares none who linger ne
 texture = ExtResource("2_x1rn7")
 icon_texure = ExtResource("2_jamvd")
 buff_modifier_entries = Array[ExtResource("1_pw1vw")]([])
+texture_name = ExtResource("6_31itm")
+texture_bg = ExtResource("5_1qnjf")

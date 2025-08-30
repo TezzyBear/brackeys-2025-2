@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cndps6buj61mn"
-path="res://.godot/imported/card_item_whispering_plume.png-63896a1deb0dd231c7aadbc6081b4b79.ctex"
+uid="uid://b5mduqlo2ub2m"
+path="res://.godot/imported/card_name_item_m_rune.png-ab7b846e1820f2159f8028fb6e1eca3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cards/card_item_whispering_plume.png"
-dest_files=["res://.godot/imported/card_item_whispering_plume.png-63896a1deb0dd231c7aadbc6081b4b79.ctex"]
+source_file="res://assets/images/cards/items/card_name_item_m_rune.png"
+dest_files=["res://.godot/imported/card_name_item_m_rune.png-ab7b846e1820f2159f8028fb6e1eca3e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqecsmkc1ikf8"
-path="res://.godot/imported/card_item_alchemist_stick.png-fc3177833654ad70dbef9d59c4f731dd.ctex"
+uid="uid://77ov0seh3ssy"
+path="res://.godot/imported/card_name_item_c_rune.png-834026ab4ed08118d93b753167eb092b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cards/card_item_alchemist_stick.png"
-dest_files=["res://.godot/imported/card_item_alchemist_stick.png-fc3177833654ad70dbef9d59c4f731dd.ctex"]
+source_file="res://assets/images/cards/items/card_name_item_c_rune.png"
+dest_files=["res://.godot/imported/card_name_item_c_rune.png-834026ab4ed08118d93b753167eb092b.ctex"]
 
 [params]
 
