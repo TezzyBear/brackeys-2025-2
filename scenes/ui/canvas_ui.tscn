@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://1s8icgqleh81"]
+[gd_scene load_steps=9 format=3 uid="uid://1s8icgqleh81"]
 
 [ext_resource type="PackedScene" uid="uid://umwejshud0lh" path="res://scenes/ui/panel_sound.tscn" id="1_y2vrh"]
 [ext_resource type="PackedScene" uid="uid://ces3wna4uuv0e" path="res://scenes/ui/panel_fatigue.tscn" id="2_h1r6l"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://f3b0yxes8yir" path="res://scenes/ui/inventory/panel_inventory.tscn" id="5_cxcp1"]
 [ext_resource type="PackedScene" uid="uid://csfcjyab42t1l" path="res://scenes/ui/buffs/panel_buffs.tscn" id="6_cxcp1"]
 [ext_resource type="PackedScene" uid="uid://cawt5snli5r2t" path="res://scenes/ui/panel_distance.tscn" id="7_ygmty"]
+[ext_resource type="PackedScene" uid="uid://yeahsa0jy2yn" path="res://scenes/ui/panel_back_to.tscn" id="8_73yob"]
 
 [node name="CanvasUI" type="CanvasLayer"]
 
@@ -42,3 +43,5 @@ offset_right = 112.0
 offset_bottom = -100.0
 
 [node name="PanelDistance" parent="." instance=ExtResource("7_ygmty")]
+
+[node name="PanelBackTo" parent="." instance=ExtResource("8_73yob")]
