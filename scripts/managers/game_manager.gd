@@ -32,17 +32,19 @@ var level_layout := []
 
 # Player Stats
 var time_steps_passed := 0
-var fatigue := 0.0 #cap 100
+var fatigue := 0.0 
 var gold := 0
 var inventory: Array[ActiveItemAgent] = [null, null, null]
+
+# Modifiers
+var weight_multiplier := 0
+var stamina_multiplier := 0
+var strength := 0
 
 func _ready() -> void:
 	if not instance:
 		GameManager.instance = self
-	
-	buff_manager.initialize_behaviours()
-	item_manager.initialize_behaviours()
-	
+		
 	var random_chunk = Chunks.get_random_chunk(Enums.CHUNK_TYPE.DIRT)
 	add_chunk(random_chunk)
 	
@@ -51,8 +53,11 @@ func _ready() -> void:
 	_initialize_sound_bar()
 	fatigue_ui.on_fatigue_treshold_reached.connect(_handle_fatigue_treshold_reached)
 	
-	#add_item(ItemManager.create_item_from_resource(load("res://assets/data/items/cursed_runestone.tres")))
-	#add_item(item_manager.create_item_from_name("Glass of Still Sands"))
+	buff_manager.initialize_behaviours()
+	item_manager.initialize_behaviours()
+	
+	add_item(item_manager.create_item_from_name("Rune of Might"))
+	add_item(item_manager.create_item_from_name("Whispering Plume"))
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("hack_1"):
@@ -60,7 +65,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("hack_2"):
 		_add_gold(100)
 	if Input.is_action_just_pressed("hack_3"):
-		_add_fatigue(33)
+		add_fatigue(33)
 
 func _add_gold(value) -> void:
 	var uncapped_gold = gold + value
@@ -72,22 +77,21 @@ func substract_gold(value: int) -> void:
 	gold = min(999, max(0, uncapped_gold))
 	gold_ui.update(gold)
 
-func _add_fatigue(value) -> void:
-	var uncapped_fatigue = fatigue + value
+func add_fatigue(value) -> void:
+	var uncapped_fatigue = fatigue + value + (value * (weight_multiplier + stamina_multiplier) / 100.0)
 	fatigue = min(100, max(0, uncapped_fatigue))
 	fatigue_ui.update(fatigue)
 
 func _handle_fatigue_treshold_reached():
-	
 	fatigue_manager.animate_fatigue_with_callback(func():
 		_add_gold(-30)
-		_add_fatigue(-80)
+		add_fatigue(-80)
 		time_ui.shift_time(120)
 	)
 
 func _handle_pick_hit(intensity: Enums.DIG_INTENSITY) -> void:
 	_add_gold(_get_gold_in_step_by_pick_hit_intensity(intensity))
-	_add_fatigue(0.2 + 1 * intensity)
+	add_fatigue(0.2 + 1 * intensity)
 	sound_ui.sound_increase(intensity)
 
 func _initialize_time_wheel():
@@ -138,6 +142,7 @@ func transition_to_scene(scene: PackedScene):
 	camera_2d.add_child(rendered_scene)
 	
 	if rendered_scene is DigSceneManager:
+		rendered_scene.hit_bonus = strength
 		rendered_scene.pick.on_dig.connect(_handle_pick_hit) # <- This needs to be before, so it logs gold previous to ran step
 		rendered_scene.connect_signal_handlers()
 		
@@ -152,8 +157,8 @@ func add_chunk(chunk: Array):
 		pretty_print_str += str(step.type) +', '
 	print(pretty_print_str)
 
-func add_buff(buff: BuffResource, modifiers: Dictionary[String, Variant] = {}) -> void:
-	buff_manager.apply_buff(buff, modifiers)
+func add_buff(buff: BuffResource, modifier = null) -> ActiveBuffAgent:
+	return buff_manager.apply_buff(buff, modifier)
 
 func remove_buff(buff: ActiveBuffAgent)  -> void:
 	buff_manager.remove_buff(buff)
@@ -168,7 +173,7 @@ func get_step_at(step_index) -> Step:
 func _get_gold_in_step_by_pick_hit_intensity(intensity: Enums.DIG_INTENSITY):
 	match get_current_step().type:
 		Enums.STEP_TYPE.GOLD:
-			return(intensity + 1) * randi_range(1, 3)
+			return(intensity + 1) * randi_range(1 + strength, 3 + strength * 2)
 		_:
 			return 1 if randi_range(0, 3) == 3 else 0
 

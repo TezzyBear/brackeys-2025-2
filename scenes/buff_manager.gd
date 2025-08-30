@@ -13,33 +13,44 @@ func _ready():
 	buffs_ui = canvas_ui.get_node("PanelBuffs")
 
 func initialize_behaviours() -> void:
+	print(GameManager.instance.dig_scene)
 	buff_behaviours = {
+		feather_step_resource: FeatherStepBuffBehaviour.behaviour.bind(GameManager.instance.sound_ui),
+		heavy_resource: HeavyDebuffBehaviour.behaviour.bind(),
+		stamina_resource: StaminaBuffBehaviour.behaviour.bind(),
+		strength_resource: StrengthBuffBehaviour.behaviour.bind(GameManager.instance.dig_scene),
 		time_freeze_resource: TimeFreezeBuffBehaviour.behaviour.bind(GameManager.instance.time_ui)
 	}
 	buff_removers = {
+		feather_step_resource: FeatherStepBuffBehaviour.remove.bind(GameManager.instance.sound_ui),
+		heavy_resource: HeavyDebuffBehaviour.remove.bind(),
+		stamina_resource: StaminaBuffBehaviour.remove.bind(),
+		strength_resource: StrengthBuffBehaviour.remove.bind(GameManager.instance.dig_scene),
 		time_freeze_resource: TimeFreezeBuffBehaviour.remove.bind(GameManager.instance.time_ui)
 	}
 
-func apply_buff(buff: BuffResource, modifiers: Dictionary[String, Variant]):
+func apply_buff(buff: BuffResource, modifier = null):
 	var agent := ActiveBuffAgent.new()
 	agent.resource = buff
 	#agent.required_entities = buff_required_entities[buff]
 	
-	if modifiers.size():
-		agent.modifiers = modifiers
-		if modifiers.values()[0].size() > 0:
-			var modifier_str = str(modifiers.values()[0][0]) # Consider later adding multiple modifiers per buff. For now it will only work with 1
-			agent.computed_description = buff.description.replace("{value}", modifier_str)
+	# Consider later adding multiple modifiers per buff. For now it will only work with 1
+	if modifier:
+		agent.modifier = modifier
+		agent.computed_description = buff.description.replace("{value}", str(modifier))
 	
 	if agent.computed_description == "":
 		agent.computed_description = buff.description
-			
-	agent.activate(self, buff_behaviours[buff])
+	
+	agent.bind_callbacks(buff_behaviours[buff], buff_removers[buff])
+	agent.activate(self)
 	buffs_ui.place_buff(agent)
 	add_child(agent)
+	return agent
 
 func remove_buff(agent: ActiveBuffAgent):
-	buff_removers[agent.resource].call()
+	print(agent.remover)
+	agent.remover.call()
 	buffs_ui.delete_buff(agent)
 	active_buffs.erase(agent)
 	agent.queue_free()

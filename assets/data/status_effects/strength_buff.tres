@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_yap6c")
 description = "+{value} strength."
-duration = 15.0
+duration = -1.0
 texture = ExtResource("2_fd5xj")

@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_wj8m7")
 description = "{value}% increse in fatigue generation."
-duration = 15.0
+duration = -1.0
 texture = ExtResource("2_fj5y4")

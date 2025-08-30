@@ -1,7 +1,15 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bb1qtdkmnhnmk"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=6 format=3 uid="uid://bb1qtdkmnhnmk"]
 
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="1_gcxo1"]
+[ext_resource type="Script" uid="uid://unw4stmmdlee" path="res://scripts/standalone/status_effects/buff_entry.gd" id="1_hegm2"]
+[ext_resource type="Resource" uid="uid://cx2ofmafatbwa" path="res://assets/data/status_effects/stamina_buff.tres" id="2_fi7js"]
 [ext_resource type="Texture2D" uid="uid://cdde5hc7ygbxq" path="res://assets/images/icons/items/item_8.png" id="2_tbyex"]
+
+[sub_resource type="Resource" id="Resource_1826g"]
+script = ExtResource("1_hegm2")
+buff = ExtResource("2_fi7js")
+modifier = 50
+metadata/_custom_type_script = "uid://unw4stmmdlee"
 
 [resource]
 script = ExtResource("1_gcxo1")
@@ -12,4 +20,4 @@ effect = "Reduce fatigue generation"
 consumable = false
 description = "Forged of iron, this belt guards the bearer’s back. Lightweight baby!"
 texture = ExtResource("2_tbyex")
-buff_id = 3
+buff_modifier_entries = Array[ExtResource("1_hegm2")]([SubResource("Resource_1826g")])

@@ -8,15 +8,14 @@
 [sub_resource type="Resource" id="Resource_8fucl"]
 script = ExtResource("1_lchim")
 buff = ExtResource("2_7dlvv")
-string = "AAA"
-modifiers = [1]
+modifier = 0
 metadata/_custom_type_script = "uid://unw4stmmdlee"
 
 [resource]
 script = ExtResource("3_lchim")
 name = "Glass of Still Sands"
 rarity = 1
-cost = 70
+cost = 50
 effect = "Pause time for a moment."
 consumable = true
 description = "The sands within stand still; use your time wisely — for it is not running out."

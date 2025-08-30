@@ -11,6 +11,8 @@ var MIN_THRESHOLD = 5
 var treshold_value: int
 var treshold_visual_height: int
 
+var noise_multiplier := 1.0
+
 signal on_sound_treshold_passed()
 
 func _ready() -> void:
@@ -21,8 +23,12 @@ func update_bar_treshold(progress: float) -> void:
 	treshold_value = MIN_THRESHOLD + (MAX_TRESHOLD - MIN_THRESHOLD) * progress
 	treshold_rect.position.y = treshold_value * treshold_visual_height
 
+func add_sound(value) -> void:
+	var uncapped_sound = progress_bar.value + value
+	progress_bar.value = min(100, max(0, uncapped_sound))
+
 func sound_increase(intensity: Enums.DIG_INTENSITY) -> void:
-	var noise_increment = _get_noise_increment_by_intensity(intensity)
+	var noise_increment = _get_noise_increment_by_intensity(intensity) * noise_multiplier
 	progress_bar.value += noise_increment
 	progress_bar_warning_update()
 

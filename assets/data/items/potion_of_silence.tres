@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://7topo47l7cdk"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://7topo47l7cdk"]
 
 [ext_resource type="Script" uid="uid://bgs88etb7yqle" path="res://scripts/standalone/item_resource_base.gd" id="1_7yqfw"]
+[ext_resource type="Script" uid="uid://unw4stmmdlee" path="res://scripts/standalone/status_effects/buff_entry.gd" id="1_jxiju"]
 [ext_resource type="Texture2D" uid="uid://b3g0mffb3n0sv" path="res://assets/images/icons/items/icon_1.png" id="2_03yse"]
 
 [resource]
@@ -8,8 +9,8 @@ script = ExtResource("1_7yqfw")
 name = "Potion of Silence"
 rarity = 0
 cost = 20
-effect = "Reduce sound completely"
+effect = "Reduce sound bar by 30."
 consumable = true
 description = "Sip to quiet every sound you cause, leaving only silence behind."
 texture = ExtResource("2_03yse")
-buff_id = 5
+buff_modifier_entries = Array[ExtResource("1_jxiju")]([])

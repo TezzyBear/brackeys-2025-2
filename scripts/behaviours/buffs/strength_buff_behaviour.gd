@@ -2,12 +2,9 @@ extends Node
 
 class_name StrengthBuffBehaviour
 
-var increase_to_hit = 2
+static func behaviour(modifier, dig_scene_manager: DigSceneManager):
+	dig_scene_manager.hit_bonus += modifier
+	GameManager.instance.strength = dig_scene_manager.hit_bonus
 
-func behaviour(required_entities: Dictionary[String, Callable]):
-	var dig_scene_manager = required_entities.dig_scene_accesor.call() as DigSceneManager
-	dig_scene_manager.hit_bonus += increase_to_hit
-
-func remove(required_entities: Dictionary[String, Callable]):
-	var dig_scene_manager = required_entities.dig_scene_accesor.call() as DigSceneManager
-	dig_scene_manager.hit_bonus -= increase_to_hit
+static func remove(modifier, dig_scene_manager: DigSceneManager):
+	dig_scene_manager.hit_bonus -= modifier

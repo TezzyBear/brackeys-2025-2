@@ -36,8 +36,8 @@ func handle_gui_input(event: InputEvent) -> void:
 	GameManager.instance.item_delete(slot_id)
 	
 func drop() -> void:
-	for entry in item.buff_modifier_entries:
-		GameManager.instance.remove_buff(entry.buff)
+	for buff in item.linked_buffs:
+		GameManager.instance.remove_buff(buff)
 
 func _on_item_mouse_entered() -> void:
 	modulate = Color(1, 1, 1, 0.7)

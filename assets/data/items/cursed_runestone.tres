@@ -9,15 +9,13 @@
 [sub_resource type="Resource" id="Resource_ytgs5"]
 script = ExtResource("2_lat3n")
 buff = ExtResource("2_fbrtc")
-string = ""
-modifiers = [6]
+modifier = 3
 metadata/_custom_type_script = "uid://unw4stmmdlee"
 
 [sub_resource type="Resource" id="Resource_fbrtc"]
 script = ExtResource("2_lat3n")
 buff = ExtResource("3_aar7v")
-string = ""
-modifiers = [2]
+modifier = 300
 metadata/_custom_type_script = "uid://unw4stmmdlee"
 
 [resource]

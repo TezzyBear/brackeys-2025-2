@@ -8,16 +8,15 @@
 [sub_resource type="Resource" id="Resource_841q1"]
 script = ExtResource("1_gmqrb")
 buff = ExtResource("2_841q1")
-string = ""
-modifiers = [2]
+modifier = 1
 metadata/_custom_type_script = "uid://unw4stmmdlee"
 
 [resource]
 script = ExtResource("1_4fnr1")
 name = "Rune of Might"
 rarity = 0
-cost = 30
-effect = "+2 to hits."
+cost = 40
+effect = "+1 to hits."
 consumable = false
 description = "A rune that sharpens force, making every hit a stronger blow."
 texture = ExtResource("2_epfbp")

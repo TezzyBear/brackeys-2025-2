@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_d81cx")
 description = "{value}% reduced noise."
-duration = 15.0
+duration = 20.0
 texture = ExtResource("2_imail")
